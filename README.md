@@ -5,6 +5,10 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 
 ## Librerías
 
+| Librería     | Descripción                                               |
+|------------  | -------------                                             |
+| Navigation   | Navegación entre los fragments de la aplicación bajo el principio de "One Activity, Multiple Fragments". |
+
 **Navigation**: Navegación entre los fragments de la aplicación bajo el principio de "One Activity, Multiple Fragments".
 
 **Coil**: Importar imágenes externas en la aplicación. 
