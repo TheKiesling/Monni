@@ -5,9 +5,9 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 
 ## Librerías
 
-| Librería     | Descripción                                               |
-|------------  | -------------                                             |
-| [Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)  | Navegación entre los fragments de la aplicación bajo el principio de "One Activity, Multiple Fragments". |
+| Librería     | Versión    | Descripción                                               |
+|------------  | -------------  |  -------------                                        |
+| [Navigation](https://developer.android.com/guide/navigation/navigation-getting-started) | 2.5.1 | Navegación entre los fragments de la aplicación bajo el principio de "One Activity, Multiple Fragments". |
 
 **Navigation**: Navegación entre los fragments de la aplicación bajo el principio de "One Activity, Multiple Fragments".
 
