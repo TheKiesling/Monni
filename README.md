@@ -14,10 +14,9 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 | [OkHttp](https://futurestud.io/tutorials/retrofit-2-log-requests-and-responses) | 4.9.3 | Permitir el acceso mediante Retrofit. |
 | [DataStore](https://developer.android.com/topic/libraries/architecture/datastore?hl=es-419) | 1.0.0 | Almacenamiento de preferencias de usuario (Ej. Cambio de paleta de colores en gráficos). |
 | [Coroutines](https://developer.android.com/kotlin/coroutines?hl=es-419&gclid=CjwKCAjw7eSZBhB8EiwA60kCWwrUNhtfAPT9YFdGpHYCzslJjl9MMANZbVu2RFohfVNMfL4KrgC2XRoCMq4QAvD_BwE&gclsrc=aw.ds) | 1.6.4 | Permitir que el almacenamiento local sea asíncrono. |
-| [Room](https://developer.android.com/training/data-storage/room) | 2.4.3 | Almacenamiento local de la información del usuario usando el nombre del mismo como llave primaria.* |
-
+| [Room](https://developer.android.com/training/data-storage/room) | 2.4.3 | Almacenamiento local de la información del usuario usando el nombre del mismo como llave primaria.|
 ###### *Se usará SQLite como DB.*
-
+|-------  | ---------- |
 | IDE | <img src="https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=Android-Studio&logoColor=white"/> |
 | Lenguaje | <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=for-the-badge&logo=Kotlin&logoColor=white"/> |
 | Base de Datos | <img src="https://img.shields.io/badge/SQLite-003B57.svg?style=for-the-badge&logo=SQLite&logoColor=white"/> |
