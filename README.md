@@ -18,7 +18,7 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 
 <br>
 
-| Servicio  | Herramienta a utilizar  |
+| Categoría  | Herramienta a utilizar  |
 |---|---|
 | IDE | <img src="https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=Android-Studio&logoColor=white"/> |
 | Lenguaje | <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=for-the-badge&logo=Kotlin&logoColor=white"/> |
