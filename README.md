@@ -15,4 +15,8 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 
 **Room**: Almacenamiento local de la información del usuario usando el nombre del mismo como llave primaria. *
 
-###### *Se usará SQLite como DB. 
+###### *Se usará SQLite como DB.
+
+## Herramientas
+
+<img src="https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=Android-Studio&logoColor=white"/>
