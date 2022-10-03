@@ -22,3 +22,4 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 <img src="https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=Android-Studio&logoColor=white"/>
 <img src="https://img.shields.io/badge/Kotlin-7F52FF.svg?style=for-the-badge&logo=Kotlin&logoColor=white"/>
 <img src="https://img.shields.io/badge/SQLite-003B57.svg?style=for-the-badge&logo=SQLite&logoColor=white"/>
+<img src="https://img.shields.io/badge/Coil-000000.svg?style=for-the-badge&logo=Coil&logoColor=white"/>
