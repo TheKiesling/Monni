@@ -4,7 +4,7 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 ## Servicios
 Únicamente se implementarán dos servicios para el desarollo de la aplicación.
 - [The Credential Management API](https://web.dev/security-credential-management/) se utilizará para recordar y autentificar a los usuarios. También servirá para hacer un login automático y para permitir logearse rápida y sencillamente.
-- Para los _tips_ de ahorro se tendrá en una base de datos pequeñas frases o recomendaciones que fomenten el hábito de ahorrar. Dichas frases y/o recomendaciones serán seleccionadas de manera aleatoria cada cierto tiempo para ser presentadas al usuario en el apartado de _Ahorros_ de la aplicación. 
+- Para los _tips_ de ahorro se tendrá en una base de datos pequeñas frases o recomendaciones que fomenten el hábito de ahorrar. Dichas frases y/o recomendaciones serán de nuestra autoría y se seleccionarán de manera aleatoria cada cierto tiempo para ser presentadas al usuario en el apartado de _Ahorros_ de la aplicación. 
 
 ## Librerías
 
