@@ -5,13 +5,14 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 
 ## Librerías
 
-###### Navigation
+###### Navigation: Navegación entre los fragments de la aplicación bajo el principio de "One Activity, Multiple Fragments".
 
-###### Coil
+###### Coil: Importar imágenes externas en la aplicación. 
 
-###### Datastore
+###### Datastore: Almacenamiento de preferencias de usuario (Ej. Cambio de paleta de colores en gráficos). 
 
-###### Coroutines
+###### Coroutines: Permitir que el almacenamiento local sea asíncrono.
 
-###### Room
+###### Room: Almacenamiento local de la información del usuario usando el nombre del mismo como llave primaria. *
 
+###### *Se usará SQLite como DB. 
