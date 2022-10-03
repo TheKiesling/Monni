@@ -3,7 +3,7 @@ El proyecto consiste en una aplicación destinada a la gestión de finanzas. Est
 
 ## Servicios
 1. Se utilizará [OAuth2](https://developer.android.com/training/id-auth/authenticate) para recordar y autenticar usuarios.
-2. Para los tips de ahorro, se creará una pequeña base de datos local que contendrá una serie de tips que serán seleccionados de forma aleatoria cada cierto tiempo para que le aparezcan al usuario en el apartado de “ahorro”.
+2. Para los tips de ahorro, se creará una pequeña base de datos local que contendrá una serie de pequeñas recomendaciones que serán seleccionadas de forma aleatoria cada cierto tiempo para que le aparezcan al usuario en el apartado de “ahorro”.
 
 ## Librerías
 
