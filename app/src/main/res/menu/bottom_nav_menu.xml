@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_item_savings"
+        android:title="@string/savings_icon_text"
+        android:icon="@drawable/ic_savings"
+        />
+
+    <item
+        android:id="@+id/menu_item_graph"
+        android:title="@string/chart_icon_text"
+        android:icon="@drawable/ic_chart"
+        />
+
+</menu>
