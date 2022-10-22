@@ -3,7 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Andrea/Documents/GitHub/Monni/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/border.xml" value="0.2595" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/bottom.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/curved_progress_bar.xml" value="0.1325" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/custom_progressbar_home.xml" value="0.1325" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/dialog_format.xml" value="0.184" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/ic_circle_for_graph.xml" value="0.184" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/ic_wave.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/lock.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/progress_bar_background.xml" value="0.1325" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/shape_login.xml" value="0.1325" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/shape_login_2.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/support-48px.xml" value="0.1255" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/support.xml" value="0.1255" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/fragment_login.xml" value="0.42397914856646396" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/fragment_savings.xml" value="0.4" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/fragment_tip_dialog.xml" value="0.264" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/progress_bar_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/savings_tips_item.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

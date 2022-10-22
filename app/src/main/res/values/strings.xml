@@ -5,5 +5,10 @@
     <string name="welcoming_text_home">Bienvenido de vuelta,</string>
     <string name="savings_icon_text">Ahorros</string>
     <string name="chart_icon_text">Gráfico</string>
+    <string name="chart_title_text">Gastos</string>
+    <string name="options_text">Opciones</string>
+    <string name="modify_limit_text">Modificar límite</string>
+    <string name="new_register_text">Nuevo registro</string>
+
 
 </resources>

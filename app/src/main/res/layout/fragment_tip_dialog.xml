@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TipDialogFragment"
+    android:background="@color/gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Dialog"
+        android:layout_width="328dp"
+        android:layout_height="336dp"
+        android:background="@drawable/dialog_format"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/textView_tipDialogFragment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="¿Cómo funcionan los ahorros?"
+            style="@style/main_title_text"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/Dialog"
+            app:layout_constraintTop_toTopOf="@id/Dialog"
+            app:layout_constraintEnd_toEndOf="@id/Dialog"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/textView_tipDialogFragment_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Cada mes, se calcula la diferencia entre el dinero gastado y el límite de cada categoría. Esta diferencia será agregada al total ahorrado, con el objetivo de llegar a la meta establecida en el transcurso de un año."
+            style="@style/general_text"
+            app:layout_constraintStart_toStartOf="@id/Dialog"
+            app:layout_constraintTop_toBottomOf="@id/textView_tipDialogFragment_title"
+            app:layout_constraintEnd_toEndOf="@id/Dialog"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="17sp"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_loginFragment_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/Dialog"
+        app:layout_constraintEnd_toEndOf="@id/Dialog"
+        app:layout_constraintTop_toBottomOf="@id/textView_tipDialogFragment_text"
+        android:text="Cerrar"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        android:padding="16dp"
+        app:strokeColor="@color/gray"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        app:cornerRadius="100dp"
+
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="16dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
