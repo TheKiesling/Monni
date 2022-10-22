@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_itemPieChart"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_with_image_height"
+    android:padding="@dimen/margin_small"
+    android:clickable="true"
+    android:focusable="true"
+    >
+
+    <ImageView
+        android:id="@+id/icon_for_pie_chart_element"
+        app:tint="@color/maximum_blue_purple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_circle_for_graph"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/category_text_pie_chart_element"
+        style="@style/general_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/icon_for_pie_chart_element"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        tools:text="Nombre de Categoría" />
+
+    <TextView
+        android:id="@+id/money_amount_text_pie_chart_element"
+        style="@style/general_text"
+        android:layout_marginEnd="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Q202.87" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
