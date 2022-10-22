@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Monni</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="savings_text_home">Se han ahorrado Q739.65 \n ¡Sigue asi!</string>
+    <string name="welcoming_text_home">Bienvenido de vuelta,</string>
+    <string name="savings_icon_text">Ahorros</string>
+    <string name="chart_icon_text">Gráfico</string>
+
 </resources>

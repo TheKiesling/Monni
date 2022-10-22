@@ -3,4 +3,6 @@
     <!-- Text dimensions -->
     <dimen name="general_text_size">16dp</dimen>
     <dimen name="main_title_text_size">32dp</dimen>
+    <dimen name="list_item_with_image_height">72dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
 </resources>

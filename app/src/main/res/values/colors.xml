@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <!--Theme colors-->
+    <color name="alice_blue">#eef0ff</color>
     <color name="maximum_blue_purple">#ADB6FD</color>
     <color name="lavender_blue">#D0C7FF</color>
     <color name="shampoo">#FCD3F7</color>
@@ -16,5 +17,8 @@
     <color name="light_fuchsia_pink">#FF83EA</color>
     <color name="light_cobalt_blue">#9796F0</color>
     <color name="ube">#7F7FC7</color>
+    <color name="bright_gray">#EFEDF1</color>
+
+
 
 </resources>
