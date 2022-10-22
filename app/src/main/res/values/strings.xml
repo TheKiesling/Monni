@@ -5,4 +5,13 @@
     <string name="email">Email</string>
     <string name="crear_cuenta">Crear Usuario</string>
     <string name="crear_usuario">Crear Usuario</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="savings_text_home">Se han ahorrado Q739.65 \n ¡Sigue asi!</string>
+    <string name="welcoming_text_home">Bienvenido de vuelta,</string>
+    <string name="savings_icon_text">Ahorros</string>
+    <string name="chart_icon_text">Gráfico</string>
+    <string name="chart_title_text">Gastos</string>
+    <string name="options_text">Opciones</string>
+    <string name="modify_limit_text">Modificar límite</string>
+    <string name="new_register_text">Nuevo registro</string>
 </resources>
