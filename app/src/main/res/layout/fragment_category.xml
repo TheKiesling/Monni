@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CategoryFragment"
+    android:background="@drawable/category_gradient">
+
+    <TextView
+        android:id="@+id/ayuda"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/category_wave"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="150dp"/>
+
+    <TextView
+        android:id="@+id/fragment_category_txt_title"
+        style="@style/main_title_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_title_text_top_margin"
+        android:textColor="@color/lavender_blue"
+        tools:text="Categoría" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_more_vert_24"
+        app:layout_constraintStart_toEndOf="@id/fragment_category_txt_title"
+        app:layout_constraintTop_toTopOf="@id/fragment_category_txt_title"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_category_txt_title"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="7dp"/>
+    <!-- me vuelvo loco si no está centrado -->
+
+    <ImageView
+        android:id="@+id/fragment_category_ic_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_expand_more_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fragment_category_txt_title"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_category_txt_title"
+        android:layout_marginStart="@dimen/return_arrow_margin"
+        android:rotation="90"/>
+
+    <TextView
+        android:id="@+id/fragment_category_txt_subtitle"
+        style="@style/main_title_text"
+        android:textSize="@dimen/subtitle_text_size"
+        app:layout_constraintTop_toBottomOf="@id/fragment_category_txt_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/return_arrow_margin"
+        android:textColor="@color/ube"
+        tools:text="@string/category_registers" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragment_category_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_category_txt_subtitle"
+        android:layout_marginTop="15dp"
+        tools:listitem="@layout/category_item"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
