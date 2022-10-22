@@ -23,30 +23,32 @@
             style="@style/general_text"
             android:textStyle="bold"
             android:gravity="center_vertical"
-            android:textSize="20dp"
-            android:layout_marginStart="16dp"
+            android:textSize="@dimen/subtitle_text_size"
+            android:layout_marginStart="@dimen/margin_16dp"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/options_text" />
 
         <TextView
             android:id="@+id/modify_limit_option_dialog"
+            style="@style/general_text"
             android:layout_width="match_parent"
             android:clickable="true"
+            android:focusable="true"
             android:layout_marginStart="16dp"
             android:layout_height="60dp"
             android:gravity="center_vertical"
-            android:textSize="16dp"
             android:text="@string/modify_limit_text" />
 
         <TextView
             android:id="@+id/new_register_option_dialog"
+            style="@style/general_text"
             android:layout_width="match_parent"
             android:clickable="true"
+            android:focusable="true"
             android:layout_height="60dp"
             android:gravity="center_vertical"
-            android:textSize="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/margin_16dp"
             android:text="@string/new_register_text" />
     </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

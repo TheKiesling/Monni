@@ -4,64 +4,98 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="328dp"
     android:layout_height="283dp"
-    tools:context=".CategoryDialogFragment">
+    tools:context=".CategoryDialogFragment"
+    android:background="@drawable/dialog_format">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/limit_dialog_tittle"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/subtitle_text_size"
+            android:textStyle="bold"
+            tools:text="Limite de Gasto de   Transporte" />
+
+        <TextView
+            android:layout_marginTop="@dimen/margin_small"
+            android:id="@+id/current_limit_text_dialog"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/ube"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold"
+            tools:text="Limite actual Q200.00" />
+
+        <TextView
+            android:id="@+id/new_register_option_dialog"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_weight="0.3"
+            android:gravity="center_vertical"
+            android:text="@string/modify_limit_text"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_modify_limit_dialog"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/dialog_input_w"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_modify_limit_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_edit_text"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <TextView
-                style="@style/general_text"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                android:textSize="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                tools:text="Limite de Gasto de   Transporte" />
+            android:layout_weight="1">
 
-            <TextView
-                style="@style/general_text"
-                android:id="@+id/modify_limit_option_dialog"
-                android:layout_width="match_parent"
-                android:textStyle="bold"
-                android:textColor="@color/ube"
-                android:layout_marginStart="16dp"
-                android:layout_height="32dp"
-                android:gravity="center_vertical"
-                android:textSize="16dp"
-                tools:text="Limite actual Q200.00" />
+            <Button
+                android:id="@+id/save_button_limit_dialog"
+                android:layout_width="@dimen/dialog_button_w"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_20dp"
+                android:text="@string/save_text"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                style="@style/general_text"
-                android:id="@+id/new_register_option_dialog"
-                android:layout_width="match_parent"
-                android:clickable="true"
-                android:layout_height="56dp"
-                android:gravity="center_vertical"
-                android:textSize="16dp"
-                android:layout_marginStart="16dp"
-                android:text="@string/modify_limit_text" />
+            <Button
+                android:id="@+id/cancel_button_limit_dialog"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="@dimen/dialog_button_w"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_text"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/save_button_limit_dialog"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="197dp"
-                app:boxCornerRadiusBottomEnd="50dp"
-                app:boxCornerRadiusBottomStart="50dp"
-                app:boxCornerRadiusTopEnd="50dp"
-                app:boxCornerRadiusTopStart="50dp"
-                android:layout_gravity="center"
-                android:layout_height="25dp">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
