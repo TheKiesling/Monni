@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Monni</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="category_registers">Registros de Categoría</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="crear_cuenta">Crear Usuario</string>
+    <string name="crear_usuario">Crear Usuario</string>
 </resources>
