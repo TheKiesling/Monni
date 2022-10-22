@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Text dimensions -->
-    <dimen name="general_text_size">16dp</dimen>
-    <dimen name="main_title_text_size">32dp</dimen>
+    <dimen name="general_text_size">16sp</dimen>
+    <dimen name="main_title_text_size">32sp</dimen>
+    <dimen name="subtitle_text_size">20sp</dimen>
+    <dimen name="main_title_text_top_margin">65sp</dimen>
+    <dimen name="return_arrow_margin">30dp</dimen>
 </resources>
