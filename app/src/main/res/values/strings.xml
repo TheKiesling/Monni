@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">Monni</string>
+    <string name="category_registers">Registros de Categoría</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="crear_cuenta">Crear Usuario</string>
+    <string name="crear_usuario">Crear Usuario</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="savings_text_home">Se han ahorrado Q739.65 \n ¡Sigue asi!</string>
     <string name="welcoming_text_home">Bienvenido de vuelta,</string>
@@ -11,4 +16,5 @@
     <string name="new_register_text">Nuevo registro</string>
     <string name="cancel_text">Cancelar</string>
     <string name="save_text">Guardar</string>
+
 </resources>

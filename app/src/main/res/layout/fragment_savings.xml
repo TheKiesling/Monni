@@ -10,9 +10,8 @@
         android:id="@+id/textView_savingsFragment_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/main_title_text"
         android:text="Ahorros"
-        android:fontFamily="@font/montserrat_medium"
-        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/textView_savingsFragment_more"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,14 +26,118 @@
         android:background="@drawable/ic_baseline_more_vert_24"
         app:layout_constraintStart_toEndOf="@id/textView_savingsFragment_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textView_savingsFragment_title"
-        android:textSize="24sp"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toBottomOf="@id/textView_savingsFragment_title"
+
         />
 
+    <TextView
+        android:id="@+id/textView_savingsFragment_savings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        tools:text="Q739.65"
+        android:translationZ="90dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@id/progressBar_savingsFragment"
+        app:layout_constraintEnd_toEndOf="@id/progressBar_savingsFragment"
+        app:layout_constraintTop_toTopOf="@id/progressBar_savingsFragment"
+        app:layout_constraintBottom_toBottomOf="@id/progressBar_savingsFragment"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar_savingsFragment"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="330dp"
+        android:layout_height="24dp"
+        android:progress="75"
+        android:progressDrawable="@drawable/curved_progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+         />
 
+    <TextView
+        android:id="@+id/textView_savingsFragment_savingsGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        tools:text="Q1000"
+        android:translationZ="90dp"
+        android:textColor="@color/gray"
+        android:textSize="16sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@id/progressBar_savingsFragment"
+        app:layout_constraintTop_toTopOf="@id/progressBar_savingsFragment"
+        app:layout_constraintBottom_toBottomOf="@id/progressBar_savingsFragment"/>
 
+    <TextView
+        android:id="@+id/textView_savingsFragment_goalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_bold"
+        tools:text="Estas al 74% de tu meta"
+        android:translationZ="90dp"
+        android:textColor="@color/lavender_blue"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/progressBar_savingsFragment"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_loginFragment_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/textView_savingsFragment_support"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_goalText"
+        android:text="¿Cómo funciona?"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="12sp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:backgroundTint="@color/bright_gray"
+        android:textColor="@color/gray"
+        app:layout_constraintHorizontal_chainStyle="packed"
+
+        app:cornerRadius="32dp"
+
+        android:layout_marginTop="32dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_savingsFragment_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/support"
+        app:layout_constraintStart_toEndOf="@id/button_loginFragment_support"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/button_loginFragment_support"
+        app:layout_constraintTop_toTopOf="@id/button_loginFragment_support"
+        />
+
+    <TextView
+        android:id="@+id/textView_savingsFragment_secondTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/main_title_text"
+        android:text="Tips de Ahorros"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_support"
+        android:layout_marginTop="32dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_secondTitle"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        tools:listitem="@layout/savings_tips_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
