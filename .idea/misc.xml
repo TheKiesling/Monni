@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Andrea/Documents/GitHub/Monni/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/bottom.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/ic_wave.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/lock.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/shape_login.xml" value="0.1325" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/drawable/shape_login_2.xml" value="0.1" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/TheKi/AndroidStudioProjects/Monni/Monni/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
