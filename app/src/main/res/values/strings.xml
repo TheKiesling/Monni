@@ -13,6 +13,7 @@
     <string name="chart_title_text">Gastos</string>
     <string name="options_text">Opciones</string>
     <string name="modify_limit_text">Modificar límite</string>
+    <string name="modify_goal_text">Modificar meta</string>
     <string name="new_register_text">Nuevo registro</string>
     <string name="cancel_text">Cancelar</string>
     <string name="save_text">Guardar</string>
