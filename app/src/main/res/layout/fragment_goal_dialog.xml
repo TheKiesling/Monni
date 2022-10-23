@@ -17,20 +17,20 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/limit_dialog_tittle"
+            android:id="@+id/goal_dialog_title"
             style="@style/general_text"
-            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
-            tools:text="Limite de Gasto de   Transporte" />
+            android:textStyle="bold"
+            tools:text="Meta de ahorros" />
 
         <TextView
             android:layout_marginTop="@dimen/margin_small"
-            android:id="@+id/current_limit_text_dialog"
+            android:id="@+id/current_goal_text_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,34 +39,33 @@
             android:textColor="@color/ube"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="Limite actual Q200.00" />
+            tools:text="Meta actual Q1000.00" />
 
         <TextView
-            android:id="@+id/new_register_option_dialog"
+            android:id="@+id/new_goal_option_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_weight="0.3"
             android:gravity="center_vertical"
-            android:text="@string/modify_limit_text"
+            android:text="@string/modify_goal_text"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_input_modify_limit_dialog"
+            android:id="@+id/text_input_modify_goal_dialog"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
             <EditText
-                android:id="@+id/edit_text_modify_limit_dialog"
+                android:id="@+id/edit_text_modify_goal_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
-                android:inputType="numberDecimal"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -75,7 +74,7 @@
             android:layout_weight="1">
 
             <Button
-                android:id="@+id/save_button_limit_dialog"
+                android:id="@+id/save_button_goal_dialog"
                 android:layout_width="@dimen/dialog_button_w"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_20dp"
@@ -86,7 +85,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/cancel_button_limit_dialog"
+                android:id="@+id/cancel_button_goal_dialog"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="@dimen/dialog_button_w"
                 android:layout_height="wrap_content"

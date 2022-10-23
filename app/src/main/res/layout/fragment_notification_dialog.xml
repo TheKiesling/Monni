@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="328dp"
-    android:layout_height="283dp"
+    android:layout_height="373dp"
     tools:context=".CategoryDialogFragment"
     android:background="@drawable/dialog_format">
 
@@ -17,56 +17,96 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/limit_dialog_tittle"
+            android:id="@+id/notification_dialog_tittle"
             style="@style/general_text"
-            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
-            tools:text="Limite de Gasto de   Transporte" />
-
-        <TextView
-            android:layout_marginTop="@dimen/margin_small"
-            android:id="@+id/current_limit_text_dialog"
-            style="@style/general_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16dp"
-            android:gravity="center_vertical"
-            android:textColor="@color/ube"
-            android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="Limite actual Q200.00" />
+            tools:text="Nueva Notificación" />
 
         <TextView
-            android:id="@+id/new_register_option_dialog"
+            android:id="@+id/title_notification_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_weight="0.3"
             android:gravity="center_vertical"
-            android:text="@string/modify_limit_text"
+            android:text="@string/title"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_input_modify_limit_dialog"
+            android:id="@+id/text_input_title_notification_dialog"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
             <EditText
-                android:id="@+id/edit_text_modify_limit_dialog"
+                android:id="@+id/edit_text_title_notification_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
-                android:inputType="numberDecimal"
-                tools:ignore="SpeakableTextPresentCheck" />
+                android:inputType="textShortMessage" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/desc_notification_dialog"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_weight="0.3"
+            android:gravity="center_vertical"
+            android:text="@string/descNotification"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_desc_notification_dialog"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/dialog_input_w"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_desc_notification_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_edit_text"
+                android:inputType="textLongMessage" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/date_notification_dialog"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_weight="0.3"
+            android:gravity="center_vertical"
+            android:text="@string/limitDate"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_date_notification_dialog"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/dialog_input_w"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_date_notification_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_edit_text"
+                android:inputType="date" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout

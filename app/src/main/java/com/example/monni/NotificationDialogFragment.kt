@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-
-class PieChartFragment : Fragment(R.layout.fragment_pie_chart) {
+class NotificationDialogFragment : Fragment(R.layout.fragment_notification_dialog) {
 
 }
