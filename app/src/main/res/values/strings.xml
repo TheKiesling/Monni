@@ -18,6 +18,9 @@
     <string name="new_register_text">Nuevo registro</string>
     <string name="cancel_text">Cancelar</string>
     <string name="save_text">Guardar</string>
+    <string name="notificaciones_de_pago">Notificaciones de Pago</string>
+    <string name="d_as_restantes">Días restantes</string>
+    <string name="fecha_l_mite">Fecha límite:</string>
     <string name="actualizate_text">Ac</string>
     <string name="descNotification">Descripción de la notificación</string>
     <string name="limitDate">Límite de fecha</string>
