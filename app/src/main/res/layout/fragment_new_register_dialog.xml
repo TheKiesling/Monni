@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="325dp"
+    android:layout_height="500dp"
+    tools:context=".NewRegisterDialogFragment">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/limit_dialog_tittle"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/subtitle_text_size"
+            android:textStyle="bold"
+            tools:text="@string/add_new_register_text" />
+
+        <TextView
+            android:id="@+id/description_text_new_register_dialog"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold"
+            tools:text="@string/add_new_register_text_description" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/description_input_dialog"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/dialog_input_w"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_description_input_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_edit_text"
+                android:inputType="textShortMessage" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/date_text_dialog"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold"
+            tools:text="@string/date_text_dialog" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/date_input_dialog"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/dialog_input_w"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_date_input_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_edit_text"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/amount_to_add_text"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold"
+            tools:text="@string/amount_to_add_text" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amount_to_add"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/dialog_input_w"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_amount_to_add_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_edit_text"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/additional_details"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/general_text_size"
+            android:textStyle="bold"
+            tools:text="@string/aditional_details_text" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/additional_details_text"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="@dimen/dialog_input_w"
+            android:layout_height="52dp"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/edit_text_additional_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_edit_text"
+                android:inputType="textLongMessage" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2">
+
+            <Button
+                android:id="@+id/save_button_new_register_dialog"
+                android:layout_width="@dimen/dialog_button_w"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_20dp"
+                android:text="@string/save_text"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/cancel_button_new_register_dialog"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="@dimen/dialog_button_w"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel_text"
+                android:textSize="@dimen/small_text_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/save_button_new_register_dialog"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

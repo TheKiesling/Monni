@@ -19,13 +19,13 @@
         <TextView
             android:id="@+id/limit_dialog_tittle"
             style="@style/general_text"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
-            android:textStyle="bold"
             tools:text="Limite de Gasto de   Transporte" />
 
         <TextView
@@ -65,7 +65,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
-                android:inputType="numberDecimal" />
+                android:inputType="numberDecimal"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
