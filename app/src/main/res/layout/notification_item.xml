@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="@color/brilliant_lavender">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_small"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_notificationItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/circle_counter"
+                android:src="@drawable/ic_baseline_circle_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/dias_restantes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/main_title_text_top_margin"
+                android:scaleX="2.7"
+                android:scaleY="2.7"
+                android:layout_marginTop="12dp"
+                app:layout_constraintVertical_chainStyle="packed"
+                android:layout_marginBottom="@dimen/margin_20dp"
+                app:tint="@color/brilliant_lavender"/>
+
+            <TextView
+                android:id="@+id/dias_restantes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_medium"
+                app:layout_constraintEnd_toEndOf="@id/circle_counter"
+                app:layout_constraintStart_toStartOf="@id/circle_counter"
+                app:layout_constraintTop_toBottomOf="@id/circle_counter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="@string/d_as_restantes"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_notificationItem_dayCounter"
+                android:fontFamily="@font/montserrat_medium"
+                tools:text="5"
+                app:layout_constraintTop_toTopOf="@id/circle_counter"
+                app:layout_constraintBottom_toBottomOf="@id/circle_counter"
+                app:layout_constraintStart_toStartOf="@id/circle_counter"
+                app:layout_constraintEnd_toEndOf="@id/circle_counter"
+                android:textColor="@color/white"
+                android:layout_marginBottom="2dp"
+                android:textSize="28sp"/>
+
+            <TextView
+                android:id="@+id/notificationItem_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/dias_restantes"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Pago de tarjeta de Banrural"
+                android:layout_marginTop="@dimen/margin_small"
+                android:fontFamily="@font/montserrat_medium"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/notificationItem_desc"
+                android:textAlignment="center"
+                android:layout_marginHorizontal="@dimen/return_arrow_margin"
+                app:layout_constraintVertical_chainStyle="packed"/>
+
+            <TextView
+                android:id="@+id/notificationItem_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                app:layout_constraintTop_toBottomOf="@id/notificationItem_title"
+                app:layout_constraintBottom_toTopOf="@id/fechaLimite"
+                app:layout_constraintStart_toEndOf="@id/dias_restantes"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                tools:text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
+                android:textAlignment="center"
+                android:textSize="11sp"
+                />
+
+            <TextView
+                android:id="@+id/fechaLimite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/notificationItem_desc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/dias_restantes"
+                app:layout_constraintEnd_toStartOf="@id/txt_notificationItem_fechaLimite"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                android:text="@string/fecha_l_mite"
+                android:textAlignment="center"
+                android:textSize="11sp"
+                android:fontFamily="@font/montserrat_regular"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:layout_marginBottom="@dimen/margin_small"
+                />
+
+            <TextView
+                android:id="@+id/txt_notificationItem_fechaLimite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/fechaLimite"
+                app:layout_constraintBottom_toBottomOf="@id/fechaLimite"
+                app:layout_constraintStart_toEndOf="@id/fechaLimite"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="@dimen/margin_small"
+                tools:text="29/02/22"
+                android:paddingHorizontal="5dp"
+                android:textSize="11sp"
+                android:fontFamily="@font/montserrat_regular"
+                android:background="@drawable/category_item_cost_bg"
+                android:textAlignment="center"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

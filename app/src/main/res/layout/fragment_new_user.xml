@@ -136,7 +136,7 @@
         />
 
     <ImageView
-        android:id="@+id/fragment_category_ic_return"
+        android:id="@+id/fragment_newUser_ic_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_expand_more_24"

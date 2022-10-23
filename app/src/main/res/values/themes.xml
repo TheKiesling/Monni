@@ -27,4 +27,11 @@
         <item name="android:fontFamily">@font/montserrat_bold</item>
     </style>
 
+    <!-- Main title 2-->
+    <style name="main_title_text_2" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">25sp</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:layout_marginTop">@dimen/main_title_text_top_margin</item>
+    </style>
+
 </resources>
