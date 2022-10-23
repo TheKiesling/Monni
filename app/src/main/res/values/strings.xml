@@ -16,5 +16,9 @@
     <string name="new_register_text">Nuevo registro</string>
     <string name="cancel_text">Cancelar</string>
     <string name="save_text">Guardar</string>
-
+    <string name="add_new_register_text">Agregar nuevo registro</string>
+    <string name="add_new_register_text_description">Descripcion del Gasto</string>
+    <string name="date_text_dialog">Fecha de Gasto</string>
+    <string name="amount_to_add_text">Monto a Agregar</string>
+    <string name="aditional_details_text">Detalles Adicionales</string>
 </resources>
