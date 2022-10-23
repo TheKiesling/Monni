@@ -21,4 +21,9 @@
     <string name="actualizate_text">Ac</string>
     <string name="descNotification">Descripción de la notificación</string>
     <string name="limitDate">Límite de fecha</string>
+    <string name="add_new_register_text">Agregar nuevo registro</string>
+    <string name="add_new_register_text_description">Descripcion del Gasto</string>
+    <string name="date_text_dialog">Fecha de Gasto</string>
+    <string name="amount_to_add_text">Monto a Agregar</string>
+    <string name="aditional_details_text">Detalles Adicionales</string>
 </resources>
