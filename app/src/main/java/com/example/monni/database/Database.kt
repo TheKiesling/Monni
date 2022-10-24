@@ -59,7 +59,108 @@ object Database {
             ),
             amount = 150.00,
             limit = 200.00
+        ),
+
+        Category(
+            id = 1,
+            name = "Gastos Fijos",
+            color = "#FFB9F1",
+            registers = mutableListOf(
+                Register(
+                    category = 1,
+                    description = "Balón de futbol",
+                    date = Date(2019, 7,29),
+                    amount = 115.00
+                )
+            ),
+            amount = 100.00,
+            limit = 200.00
+        ),
+
+        Category(
+            id = 2,
+            name = "Transporte",
+            color = "#FF83EA",
+            registers = mutableListOf(
+                Register(
+                    category = 2,
+                    description = "Balón de futbol",
+                    date = Date(2019, 7,29),
+                    amount = 115.00
+                )
+            ),
+            amount = 25.00,
+            limit = 200.00
+        ),
+
+        Category(
+            id = 3,
+            name = "Comida",
+            color = "#D0C7FF",
+            registers = mutableListOf(
+                Register(
+                    category = 3,
+                    description = "Balón de futbol",
+                    date = Date(2019, 7,29),
+                    amount = 115.00
+                )
+            ),
+            amount = 75.00,
+            limit = 200.00
+        ),
+
+        Category(
+            id = 4,
+            name = "Vestimenta",
+            color = "#ADB6FD",
+            registers = mutableListOf(
+                Register(
+                    category = 4,
+                    description = "Balón de futbol",
+                    date = Date(2019, 7,29),
+                    amount = 115.00
+                )
+            ),
+            amount = 175.00,
+            limit = 200.00
+        ),
+
+        Category(
+            id = 5,
+            name = "Supermercado",
+            color = "#9796F0",
+            registers = mutableListOf(
+                Register(
+                    category = 5,
+                    description = "Balón de futbol",
+                    date = Date(2019, 7,29),
+                    amount = 115.00
+                )
+            ),
+            amount = 150.00,
+            limit = 200.00
+        ),
+
+        Category(
+            id = 6,
+            name = "Emergencia",
+            color = "#7F7FC7",
+            registers = mutableListOf(
+                Register(
+                    category = 6,
+                    description = "Balón de futbol",
+                    date = Date(2019, 7,29),
+                    amount = 115.00
+                )
+            ),
+            amount = 10.00,
+            limit = 200.00
         )
+
+
+
+
+
     )
 
     fun getCategories() = categories

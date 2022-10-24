@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
 import com.example.monni.databinding.FragmentHomeBinding
+import com.example.monni.database.Category
+import com.example.monni.database.Database
 
 
 class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.CategoryItemListener {

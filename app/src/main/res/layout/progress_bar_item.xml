@@ -29,8 +29,8 @@
         android:layout_height="17dp"
         android:layout_marginStart="@dimen/margin_16dp"
         android:layout_marginBottom="8dp"
-        android:progress="40"
-        android:progressDrawable="@drawable/custom_progressbar_home"
+        tools:progress="40"
+        android:scaleY="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

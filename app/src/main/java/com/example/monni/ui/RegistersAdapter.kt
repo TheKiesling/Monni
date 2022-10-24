@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
 import com.example.monni.databinding.CategoryItemBinding
-import com.example.monni.databinding.FragmentLoginBinding
+import com.example.monni.database.Register
 
 class RegistersAdapter(
     private val dataSet: MutableList<Register>,

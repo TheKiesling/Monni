@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import com.example.monni.R
+import com.example.monni.database.Register
 import com.example.monni.databinding.FragmentCategoryBinding
 
-class CategoryFragment : Fragment(R.layout.fragment_category) {
+class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.RegisterItemListener {
     private lateinit var binding: FragmentCategoryBinding
 
     override fun onCreateView(
@@ -41,6 +42,10 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
         //recyclerView.layoutManager = LinearLayoutManager(requireContext())
         //recyclerView.setHasFixedSize(true)
 
+    }
+
+    override fun onRegisterItemClicked(register: Register, position: Int) {
+        
     }
 
 

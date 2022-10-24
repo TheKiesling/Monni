@@ -1,6 +1,7 @@
 package com.example.monni.ui
 
 import android.annotation.SuppressLint
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
+import com.example.monni.database.Category
 
 class CategoriesAdapter(
     private val dataSet: List<Category>,
@@ -34,13 +36,15 @@ class CategoriesAdapter(
             this.category = category
 
             txtName.text = category.name
+
+
             progressBar.progress = (100*category.amount/category.limit).toInt()
+            progressBar.progressTintList = ColorStateList.valueOf(Color.parseColor(category.color))
 
             layout.setOnClickListener{
                 listener.onCategoryItemClicked(category, this.adapterPosition)
             }
         }
-
     }
 
     override fun getItemCount() = dataSet.size
