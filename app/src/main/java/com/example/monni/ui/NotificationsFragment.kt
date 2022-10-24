@@ -32,7 +32,7 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications) {
     private fun setListeners() {
         binding.apply{
             notificationBtnAdd.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_notificationsFragment_to_notificationDialogFragment2)
+                NotificationDialogFragment().show(parentFragmentManager,"dialog")
             }
         }
     }

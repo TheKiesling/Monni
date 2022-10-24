@@ -44,6 +44,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             imageViewHomeFragmentNotifications.setOnClickListener {
                 requireView().findNavController().navigate(R.id.action_homeFragment_to_notificationsFragment)
             }
+
+            exitIconHomeFragment.setOnClickListener {
+                requireView().findNavController().navigate(R.id.action_toLoginFragment)
+            }
         }
     }
 

@@ -95,7 +95,7 @@
                 android:text="@string/cancel_text"
                 android:textSize="@dimen/small_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/save_button_limit_dialog"
+                app:layout_constraintEnd_toStartOf="@+id/save_button_goal_dialog"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
