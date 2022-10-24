@@ -55,6 +55,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/imageView_homeFragment_notifications"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32dp"
@@ -62,7 +63,9 @@
         android:src="@drawable/ic_notifications"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:focusable="true"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView"

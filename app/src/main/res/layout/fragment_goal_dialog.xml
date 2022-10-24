@@ -2,14 +2,15 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="328dp"
-    android:layout_height="283dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".CategoryDialogFragment"
-    android:background="@drawable/dialog_format">
+    android:background="@drawable/dialog_format"
+    >
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="328dp"
+        android:layout_height="283dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +27,7 @@
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
             android:textStyle="bold"
-            tools:text="Meta de ahorros" />
+            android:text="Meta de ahorros" />
 
         <TextView
             android:layout_marginTop="@dimen/margin_small"
@@ -39,7 +40,7 @@
             android:textColor="@color/ube"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="Meta actual Q1000.00" />
+            android:text="Meta actual Q1000.00" />
 
         <TextView
             android:id="@+id/new_goal_option_dialog"
@@ -52,7 +53,7 @@
             android:text="@string/modify_goal_text"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold" />
-
+<!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_modify_goal_dialog"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -60,13 +61,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center">
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_modify_goal_dialog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/custom_edit_text"
                 android:inputType="numberDecimal" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

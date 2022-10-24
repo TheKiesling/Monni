@@ -9,5 +9,138 @@
         android:id="@+id/loginFragment"
         android:name="com.example.monni.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_loginFragment_to_newUserFragment"
+            app:destination="@id/newUserFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_toLoginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.monni.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pieChartFragment"
+            app:destination="@id/pieChartFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_savingsFragment"
+            app:destination="@id/savingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newUserFragment"
+        android:name="com.example.monni.NewUserFragment"
+        android:label="fragment_new_user"
+        tools:layout="@layout/fragment_new_user" >
+        <action
+            android:id="@+id/action_newUserFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_newUserFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/categoryFragment"
+        android:name="com.example.monni.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_categoryDialogFragment2"
+            app:destination="@id/categoryDialogFragment2" />
+    </dialog>
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.monni.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_notificationsFragment_to_notificationDialogFragment2"
+            app:destination="@id/notificationDialogFragment2" />
+    </fragment>
+    <dialog
+        android:id="@+id/notificationDialogFragment2"
+        android:name="com.example.monni.NotificationDialogFragment"
+        android:label="NotificationDialogFragment" >
+        <action
+            android:id="@+id/action_notificationDialogFragment2_to_notificationsFragment"
+            app:destination="@id/notificationsFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/pieChartFragment"
+        android:name="com.example.monni.PieChartFragment"
+        android:label="fragment_pie_chart"
+        tools:layout="@layout/fragment_pie_chart" />
+    <fragment
+        android:id="@+id/savingsFragment"
+        android:name="com.example.monni.SavingsFragment"
+        android:label="fragment_savings"
+        tools:layout="@layout/fragment_savings" >
+        <action
+            android:id="@+id/action_savingsFragment_to_tipDialogFragment"
+            app:destination="@id/tipDialogFragment" />
+        <action
+            android:id="@+id/action_savingsFragment_to_goalDialogFragment2"
+            app:destination="@id/goalDialogFragment2" />
+    </fragment>
+    <dialog
+        android:id="@+id/tipDialogFragment"
+        android:name="com.example.monni.TipDialogFragment"
+        android:label="fragment_tip_dialog"
+        tools:layout="@layout/fragment_tip_dialog" >
+        <action
+            android:id="@+id/action_tipDialogFragment_to_savingsFragment"
+            app:destination="@id/savingsFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/newRegisterDialogFragment"
+        android:name="com.example.monni.NewRegisterDialogFragment"
+        android:label="fragment_new_register_dialog"
+        tools:layout="@layout/fragment_new_register_dialog" >
+        <action
+            android:id="@+id/action_newRegisterDialogFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/limitDialogFragment"
+        android:name="com.example.monni.LimitDialogFragment"
+        android:label="LimitDialogFragment" >
+        <action
+            android:id="@+id/action_limitDialogFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/categoryDialogFragment2"
+        android:name="com.example.monni.CategoryDialogFragment"
+        android:label="fragment_goal_dialog"
+        tools:layout="@layout/fragment_goal_dialog" >
+        <action
+            android:id="@+id/action_categoryDialogFragment2_to_limitDialogFragment"
+            app:destination="@id/limitDialogFragment" />
+        <action
+            android:id="@+id/action_categoryDialogFragment2_to_newRegisterDialogFragment"
+            app:destination="@id/newRegisterDialogFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/goalDialogFragment2"
+        android:name="com.example.monni.goalDialogFragment"
+        android:label="goalDialogFragment" >
+        <action
+            android:id="@+id/action_goalDialogFragment2_to_savingsFragment"
+            app:destination="@id/savingsFragment" />
+    </dialog>
 </navigation>

@@ -30,6 +30,7 @@
         tools:text="Categoría" />
 
     <ImageView
+        android:id="@+id/imageView_categoryFragment_moreOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_more_vert_24"
