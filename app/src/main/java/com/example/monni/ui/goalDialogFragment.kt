@@ -1,4 +1,4 @@
-package com.example.monni
+package com.example.monni.ui
 
 import android.app.Dialog
 import android.graphics.Color
@@ -14,13 +14,25 @@ class GoalDialogFragment(): DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         binding = FragmentGoalDialogBinding.inflate(LayoutInflater.from(context))
-
+        setListeners()
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(binding.root)
 
         val dialog = builder.create()
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
         return dialog
+    }
+
+    private fun setListeners() {
+        binding.apply {
+            saveButtonGoalDialog.setOnClickListener{
+                dismiss()
+            }
+            cancelButtonGoalDialog.setOnClickListener{
+                dismiss()
+            }
+        }
     }
 
 }

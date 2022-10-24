@@ -1,25 +1,24 @@
-package com.example.monni
+package com.example.monni.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.findNavController
-import com.example.monni.databinding.FragmentLoginBinding
+import com.example.monni.R
+import com.example.monni.databinding.FragmentNewUserBinding
 
 
-class LoginFragment : Fragment(R.layout.fragment_login) {
-
-    private lateinit var binding: FragmentLoginBinding
+class NewUserFragment : Fragment(R.layout.fragment_new_user) {
+    private lateinit var binding: FragmentNewUserBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        binding = FragmentNewUserBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,11 +31,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun setListeners() {
         binding.apply {
             buttonLoginFragmentLogin.setOnClickListener{
-                requireView().findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-            }
-
-            textViewLoginFragmentCreateAccount.setOnClickListener{
-                requireView().findNavController().navigate(R.id.action_loginFragment_to_newUserFragment)
+                requireView().findNavController().navigate(R.id.action_newUserFragment_to_homeFragment)
             }
         }
     }

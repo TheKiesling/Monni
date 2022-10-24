@@ -1,25 +1,25 @@
-package com.example.monni
+package com.example.monni.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import com.example.monni.R
 import com.example.monni.databinding.FragmentNewRegisterDialogBinding
-import com.example.monni.databinding.FragmentNotificationDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class NotificationDialogFragment : BottomSheetDialogFragment() {
 
-    private lateinit var binding: FragmentNotificationDialogBinding
+class NewRegisterDialogFragment : BottomSheetDialogFragment() {
+
+    private lateinit var binding: FragmentNewRegisterDialogBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentNotificationDialogBinding.inflate(inflater, container, false)
+        binding = FragmentNewRegisterDialogBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -31,11 +31,11 @@ class NotificationDialogFragment : BottomSheetDialogFragment() {
 
     private fun setListeners() {
         binding.apply{
-            saveButtonLimitDialog.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_notificationDialogFragment2_to_notificationsFragment)
+            saveButtonNewRegisterDialog.setOnClickListener {
+                requireView().findNavController().navigate(R.id.action_newRegisterDialogFragment_to_categoryFragment)
             }
-            cancelButtonLimitDialog.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_notificationDialogFragment2_to_notificationsFragment)
+            cancelButtonNewRegisterDialog.setOnClickListener {
+                requireView().findNavController().navigate(R.id.action_newRegisterDialogFragment_to_categoryFragment)
             }
         }
     }

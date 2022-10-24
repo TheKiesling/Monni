@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PieChartFragment">
+    tools:context=".ui.PieChartFragment">
 
     <TextView
         android:id="@+id/expenses_fragment_title"
