@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
 import com.example.monni.databinding.FragmentHomeBinding
 
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
-    //private lateinit var recyclerView: RecyclerView
+class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.CategoryItemListener {
+    private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentHomeBinding
-    //private lateinit var categoriesList: MutableList<Category>
+    private lateinit var categoriesList: List<Category>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,6 +28,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        recyclerView = binding.recyclerViewHomeFragment
 
         setupRecyclers()
         setListeners()
@@ -52,14 +56,15 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setupRecyclers(){
-        //categoriesList = MonniDB.getCharacters()
-        //recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        //recyclerView.setHasFixedSize(true)
-
+        categoriesList = Database.getCategories()
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = CategoriesAdapter(categoriesList, this)
     }
 
-
-
+    override fun onCategoryItemClicked(category: Category, position: Int) {
+        requireView().findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
+    }
 
 
 }

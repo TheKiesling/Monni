@@ -11,6 +11,7 @@
     >
 
     <TextView
+        android:id="@+id/textView_progressBarItem_name"
         style="@style/general_text"
         android:textStyle="bold"
         android:layout_width="wrap_content"
@@ -28,7 +29,7 @@
         android:layout_height="17dp"
         android:layout_marginStart="@dimen/margin_16dp"
         android:layout_marginBottom="8dp"
-        tools:progress="40"
+        android:progress="40"
         android:progressDrawable="@drawable/custom_progressbar_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -36,11 +37,10 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_16dp"
         android:layout_marginBottom="@dimen/margin_5dp"
+        app:layout_constraintStart_toEndOf="@id/progressBar"
         android:src="@drawable/ic_baseline_expand_more_24"
         android:rotation="-90"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="@+id/progressBar"/>
+        android:layout_marginStart="@dimen/margin_5dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
