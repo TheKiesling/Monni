@@ -53,20 +53,23 @@
             android:text="@string/modify_goal_text"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold" />
-<!--
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_modify_goal_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_gravity="center">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_modify_goal_dialog"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="numberDecimal" />
-        </com.google.android.material.textfield.TextInputLayout>-->
+                android:background="@drawable/custom_edit_text"
+                android:layout_width="@dimen/dialog_input_w"
+                android:textColor="@color/gray"
+                android:inputType="numberDecimal"
+                android:layout_height="wrap_content"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
