@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.navigation.findNavController
+import com.example.monni.databinding.FragmentGoalDialogBinding
 import com.example.monni.databinding.FragmentLoginBinding
 import com.example.monni.databinding.FragmentSavingsBinding
 
@@ -33,7 +34,7 @@ class SavingsFragment : Fragment(R.layout.fragment_savings) {
     private fun setListeners() {
         binding.apply{
             textViewSavingsFragmentMore.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_savingsFragment_to_goalDialogFragment2)
+                GoalDialogFragment().show(parentFragmentManager,"dialog")
             }
         }
     }
