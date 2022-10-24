@@ -1,41 +1,39 @@
 package com.example.monni.ui
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.navigation.findNavController
-import com.example.monni.R
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
+import com.example.monni.databinding.FragmentGoalDialogBinding
 import com.example.monni.databinding.FragmentNotificationDialogBinding
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class NotificationDialogFragment : BottomSheetDialogFragment() {
+class NotificationDialogFragment(): DialogFragment() {
+    private lateinit var binding :FragmentNotificationDialogBinding
 
-    private lateinit var binding: FragmentNotificationDialogBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentNotificationDialogBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        binding = FragmentNotificationDialogBinding.inflate(LayoutInflater.from(context))
         setListeners()
+        val builder = AlertDialog.Builder(requireActivity())
+        builder.setView(binding.root)
+
+        val dialog = builder.create()
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        return dialog
     }
 
     private fun setListeners() {
-        binding.apply{
-            saveButtonLimitDialog.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_notificationDialogFragment2_to_notificationsFragment)
+        binding.apply {
+            saveButtonNotificationDialog.setOnClickListener{
+                dismiss()
             }
-            cancelButtonLimitDialog.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_notificationDialogFragment2_to_notificationsFragment)
+            cancelButtonNotificationDialog.setOnClickListener{
+                dismiss()
             }
         }
     }
+
 }

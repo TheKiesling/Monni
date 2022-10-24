@@ -31,4 +31,5 @@
     <string name="aditional_details_text">Detalles Adicionales</string>
     <string name="login">Login</string>
     <string name="no_tienes_una_cuenta">¿No tienes una cuenta?</string>
+    <string name="add_notification_text">Nueva notificacion</string>
 </resources>
