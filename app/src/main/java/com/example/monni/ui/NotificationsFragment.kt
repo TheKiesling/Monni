@@ -1,46 +1,44 @@
-package com.example.monni
+package com.example.monni.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AlertDialog
 import androidx.navigation.findNavController
-import com.example.monni.databinding.FragmentGoalDialogBinding
-import com.example.monni.databinding.FragmentLoginBinding
-import com.example.monni.databinding.FragmentSavingsBinding
+import com.example.monni.R
+import com.example.monni.databinding.FragmentNotificationsBinding
 
-
-class SavingsFragment : Fragment(R.layout.fragment_savings) {
-    private lateinit var binding: FragmentSavingsBinding
-
+class NotificationsFragment : Fragment(R.layout.fragment_notifications) {
+    private lateinit var binding: FragmentNotificationsBinding
+    //private lateinit var notificationsList: MutableList<Notification>
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentSavingsBinding.inflate(inflater, container, false)
+        binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         setupRecyclers()
         setListeners()
     }
 
     private fun setListeners() {
         binding.apply{
-            textViewSavingsFragmentMore.setOnClickListener {
-                GoalDialogFragment().show(parentFragmentManager,"dialog")
+            notificationBtnAdd.setOnClickListener {
+                requireView().findNavController().navigate(R.id.action_notificationsFragment_to_notificationDialogFragment2)
             }
         }
     }
 
     private fun setupRecyclers(){
-        //tipsList = MonniDB.getCharacters()
+        //notificationsList = MonniDB.getCharacters()
         //recyclerView.layoutManager = LinearLayoutManager(requireContext())
         //recyclerView.setHasFixedSize(true)
 

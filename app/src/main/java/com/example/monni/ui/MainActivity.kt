@@ -1,8 +1,9 @@
-package com.example.monni
+package com.example.monni.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
+import com.example.monni.R
 
 class MainActivity : AppCompatActivity() {
 

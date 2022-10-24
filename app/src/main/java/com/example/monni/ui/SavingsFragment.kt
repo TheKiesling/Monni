@@ -1,46 +1,45 @@
-package com.example.monni
+package com.example.monni.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
-import com.example.monni.databinding.FragmentCategoryBinding
+import com.example.monni.R
+import com.example.monni.databinding.FragmentSavingsBinding
 
-class CategoryFragment : Fragment(R.layout.fragment_category) {
-    private lateinit var binding: FragmentCategoryBinding
+
+class SavingsFragment : Fragment(R.layout.fragment_savings) {
+    private lateinit var binding: FragmentSavingsBinding
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCategoryBinding.inflate(inflater, container, false)
+        binding = FragmentSavingsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupRecyclers()
         setListeners()
     }
 
     private fun setListeners() {
-        binding.apply {
-            imageViewCategoryFragmentMoreOptions.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_categoryFragment_to_categoryDialogFragment2)
+        binding.apply{
+            textViewSavingsFragmentMore.setOnClickListener {
+                GoalDialogFragment().show(parentFragmentManager,"dialog")
             }
         }
     }
 
     private fun setupRecyclers(){
-        //categoriesList = MonniDB.getCharacters()
+        //tipsList = MonniDB.getCharacters()
         //recyclerView.layoutManager = LinearLayoutManager(requireContext())
         //recyclerView.setHasFixedSize(true)
 
     }
-
-
 }
