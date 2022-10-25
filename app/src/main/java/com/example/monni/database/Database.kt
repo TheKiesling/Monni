@@ -164,4 +164,11 @@ object Database {
     )
 
     fun getCategories() = categories
+    fun  getRegisters(): MutableList<Register> {
+        val registers: MutableList<Register> = mutableListOf()
+        for (category in categories){
+            registers.add(category.registers[0])
+        }
+        return registers
+    }
 }

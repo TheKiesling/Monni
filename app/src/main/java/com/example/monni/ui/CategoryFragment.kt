@@ -6,12 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
+import com.example.monni.database.Category
+import com.example.monni.database.Database
 import com.example.monni.database.Register
 import com.example.monni.databinding.FragmentCategoryBinding
 
 class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.RegisterItemListener {
+    private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentCategoryBinding
+    private lateinit var registersList: MutableList<Register>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,14 +44,14 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     }
 
     private fun setupRecyclers(){
-        //categoriesList = MonniDB.getCharacters()
-        //recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        //recyclerView.setHasFixedSize(true)
-
+        registersList = Database.getRegisters()
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = RegistersAdapter(registersList, this)
     }
 
     override fun onRegisterItemClicked(register: Register, position: Int) {
-        
+
     }
 
 
