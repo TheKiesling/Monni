@@ -1,6 +1,5 @@
 package com.example.monni.ui
 
-import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater

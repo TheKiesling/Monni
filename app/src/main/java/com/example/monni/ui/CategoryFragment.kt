@@ -31,6 +31,8 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        recyclerView = binding.fragmentCategoryRecycler
+
         setupRecyclers()
         setListeners()
     }
@@ -49,10 +51,4 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = RegistersAdapter(registersList, this)
     }
-
-    override fun onRegisterItemClicked(register: Register, position: Int) {
-
-    }
-
-
 }

@@ -54,7 +54,7 @@
             android:id="@+id/action_newUserFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-    <dialog
+    <fragment
         android:id="@+id/categoryFragment"
         android:name="com.example.monni.ui.CategoryFragment"
         android:label="fragment_category"
@@ -62,7 +62,7 @@
         <action
             android:id="@+id/action_categoryFragment_to_categoryDialogFragment2"
             app:destination="@id/categoryDialogFragment2" />
-    </dialog>
+    </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="com.example.monni.ui.NotificationsFragment"
@@ -123,7 +123,7 @@
             android:id="@+id/action_limitDialogFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
     </dialog>
-    <dialog
+    <fragment
         android:id="@+id/categoryDialogFragment2"
         android:name="com.example.monni.ui.CategoryDialogFragment"
         android:label="fragment_goal_dialog"
@@ -134,10 +134,10 @@
         <action
             android:id="@+id/action_categoryDialogFragment2_to_newRegisterDialogFragment"
             app:destination="@id/newRegisterDialogFragment" />
-    </dialog>
+    </fragment>
     <dialog
         android:id="@+id/goalDialogFragment2"
-        android:name="com.example.monni.goalDialogFragment"
+        android:name="com.example.monni.ui.GoalDialogFragment"
         android:label="goalDialogFragment" >
         <action
             android:id="@+id/action_goalDialogFragment2_to_savingsFragment"

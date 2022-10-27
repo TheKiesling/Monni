@@ -17,7 +17,7 @@ class RegistersAdapter(
 ): RecyclerView.Adapter<RegistersAdapter.ViewHolder>() {
 
     interface RegisterItemListener {
-        fun onRegisterItemClicked(register: Register, position: Int)
+
     }
 
     class ViewHolder(
@@ -25,12 +25,12 @@ class RegistersAdapter(
         private val listener: RegisterItemListener
     ): RecyclerView.ViewHolder(view){
 
-        private lateinit var binding: CategoryItemBinding
+        //private lateinit var binding: CategoryItemBinding
 
-        private val description: TextView = binding.textViewCategoryItemDesc
-        private val date: TextView = binding.textViewCategoryItemDate
-        private val amount: TextView = binding.textViewCategoryItemAmount
-        private val layout: LinearLayout = binding.layoutItemCategory
+        private val description: TextView = view.findViewById(R.id.textView_categoryItem_desc)
+        private val date: TextView = view.findViewById(R.id.textView_categoryItem_date)
+        private val amount: TextView = view.findViewById(R.id.textView_categoryItem_amount)
+        private val layout: LinearLayout = view.findViewById(R.id.layout_itemCategory)
         private lateinit var register: Register
 
         fun setData(register: Register){
@@ -40,9 +40,6 @@ class RegistersAdapter(
             description.text = register.description
             amount.text = register.amount.toString()
 
-            layout.setOnClickListener{
-                listener.onRegisterItemClicked(register, this.adapterPosition)
-            }
         }
 
     }
