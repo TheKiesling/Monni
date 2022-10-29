@@ -1,6 +1,5 @@
 package com.example.monni.ui
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,12 +7,14 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
-import com.example.monni.databinding.CategoryItemBinding
 import com.example.monni.database.Register
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.time.format.DateTimeFormatter
 
 class RegistersAdapter(
     private val dataSet: MutableList<Register>,
-    private val registerItemListener: RegisterItemListener
+    private val registerItemListener: RegisterItemListener,
 ): RecyclerView.Adapter<RegistersAdapter.ViewHolder>() {
 
     interface RegisterItemListener {
@@ -35,8 +36,7 @@ class RegistersAdapter(
 
         fun setData(register: Register){
             this.register = register
-
-            date.text = register.date.toString()
+            date.text = register.date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
             description.text = register.description
             amount.text = register.amount.toString()
 

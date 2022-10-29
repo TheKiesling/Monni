@@ -13,11 +13,14 @@ import com.example.monni.database.Category
 import com.example.monni.database.Database
 import com.example.monni.database.Register
 import com.example.monni.databinding.FragmentCategoryBinding
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.RegisterItemListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentCategoryBinding
     private lateinit var registersList: MutableList<Register>
+    private lateinit var today: Calendar
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,8 +34,8 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = binding.fragmentCategoryRecycler
 
+        recyclerView = binding.fragmentCategoryRecycler
         setupRecyclers()
         setListeners()
     }

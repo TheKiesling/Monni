@@ -2,6 +2,7 @@ package com.example.monni.database
 
 import androidx.core.content.ContextCompat
 import com.example.monni.R
+import java.time.LocalDate
 import java.util.*
 
 data class User(
@@ -23,7 +24,7 @@ data class Category(
 data class Register(
     val category: Int,
     val description: String,
-    val date: Date,
+    val date:LocalDate,
     val amount: Double
     )
 
@@ -36,7 +37,7 @@ object Database {
                 Register(
                     category = 0,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
@@ -53,7 +54,7 @@ object Database {
                 Register(
                     category = 0,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
@@ -69,7 +70,7 @@ object Database {
                 Register(
                     category = 1,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
@@ -85,7 +86,7 @@ object Database {
                 Register(
                     category = 2,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
@@ -101,7 +102,7 @@ object Database {
                 Register(
                     category = 3,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
@@ -117,7 +118,7 @@ object Database {
                 Register(
                     category = 4,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
@@ -133,7 +134,7 @@ object Database {
                 Register(
                     category = 5,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
@@ -149,7 +150,7 @@ object Database {
                 Register(
                     category = 6,
                     description = "Balón de futbol",
-                    date = Date(2019, 7,29),
+                    date = LocalDate.of(2019,7,29),
                     amount = 115.00
                 )
             ),
