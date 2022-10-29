@@ -11,10 +11,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
 import com.example.monni.database.Category
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CategoriesAdapter(
     private val dataSet: List<Category>,
     private val categoryItemListener: CategoryItemListener
+
 ): RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
 
     interface CategoryItemListener {
@@ -33,10 +36,7 @@ class CategoriesAdapter(
 
         fun setData(category: Category){
             this.category = category
-
             txtName.text = category.name
-
-
             progressBar.progress = (100*category.amount/category.limit).toInt()
             progressBar.progressTintList = ColorStateList.valueOf(Color.parseColor(category.color))
 
