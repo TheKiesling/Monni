@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
@@ -17,10 +19,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.RegisterItemListener {
+    private val args: CategoryFragmentArgs by navArgs()
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentCategoryBinding
     private lateinit var registersList: MutableList<Register>
-    private lateinit var today: Calendar
+    private lateinit var txtTitle: TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,8 +38,9 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        txtTitle = binding.fragmentCategoryTxtTitle
         recyclerView = binding.fragmentCategoryRecycler
+        txtTitle.text = args.categoryName
         setupRecyclers()
         setListeners()
     }
@@ -49,7 +54,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     }
 
     private fun setupRecyclers(){
-        registersList = Database.getRegisters()
+        registersList = Database.getRegisters(args.categoryName)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = RegistersAdapter(registersList, this)

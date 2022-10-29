@@ -36,6 +36,7 @@ class CategoriesAdapter(
 
         fun setData(category: Category){
             this.category = category
+
             txtName.text = category.name
             progressBar.progress = (100*category.amount/category.limit).toInt()
             progressBar.progressTintList = ColorStateList.valueOf(Color.parseColor(category.color))
