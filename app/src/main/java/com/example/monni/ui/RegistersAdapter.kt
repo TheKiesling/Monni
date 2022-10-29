@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
 import com.example.monni.database.Register
@@ -17,6 +18,7 @@ class RegistersAdapter(
     private val registerItemListener: RegisterItemListener,
 ): RecyclerView.Adapter<RegistersAdapter.ViewHolder>() {
 
+
     interface RegisterItemListener {
 
     }
@@ -26,7 +28,6 @@ class RegistersAdapter(
         private val listener: RegisterItemListener
     ): RecyclerView.ViewHolder(view){
 
-        //private lateinit var binding: CategoryItemBinding
 
         private val description: TextView = view.findViewById(R.id.textView_categoryItem_desc)
         private val date: TextView = view.findViewById(R.id.textView_categoryItem_date)
@@ -38,7 +39,7 @@ class RegistersAdapter(
             this.register = register
             date.text = register.date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
             description.text = register.description
-            amount.text = register.amount.toString()
+            amount.text = "Q" + register.amount.toString()
 
         }
 

@@ -20,24 +20,26 @@
     <TextView
         android:id="@+id/fragment_category_txt_title"
         style="@style/main_title_text"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@id/imageView_categoryFragment_moreOptions"
+        android:layout_marginTop="@dimen/margin_32dp"
+
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/main_title_text_top_margin"
+        android:gravity="center"
         android:textColor="@color/lavender_blue"
-        tools:text="Categoría" />
+        app:layout_constraintStart_toEndOf="@+id/fragment_category_ic_return"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Actividades Recreativas" />
 
     <ImageView
         android:id="@+id/imageView_categoryFragment_moreOptions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_baseline_more_vert_24"
-        app:layout_constraintStart_toEndOf="@id/fragment_category_txt_title"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/fragment_category_txt_title"
         app:layout_constraintBottom_toBottomOf="@id/fragment_category_txt_title"
-        android:layout_marginStart="2dp"
+        android:layout_marginEnd = "@dimen/margin_32dp"
         android:layout_marginTop="7dp"/>
     <!-- me vuelvo loco si no está centrado -->
 
@@ -63,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/return_arrow_margin"
         android:textColor="@color/ube"
-        tools:text="@string/category_registers" />
+        android:text="@string/category_registers" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_category_recycler"
