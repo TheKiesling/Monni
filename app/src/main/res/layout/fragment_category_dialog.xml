@@ -2,54 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="330dp"
-    android:layout_height="180dp"
-    tools:context=".ui.CategoryDialogFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CategoryDialogFragment"
+    android:background="@drawable/dialog_format">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+            <TextView
+                style="@style/general_text"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:gravity="center_vertical"
+                android:text="@string/options_text"
+                android:textSize="@dimen/subtitle_text_size"
+                android:textStyle="bold" />
 
-        <TextView
-            style="@style/general_text"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
-            android:textSize="@dimen/subtitle_text_size"
-            android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/options_text" />
+            <TextView
+                android:id="@+id/modify_limit_option_dialog"
+                style="@style/general_text"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="@string/modify_limit_text" />
 
-        <TextView
-            android:id="@+id/modify_limit_option_dialog"
-            style="@style/general_text"
-            android:layout_width="match_parent"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginStart="16dp"
-            android:layout_height="60dp"
-            android:gravity="center_vertical"
-            android:text="@string/modify_limit_text" />
-
-        <TextView
-            android:id="@+id/new_register_option_dialog"
-            style="@style/general_text"
-            android:layout_width="match_parent"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_height="60dp"
-            android:gravity="center_vertical"
-            android:layout_marginStart="@dimen/margin_16dp"
-            android:text="@string/new_register_text" />
-    </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/new_register_option_dialog"
+                style="@style/general_text"
+                android:layout_width="300dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:text="@string/new_register_text" />
+        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

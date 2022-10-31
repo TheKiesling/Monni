@@ -6,17 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
-import com.example.monni.database.Category
 import com.example.monni.database.Database
 import com.example.monni.database.Register
 import com.example.monni.databinding.FragmentCategoryBinding
-import java.text.SimpleDateFormat
-import java.util.*
+
 
 class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.RegisterItemListener {
     private val args: CategoryFragmentArgs by navArgs()
@@ -48,7 +45,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     private fun setListeners() {
         binding.apply {
             imageViewCategoryFragmentMoreOptions.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_categoryFragment_to_categoryDialogFragment2)
+                CategoryDialogFragment().show(parentFragmentManager,"dialog")
             }
         }
     }

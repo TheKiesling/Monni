@@ -17,7 +17,6 @@ class GoalDialogFragment(): DialogFragment() {
         setListeners()
         val builder = AlertDialog.Builder(requireActivity())
         builder.setView(binding.root)
-
         val dialog = builder.create()
         dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
