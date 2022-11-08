@@ -8,8 +8,8 @@ import java.util.*
 data class User(
     val username: String,
     val password: String,
-    val registers: List<Register>,
-    val limit: Double
+    val limit: Double,
+    val categories: List<Category>
 )
 
 data class Category(
@@ -172,14 +172,6 @@ object Database {
         )
     )
 
-    fun getCategories() = categories
-    fun  getRegisters(): MutableList<Register> {
-        val registers: MutableList<Register> = mutableListOf()
-        for (category in categories){
-            registers.add(category.registers[0])
-        }
-        return registers
-    }
     fun getNotis(): List<Notification> {
         val notis = notifications.sortedBy{ it.dateLimit}
         return notis
