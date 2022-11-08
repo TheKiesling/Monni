@@ -6,12 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
+import com.example.monni.database.Database
+import com.example.monni.database.Notification
 import com.example.monni.databinding.FragmentNotificationsBinding
 
-class NotificationsFragment : Fragment(R.layout.fragment_notifications) {
+class NotificationsFragment : Fragment(R.layout.fragment_notifications), NotificationsAdapter.NotificationItemListener {
+    private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentNotificationsBinding
-    //private lateinit var notificationsList: MutableList<Notification>
+    private lateinit var notiList: List<Notification>
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,6 +30,8 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        
+        recyclerView = binding.notificationRv
 
         setupRecyclers()
         setListeners()
@@ -34,13 +42,18 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications) {
             notificationBtnAdd.setOnClickListener {
                 NotificationDialogFragment().show(parentFragmentManager,"dialog")
             }
+
+            notificationsBtnReturn.setOnClickListener {
+                requireView().findNavController().navigate(R.id.action_notificationsFragment_to_homeFragment)
+            }
         }
     }
 
     private fun setupRecyclers(){
-        //notificationsList = MonniDB.getCharacters()
-        //recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        //recyclerView.setHasFixedSize(true)
+        notiList = Database.getNotis()
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.setHasFixedSize(true)
+        recyclerView.adapter = NotificationsAdapter(notiList, this)
 
     }
 }

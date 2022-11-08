@@ -18,6 +18,7 @@
         android:text="@string/notificaciones_de_pago"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/notification_rv"
         tools:listitem="@layout/notification_item"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -10,6 +10,7 @@
         android:name="com.example.monni.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
+
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment"
@@ -34,7 +35,9 @@
             app:destination="@id/categoryFragment" />
         <action
             android:id="@+id/action_homeFragment_to_notificationsFragment"
-            app:destination="@id/notificationsFragment" />
+            app:destination="@id/notificationsFragment"
+            app:enterAnim="@anim/enter_notification"
+            app:popEnterAnim="@anim/enter_notification" />
         <action
             android:id="@+id/action_homeFragment_to_pieChartFragment"
             app:destination="@id/pieChartFragment" />
@@ -74,6 +77,9 @@
         <action
             android:id="@+id/action_notificationsFragment_to_notificationDialogFragment2"
             app:destination="@id/notificationDialogFragment2" />
+        <action
+            android:id="@+id/action_notificationsFragment_to_homeFragment"
+            app:destination="@id/homeFragment"/>
     </fragment>
     <dialog
         android:id="@+id/notificationDialogFragment2"
@@ -81,7 +87,8 @@
         android:label="NotificationDialogFragment" >
         <action
             android:id="@+id/action_notificationDialogFragment2_to_notificationsFragment"
-            app:destination="@id/notificationsFragment" />
+            app:destination="@id/notificationsFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
     </dialog>
     <fragment
         android:id="@+id/pieChartFragment"

@@ -8,9 +8,8 @@ import java.util.*
 data class User(
     val username: String,
     val password: String,
-    val limit: Double,
-    val categories: List<Category>
-
+    val registers: List<Register>,
+    val limit: Double
 )
 
 data class Category(
@@ -26,6 +25,13 @@ data class Register(
     val date:LocalDate,
     val amount: Double
     )
+
+
+data class Notification(
+    val dateLimit: LocalDate,
+    val title: String,
+    val desc: String,
+)
 
 object Database {
     private val users = mutableListOf(
@@ -146,5 +152,36 @@ object Database {
                 for (register in category.registers)
                     registers.add(register)
         return registers
+    }
+    
+    private var notifications = mutableListOf(
+        Notification(
+            dateLimit = LocalDate.of(2022,12,25),
+            title = "Saldar regalo de navidad",
+            desc = "Muy bien! Interesante ver que Aida tiene 68 años en un lado y 61 en otro."
+        ),
+        Notification(
+            dateLimit = LocalDate.of(2022, 11, 2),
+            title = "Tercer entregable",
+            desc = "Excelente trabajo! En próximas presentaciones utilizar plantillas acorde al tema a presentar."
+        ),
+        Notification(
+            dateLimit = LocalDate.of(2023,2,28),
+            title = "El diseño del material audiovisual es adecuado: 4.",
+            desc = "Esto me hace pensar que no hicieron el research suficiente para elegir la librería, ya que literal la primera oración del artículo dice:"
+        )
+    )
+
+    fun getCategories() = categories
+    fun  getRegisters(): MutableList<Register> {
+        val registers: MutableList<Register> = mutableListOf()
+        for (category in categories){
+            registers.add(category.registers[0])
+        }
+        return registers
+    }
+    fun getNotis(): List<Notification> {
+        val notis = notifications.sortedBy{ it.dateLimit}
+        return notis
     }
 }
