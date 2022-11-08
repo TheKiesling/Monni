@@ -18,6 +18,7 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications), Notific
     private lateinit var binding: FragmentNotificationsBinding
     private lateinit var notiList: List<Notification>
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,7 +30,7 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications), Notific
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        
         recyclerView = binding.notificationRv
 
         setupRecyclers()
@@ -41,6 +42,7 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications), Notific
             notificationBtnAdd.setOnClickListener {
                 NotificationDialogFragment().show(parentFragmentManager,"dialog")
             }
+
             notificationsBtnReturn.setOnClickListener {
                 requireView().findNavController().navigate(R.id.action_notificationsFragment_to_homeFragment)
             }
@@ -52,5 +54,6 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications), Notific
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = NotificationsAdapter(notiList, this)
+
     }
 }

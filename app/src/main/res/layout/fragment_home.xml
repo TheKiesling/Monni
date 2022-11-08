@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeFragment">
+    tools:context=".ui.HomeFragment">
 
     <TextView
         android:id="@+id/home_icon"
@@ -55,17 +55,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
+        android:id="@+id/imageView_homeFragment_notifications"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32dp"
         android:layout_marginEnd="@dimen/margin_16dp"
         android:src="@drawable/ic_notifications"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/exit_icon_home_fragment"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:focusable="true"
+        android:clickable="true"/>
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/exit_icon_home_fragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32dp"
@@ -76,12 +79,14 @@
         app:tint="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_homeFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation_homeFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/home_icon"
+        android:layout_marginTop="@dimen/margin_24dp"
         tools:listitem="@layout/progress_bar_item" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

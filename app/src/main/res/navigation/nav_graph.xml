@@ -7,9 +7,10 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.monni.LoginFragment"
+        android:name="com.example.monni.ui.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment"
@@ -64,6 +65,9 @@
         <action
             android:id="@+id/action_categoryFragment_to_categoryDialogFragment2"
             app:destination="@id/categoryDialogFragment2" />
+        <argument
+            android:name="category_name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
@@ -149,5 +153,4 @@
             android:id="@+id/action_goalDialogFragment2_to_savingsFragment"
             app:destination="@id/savingsFragment" />
     </dialog>
->>>>>>> Stashed changes
 </navigation>

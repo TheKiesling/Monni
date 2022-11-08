@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="328dp"
-    android:layout_height="373dp"
-    tools:context=".CategoryDialogFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CategoryDialogFragment"
     android:background="@drawable/dialog_format">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,21 +20,23 @@
             android:id="@+id/notification_dialog_tittle"
             style="@style/general_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/margin_16dp"
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
             android:textStyle="bold"
-            tools:text="Nueva Notificación" />
+            android:text="@string/add_notification_text" />
 
         <TextView
             android:id="@+id/title_notification_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_weight="0.3"
+            android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:text="@string/title"
             android:textSize="@dimen/general_text_size"
@@ -42,7 +44,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_title_notification_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -52,16 +54,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
-                android:inputType="textShortMessage" />
+                android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/desc_notification_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_weight="0.3"
+            android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:text="@string/descNotification"
             android:textSize="@dimen/general_text_size"
@@ -69,7 +71,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_desc_notification_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -86,9 +88,9 @@
             android:id="@+id/date_notification_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_weight="0.3"
+            android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:text="@string/limitDate"
             android:textSize="@dimen/general_text_size"
@@ -96,7 +98,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_date_notification_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -110,12 +112,13 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="@dimen/margin_16dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
+            android:layout_weight="2">
 
             <Button
-                android:id="@+id/save_button_limit_dialog"
+                android:id="@+id/save_button_notification_dialog"
                 android:layout_width="@dimen/dialog_button_w"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_20dp"
@@ -126,14 +129,14 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/cancel_button_limit_dialog"
+                android:id="@+id/cancel_button_notification_dialog"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="@dimen/dialog_button_w"
                 android:layout_height="wrap_content"
                 android:text="@string/cancel_text"
                 android:textSize="@dimen/small_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/save_button_limit_dialog"
+                app:layout_constraintEnd_toStartOf="@+id/save_button_notification_dialog"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

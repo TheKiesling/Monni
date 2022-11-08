@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="325dp"
-    android:layout_height="500dp"
-    tools:context=".NewRegisterDialogFragment">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NewRegisterDialogFragment">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="325dp"
+        android:layout_height="500dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +40,7 @@
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
             tools:text="@string/add_new_register_text_description" />
-
+<!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/description_input_dialog"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -54,7 +54,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
                 android:inputType="textShortMessage" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <TextView
             android:id="@+id/date_text_dialog"
@@ -68,7 +68,7 @@
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
             tools:text="@string/date_text_dialog" />
-
+        <!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date_input_dialog"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -82,7 +82,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
                 android:inputType="date" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <TextView
             android:id="@+id/amount_to_add_text"
@@ -96,7 +96,7 @@
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
             tools:text="@string/amount_to_add_text" />
-
+<!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/amount_to_add"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -110,7 +110,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
                 android:inputType="numberDecimal" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <TextView
             android:id="@+id/additional_details"
@@ -124,7 +124,7 @@
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
             tools:text="@string/aditional_details_text" />
-
+<!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/additional_details_text"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -138,7 +138,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/custom_edit_text"
                 android:inputType="textLongMessage" />
-        </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>-->
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
