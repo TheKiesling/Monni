@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1092533339955",
+    "project_id": "monni-973c4",
+    "storage_bucket": "monni-973c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092533339955:android:7966cb24776dd3e693a046",
+        "android_client_info": {
+          "package_name": "com.example.monni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092533339955-7mfbtvupv01rgvk95dvlf5opa00kfa28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPcnxZn9EM0nnpz8ZwjzqHZ3Y5BievAxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092533339955-7mfbtvupv01rgvk95dvlf5opa00kfa28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

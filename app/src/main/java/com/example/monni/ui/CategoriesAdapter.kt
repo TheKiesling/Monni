@@ -10,9 +10,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
-import com.example.monni.database.Category
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.monni.data.local.entity.Category
 
 class CategoriesAdapter(
     private val dataSet: List<Category>,
