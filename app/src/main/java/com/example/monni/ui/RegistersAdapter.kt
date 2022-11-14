@@ -5,12 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
-import com.example.monni.database.Register
-import java.text.DateFormat
-import java.text.SimpleDateFormat
+import com.example.monni.data.local.entity.Register
 import java.time.format.DateTimeFormatter
 
 class RegistersAdapter(
@@ -38,7 +35,7 @@ class RegistersAdapter(
         fun setData(register: Register){
             this.register = register
             date.text = register.date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
-            description.text = register.description
+            description.text = register.desc
             amount.text = "Q" + register.amount.toString()
 
         }
