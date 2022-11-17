@@ -46,6 +46,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
                 lifecycleScope.launch{
                     val userId = authRepository.signInWithEmailAndPassword(email, password)
+
                     if(userId != null){
                         requireView().findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                     }

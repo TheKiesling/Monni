@@ -2,7 +2,6 @@ package com.example.monni.data.repository.auth
 
 import com.example.monni.data.Resource
 import com.example.monni.data.remote.api.AuthApi
-import com.example.monni.data.repository.auth.AuthRepository
 
 class AuthRepositoryImpl(
     private val authApi: AuthApi
