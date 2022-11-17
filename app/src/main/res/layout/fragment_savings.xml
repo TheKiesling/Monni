@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toStartOf="@id/textView_savingsFragment_support"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_goalText"
-        android:text="¿Cómo funciona?"
+        android:text="@string/c_mo_funciona"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="12sp"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"

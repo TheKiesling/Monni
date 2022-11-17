@@ -9,9 +9,9 @@
             android:type="radial"
             android:gradientRadius="265dp"
             android:centerY="0"
-            android:startColor="@color/maximum_blue_purple"
-            android:centerColor="@color/lavender_blue"
-            android:endColor="@color/shampoo"></gradient>
+            android:startColor="@color/maximum_blue_purple_night"
+            android:centerColor="@color/lavender_blue_night"
+            android:endColor="@color/shampoo_night"></gradient>
 
         <size
             android:width="500dp"
