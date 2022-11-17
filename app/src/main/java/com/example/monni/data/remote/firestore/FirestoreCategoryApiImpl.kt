@@ -9,11 +9,12 @@ import kotlinx.coroutines.tasks.await
 class FirestoreCategoryApiImpl(
     private val db: FirebaseFirestore
 ): CategoryApi {
-    override suspend fun getCategories(): List<CategoryDto> {
+    override suspend fun getCategories(id: String): List<CategoryDto> {
         return try {
 
             val res = db
                 .collection("categories")
+                .whereEqualTo("id", id)
                 .get()
                 .await()
 

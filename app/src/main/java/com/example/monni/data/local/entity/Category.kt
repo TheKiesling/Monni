@@ -9,10 +9,3 @@ data class Category (
         val limit: Double,
         val name: String
         )
-
-fun Category.mapToDto(): CategoryDto = CategoryDto(
-        amount = amount,
-        color = color,
-        limit = limit,
-        name = name
-)

@@ -7,8 +7,8 @@ import com.example.monni.data.remote.dto.mapToEntity
 class CategoryRepositoryImpl(
     private val api: CategoryApi
 ): CategoryRepository {
-    override suspend fun getCategories(): List<Category> {
-        val filteredDto = api.getCategories()
+    override suspend fun getCategories(id: String): List<Category> {
+        val filteredDto = api.getCategories(id)
         return filteredDto.map {
             dto -> dto.mapToEntity()
         }
