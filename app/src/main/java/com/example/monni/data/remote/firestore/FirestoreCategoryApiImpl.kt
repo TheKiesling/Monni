@@ -14,7 +14,6 @@ class FirestoreCategoryApiImpl(
 
             val res = db
                 .collection("categories")
-                .whereEqualTo("id", id)
                 .get()
                 .await()
 
