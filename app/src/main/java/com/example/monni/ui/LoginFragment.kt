@@ -48,7 +48,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     val userId = authRepository.signInWithEmailAndPassword(email, password)
 
                     if(userId != null){
-                        requireView().findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                        val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(email)
+                        requireView().findNavController().navigate(action)
                     }
                     else{
                         Toast.makeText(requireContext(), "jk", Toast.LENGTH_LONG).show()
