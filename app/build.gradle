@@ -76,7 +76,7 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:$hilt_Version"
 
     // Firebase version declaration
-    implementation platform('com.google.firebase:firebase-bom:31.0.1')
+    implementation platform('com.google.firebase:firebase-bom:31.0.3')
     // Firebase auth
     implementation 'com.google.firebase:firebase-auth-ktx'
     // Firebase firestore

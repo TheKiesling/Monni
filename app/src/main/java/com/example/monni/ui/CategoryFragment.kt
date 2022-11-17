@@ -6,13 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
-import com.example.monni.database.Database
-import com.example.monni.database.Register
+import com.example.monni.data.local.entity.Register
+import com.example.monni.data.remote.firestore.FirestoreRegisterApiImpl
+import com.example.monni.data.repository.register.RegisterRepository
+import com.example.monni.data.repository.register.RegisterRepositoryImpl
 import com.example.monni.databinding.FragmentCategoryBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.RegisterItemListener {
@@ -22,6 +29,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     private lateinit var binding: FragmentCategoryBinding
     private lateinit var registersList: MutableList<Register>
     private lateinit var txtTitle: TextView
+    private lateinit var repository: RegisterRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,6 +46,9 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
         txtTitle = binding.fragmentCategoryTxtTitle
         recyclerView = binding.fragmentCategoryRecycler
         txtTitle.text = args.categoryName
+        repository = RegisterRepositoryImpl(
+            FirestoreRegisterApiImpl(Firebase.firestore)
+        )
         setupRecyclers()
         setListeners()
     }
@@ -51,9 +62,11 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     }
 
     private fun setupRecyclers(){
-        registersList = Database.getRegisters(args.categoryName)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = RegistersAdapter(registersList, this)
+        lifecycleScope.launch(Dispatchers.IO) {
+            registersList = repository.getRegisters(args.categoryName)?.toMutableList()!!
+                recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.setHasFixedSize(true)
+            recyclerView.adapter = RegistersAdapter(registersList, this@CategoryFragment)
+        }
     }
 }
