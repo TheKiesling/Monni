@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
@@ -22,6 +23,8 @@ import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.CategoryItemListener {
+
+    private val args: HomeFragmentArgs by navArgs()
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentHomeBinding
     private lateinit var categoriesList: List<Category>
@@ -69,10 +72,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
 
     private fun setupRecyclers(){
         lifecycleScope.launch(Dispatchers.IO) {
-            categoriesList = repository.getCategories()
-            recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = CategoriesAdapter(categoriesList, this@HomeFragment)
+            categoriesList = repository.getCategories(args.id)
+            lifecycleScope.launch(Dispatchers.Main) {
+                recyclerView.layoutManager = LinearLayoutManager(requireContext())
+                recyclerView.setHasFixedSize(true)
+                recyclerView.adapter = CategoriesAdapter(categoriesList, this@HomeFragment)
+            }
         }
     }
 
