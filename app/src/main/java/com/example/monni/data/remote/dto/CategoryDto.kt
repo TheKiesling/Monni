@@ -11,6 +11,7 @@ data class CategoryDto(
 )
 
 fun CategoryDto.mapToEntity(): Category = Category(
+    id = id,
     amount = amount,
     color = color,
     limit = limit,
