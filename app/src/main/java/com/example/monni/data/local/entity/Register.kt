@@ -1,16 +1,14 @@
 package com.example.monni.data.local.entity
 
-import com.example.monni.data.remote.dto.RegisterDto
-import java.time.LocalDate
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
+@Entity
 data class Register (
+    @PrimaryKey
+    val id: String,
+    val category: String,
     val amount: Double,
-    val date: LocalDate,
-    val desc: String
+    val date: String,
+    val description: String
         )
-
-fun Register.mapToDto(): RegisterDto = RegisterDto(
-    amount = amount,
-    date = date,
-    desc = desc
-)

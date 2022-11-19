@@ -62,7 +62,7 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
                             dataStore.saveKeyValue("email", email)
                             dataStore.saveKeyValue("name", name)
                         }
-                        val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment()
+                        val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment(email)
                         requireView().findNavController().navigate(action)
                     } else {
                         Toast.makeText(requireContext(), "jk", Toast.LENGTH_LONG).show()

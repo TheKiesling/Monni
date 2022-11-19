@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
+import com.example.monni.data.local.entity.Category
 import com.example.monni.database.Database
 import com.example.monni.databinding.FragmentPieChartBinding
 import com.github.mikephil.charting.animation.Easing
@@ -27,7 +28,7 @@ class PieChartFragment : Fragment(R.layout.fragment_pie_chart) {
     private lateinit var pieChart: PieChart
     private lateinit var binding: FragmentPieChartBinding
     private var database: Database = Database
-    private lateinit var categoriesList: List<com.example.monni.database.Category>
+    private lateinit var categoriesList: List<Category>
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -51,8 +51,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     private fun verifyLogin() {
         CoroutineScope(Dispatchers.IO).launch {
             if(dataStore.getValueFromKey("email") != null){
+                email = dataStore.getValueFromKey("email").toString()
                 CoroutineScope(Dispatchers.Main).launch {
-                    val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+                    val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(email)
                     requireView().findNavController().navigate(action)
                 }
             }
@@ -72,7 +73,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         CoroutineScope(Dispatchers.IO).launch{
                             dataStore.saveKeyValue("email", email)
                         }
-                        val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment()
+                        val action = LoginFragmentDirections.actionLoginFragmentToHomeFragment(email)
                         requireView().findNavController().navigate(action)
                     }
                     else{
