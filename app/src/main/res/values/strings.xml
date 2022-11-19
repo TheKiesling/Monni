@@ -32,4 +32,6 @@
     <string name="login">Login</string>
     <string name="no_tienes_una_cuenta">¿No tienes una cuenta?</string>
     <string name="add_notification_text">Nueva notificacion</string>
+    <string name="name">Nombre</string>
+    <string name="c_mo_funciona">¿Cómo funciona?</string>
 </resources>

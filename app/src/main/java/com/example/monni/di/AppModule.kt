@@ -40,9 +40,9 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providePlaceApi(db: FirebaseFirestore): CategoryApi = FirestoreCategoryApiImpl(db)
+    fun provideCategoryApi(db: FirebaseFirestore): CategoryApi = FirestoreCategoryApiImpl(db)
 
     @Provides
     @Singleton
-    fun providePlaceRepository(api: CategoryApi) : CategoryRepository = CategoryRepositoryImpl(api)
+    fun provideCategoryRepository(api: CategoryApi) : CategoryRepository = CategoryRepositoryImpl(api)
 }

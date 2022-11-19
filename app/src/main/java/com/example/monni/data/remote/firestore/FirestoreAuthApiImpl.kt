@@ -26,4 +26,22 @@ class FirestoreAuthApiImpl: AuthApi{
         }
     }
 
+    override suspend fun createUserWithEmailAndPassword(
+        email: String,
+        password: String
+    ): Resource<String> {
+        return try {
+            val auth = Firebase.auth
+            val response = auth.signInWithEmailAndPassword(email, password).await()
+
+            val user = response.user
+            if (user != null)
+                Resource.Success(data = user.uid)
+            else
+                Resource.Error(message = "Error")
+        } catch (e: Exception) {
+            Resource.Error(message = "Error")
+        }
+    }
+
 }
