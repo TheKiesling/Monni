@@ -16,19 +16,25 @@ import com.example.monni.data.remote.firestore.FirestoreCategoryApiImpl
 import com.example.monni.data.repository.categories.CategoryRepository
 import com.example.monni.data.repository.categories.CategoryRepositoryImpl
 import com.example.monni.databinding.FragmentHomeBinding
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.CategoryItemListener {
-
+    @Inject
+    lateinit var firestore: FirebaseFirestore
     private val args: HomeFragmentArgs by navArgs()
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentHomeBinding
     private lateinit var categoriesList: List<Category>
-    private lateinit var repository: CategoryRepository
+
+    @Inject
+    lateinit var repository: CategoryRepository
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,8 +52,13 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
         repository = CategoryRepositoryImpl(
             FirestoreCategoryApiImpl(Firebase.firestore)
         )
+        prueba()
         setupRecyclers()
         setListeners()
+    }
+
+    private fun prueba(){
+
     }
 
     private fun setListeners() {
