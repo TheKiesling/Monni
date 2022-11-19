@@ -55,18 +55,14 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
                 name = binding.inputLayoutNewUserFragmentUsername.editText!!.text.toString()
 
                 lifecycleScope.launch {
-                    val userId = authRepository.signInWithEmailAndPassword(email, password)
+                    authRepository.createUserWithEmailAndPassword(email, password)
 
-                    if (userId != null) {
-                        CoroutineScope(Dispatchers.IO).launch {
-                            dataStore.saveKeyValue("email", email)
-                            dataStore.saveKeyValue("name", name)
-                        }
-                        val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment()
-                        requireView().findNavController().navigate(action)
-                    } else {
-                        Toast.makeText(requireContext(), "jk", Toast.LENGTH_LONG).show()
+                    CoroutineScope(Dispatchers.IO).launch {
+                        dataStore.saveKeyValue("email", email)
+                        dataStore.saveKeyValue("name", name)
                     }
+                    val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment()
+                    requireView().findNavController().navigate(action)
                 }
             }
         }
