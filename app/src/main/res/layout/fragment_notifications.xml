@@ -41,7 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_baseline_add_circle_24"
         android:layout_marginBottom="100dp"
-        app:tint="@color/ube" />
+        app:tint="@color/ube2" />
 
     <ImageView
         android:id="@+id/notifications_btn_return"

@@ -39,7 +39,7 @@
             android:gravity="center_vertical"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="@string/add_new_register_text_description" />
+            android:text="@string/add_new_register_text_description" />
 <!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/description_input_dialog"
@@ -67,7 +67,7 @@
             android:gravity="center_vertical"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="@string/date_text_dialog" />
+            android:text="@string/date_text_dialog" />
         <!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date_input_dialog"
@@ -95,7 +95,7 @@
             android:gravity="center_vertical"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="@string/amount_to_add_text" />
+            android:text="@string/amount_to_add_text" />
 <!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/amount_to_add"
@@ -123,7 +123,7 @@
             android:gravity="center_vertical"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="@string/aditional_details_text" />
+            android:text="@string/aditional_details_text" />
 <!--
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/additional_details_text"
