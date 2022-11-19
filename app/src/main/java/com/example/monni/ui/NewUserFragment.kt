@@ -49,23 +49,24 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
 
     private fun setListeners() {
         binding.apply {
-            email = binding.inputLayoutNewUserFragmentEmail.editText!!.text.toString()
-            password = binding.inputLayoutNewUserFragmentPassword.editText!!.text.toString()
-            name = binding.inputLayoutNewUserFragmentUsername.editText!!.text.toString()
+            buttonLoginFragmentLogin.setOnClickListener {
+                email = binding.inputLayoutNewUserFragmentEmail.editText!!.text.toString()
+                password = binding.inputLayoutNewUserFragmentPassword.editText!!.text.toString()
+                name = binding.inputLayoutNewUserFragmentUsername.editText!!.text.toString()
 
-            lifecycleScope.launch{
-                val userId = authRepository.signInWithEmailAndPassword(email, password)
+                lifecycleScope.launch {
+                    val userId = authRepository.signInWithEmailAndPassword(email, password)
 
-                if(userId != null){
-                    CoroutineScope(Dispatchers.IO).launch{
-                        dataStore.saveKeyValue("email", email)
-                        dataStore.saveKeyValue("name", name)
+                    if (userId != null) {
+                        CoroutineScope(Dispatchers.IO).launch {
+                            dataStore.saveKeyValue("email", email)
+                            dataStore.saveKeyValue("name", name)
+                        }
+                        val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment()
+                        requireView().findNavController().navigate(action)
+                    } else {
+                        Toast.makeText(requireContext(), "jk", Toast.LENGTH_LONG).show()
                     }
-                    val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment()
-                    requireView().findNavController().navigate(action)
-                }
-                else{
-                    Toast.makeText(requireContext(), "jk", Toast.LENGTH_LONG).show()
                 }
             }
         }
