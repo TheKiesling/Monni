@@ -53,8 +53,6 @@ object Database {
                     amount = 150.00,
                     limit = 200.00
                 ),
-
-
                 Category(
                     name = "Gastos Fijos",
                     color = "#FFB9F1",
@@ -62,7 +60,7 @@ object Database {
                         Register(
                             description = "Bizcochito",
                             date = LocalDate.of(2019,7,29),
-                            amount = 115.00
+                            amount = 115.05
                         )
                     ),
                     amount = 100.00,
@@ -166,5 +164,25 @@ object Database {
     fun getNotis(): List<Notification> {
         val notis = notifications.sortedBy{ it.dateLimit}
         return notis
+    }
+
+    fun getUser(username: String): User {
+        val user = users.first{it.username.equals(username)}
+        return user
+    }
+
+    fun getCategories(username: String): List<Category> {
+        val user = getUser(username)
+        val categories = user.categories
+        return categories
+    }
+
+    fun getTotalCategories(username: String): Double{
+        var totalSum:Double = 0.0;
+        val categories = getCategories(username)
+        for(currentCategory in categories){
+            totalSum += currentCategory.amount
+        }
+        return totalSum
     }
 }
