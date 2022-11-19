@@ -12,29 +12,31 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
 import com.example.monni.data.local.entity.Category
+import com.example.monni.data.local.storage.DataStorage
 import com.example.monni.data.remote.firestore.FirestoreCategoryApiImpl
 import com.example.monni.data.repository.categories.CategoryRepository
 import com.example.monni.data.repository.categories.CategoryRepositoryImpl
+import com.example.monni.database.Database
 import com.example.monni.databinding.FragmentHomeBinding
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.CategoryItemListener {
-    @Inject
-    lateinit var firestore: FirebaseFirestore
-    private val args: HomeFragmentArgs by navArgs()
+
+    private lateinit var dataStore: DataStorage
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentHomeBinding
     private lateinit var categoriesList: List<Category>
-
-    @Inject
+    private lateinit var database: Database
     lateinit var repository: CategoryRepository
+    private lateinit var name: String
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -52,13 +54,23 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
         repository = CategoryRepositoryImpl(
             FirestoreCategoryApiImpl(Firebase.firestore)
         )
-        prueba()
+        dataStore = DataStorage(requireContext())
+        setInfo()
         setupRecyclers()
         setListeners()
     }
 
-    private fun prueba(){
-
+    private fun setInfo(){
+        CoroutineScope(Dispatchers.IO).launch {
+            if (dataStore.getValueFromKey("name") != null) {
+                name = dataStore.getValueFromKey("name")!!
+                CoroutineScope(Dispatchers.Main).launch {
+                    binding.apply {
+                        binding.textviewHomeFragmentUsername.text = name
+                    }
+                }
+            }
+        }
     }
 
     private fun setListeners() {
@@ -76,14 +88,19 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
             }
 
             exitIconHomeFragment.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_toLoginFragment)
+                CoroutineScope(Dispatchers.IO).launch {
+                    dataStore.removeKey("email")
+                    CoroutineScope(Dispatchers.Main).launch {
+                        requireView().findNavController().navigate(R.id.action_toLoginFragment)
+                    }
+                }
             }
         }
     }
 
     private fun setupRecyclers(){
         lifecycleScope.launch(Dispatchers.IO) {
-            categoriesList = repository.getCategories(args.id)
+            categoriesList = mutableListOf()
             lifecycleScope.launch(Dispatchers.Main) {
                 recyclerView.layoutManager = LinearLayoutManager(requireContext())
                 recyclerView.setHasFixedSize(true)

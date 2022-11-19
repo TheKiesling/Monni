@@ -44,9 +44,6 @@
         <action
             android:id="@+id/action_homeFragment_to_savingsFragment"
             app:destination="@id/savingsFragment" />
-        <argument
-            android:name="id"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/newUserFragment"
