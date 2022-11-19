@@ -48,6 +48,7 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/expenses_pie_chart"
+            android:background="@android:color/transparent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 

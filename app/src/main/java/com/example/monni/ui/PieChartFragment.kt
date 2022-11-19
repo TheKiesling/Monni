@@ -1,4 +1,5 @@
 package com.example.monni.ui
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -76,6 +77,7 @@ class PieChartFragment : Fragment(R.layout.fragment_pie_chart) {
         pieChart.setDrawSliceText(false)
         description.setEnabled(false)
         pieChart.setData(pieData)
+        pieChart.setHoleColor(Color.TRANSPARENT)
         pieChart.invalidate()
         pieChart.animateY(1400, Easing.EaseInOutQuad)
 
