@@ -1,31 +1,16 @@
 package com.example.monni.database
 
-import androidx.core.content.ContextCompat
 import com.example.monni.R
+import com.example.monni.data.local.entity.Category
+import com.example.monni.data.local.entity.Register
 import java.time.LocalDate
 import java.util.*
 
 data class User(
     val username: String,
-    val password: String,
     val categories: List<Category>,
     val limit: Double
 )
-
-data class Category(
-    val name: String,
-    val color: String,
-    val registers: MutableList<Register>,
-    val amount: Double,
-    val limit: Double
-)
-
-data class Register(
-    val description: String,
-    val date:LocalDate,
-    val amount: Double
-)
-
 
 data class Notification(
     val dateLimit: LocalDate,
@@ -34,105 +19,63 @@ data class Notification(
 )
 
 object Database {
+
     private val users = mutableListOf(
         User(
-            username = "the_kiesling",
-            password = "contraseñaSegura",
+            username = "Adrian",
             limit = 1000.00,
             categories = listOf(
                 Category(
+                    id = "Adrian",
                     name = "Actividades Recreativas",
                     color = "#FCD3F7",
-                    registers = mutableListOf(
-                        Register(
-                            description = "Balón de futbol",
-                            date = LocalDate.of(2019,7,29),
-                            amount = 115.00
-                        )
-                    ),
                     amount = 150.00,
                     limit = 200.00
                 ),
                 Category(
+                    id = "Adrian",
                     name = "Gastos Fijos",
                     color = "#FFB9F1",
-                    registers = mutableListOf(
-                        Register(
-                            description = "Bizcochito",
-                            date = LocalDate.of(2019,7,29),
-                            amount = 115.05
-                        )
-                    ),
                     amount = 100.00,
                     limit = 200.00
                 ),
 
                 Category(
+                    id = "Adrian",
                     name = "Transporte",
                     color = "#FF83EA",
-                    registers = mutableListOf(
-                        Register(
-                            description = "Balón de futbol",
-                            date = LocalDate.of(2019,7,29),
-                            amount = 115.00
-                        )
-                    ),
                     amount = 25.00,
                     limit = 200.00
                 ),
 
                 Category(
+                    id = "Adrian",
                     name = "Comida",
                     color = "#D0C7FF",
-                    registers = mutableListOf(
-                        Register(
-                            description = "Balón de futbol",
-                            date = LocalDate.of(2019,7,29),
-                            amount = 115.00
-                        )
-                    ),
                     amount = 75.00,
                     limit = 200.00
                 ),
 
                 Category(
+                    id = "Adrian",
                     name = "Vestimenta",
                     color = "#ADB6FD",
-                    registers = mutableListOf(
-                        Register(
-                            description = "Balón de futbol",
-                            date = LocalDate.of(2019,7,29),
-                            amount = 115.00
-                        )
-                    ),
                     amount = 175.00,
                     limit = 200.00
                 ),
 
                 Category(
+                    id = "Adrian",
                     name = "Supermercado",
                     color = "#9796F0",
-                    registers = mutableListOf(
-                        Register(
-                            description = "Balón de futbol",
-                            date = LocalDate.of(2019,7,29),
-                            amount = 115.00
-                        )
-                    ),
                     amount = 150.00,
                     limit = 200.00
                 ),
 
                 Category(
+                    id = "Adrian",
                     name = "Emergencia",
                     color = "#7F7FC7",
-                    registers = mutableListOf(
-                        Register(
-                            description = "Balón de futbol",
-                            date = LocalDate.of(2019,7,29),
-                            amount = 115.00
-                        )
-                    ),
                     amount = 10.00,
                     limit = 200.00
                 )

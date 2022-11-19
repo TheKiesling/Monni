@@ -9,11 +9,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
+import com.example.monni.data.local.entity.Category
 import java.math.RoundingMode
 import java.text.DecimalFormat
 
 class PieChartAdapter (
-    private val dataSet: List<com.example.monni.database.Category>,
+    private val dataSet: List<Category>,
     ): RecyclerView.Adapter<PieChartAdapter.ViewHolder>() {
 
     class ViewHolder(
@@ -22,9 +23,9 @@ class PieChartAdapter (
         private val colorOfCategory: ImageView = view.findViewById(R.id.icon_for_pie_chart_element)
         private val nameOfCategory: TextView = view.findViewById(R.id.category_text_pie_chart_element)
         private val totalAmountCategory: TextView = view.findViewById(R.id.money_amount_text_pie_chart_element)
-        private lateinit var category: com.example.monni.database.Category
+        private lateinit var category: Category
 
-        fun setData(category: com.example.monni.database.Category) {
+        fun setData(category: Category) {
             this.category = category
             colorOfCategory.imageTintList = ColorStateList.valueOf(Color.parseColor(category.color))
             nameOfCategory.text = category.name

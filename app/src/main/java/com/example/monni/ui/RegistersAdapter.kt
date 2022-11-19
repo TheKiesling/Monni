@@ -35,7 +35,7 @@ class RegistersAdapter(
         fun setData(register: Register){
             this.register = register
             date.text = register.date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
-            description.text = register.desc
+            description.text = register.description
             amount.text = "Q" + register.amount.toString()
 
         }
