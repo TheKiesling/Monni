@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/inputLayout_newUserFragment_username"
         android:hint="@string/email"
 
         app:boxCornerRadiusBottomEnd="32dp"
@@ -46,7 +46,7 @@
 
         android:layout_marginStart="@dimen/main_title_text_top_margin"
         android:layout_marginEnd="@dimen/main_title_text_top_margin"
-        android:layout_marginTop="@dimen/return_arrow_margin"
+        android:layout_marginTop="@dimen/margin_16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
         <com.google.android.material.textfield.TextInputEditText
@@ -54,7 +54,6 @@
             android:layout_height="match_parent"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="16dp"
-            android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -87,13 +86,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/inputLayout_newUserFragment_repeatPassword"
+        android:id="@+id/inputLayout_newUserFragment_username"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputLayout_newUserFragment_password"
-        android:hint="@string/password"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:hint="@string/name"
 
         app:boxCornerRadiusBottomEnd="32dp"
         app:boxCornerRadiusTopEnd="32dp"
@@ -102,15 +101,14 @@
 
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/return_arrow_margin"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawableStart="@drawable/ic_lock"
+            android:drawableStart="@drawable/ic_person"
             android:drawablePadding="16dp"
-            android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,7 +118,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputLayout_newUserFragment_repeatPassword"
+        app:layout_constraintTop_toBottomOf="@id/inputLayout_newUserFragment_password"
         android:text="@string/crear_cuenta"
         android:fontFamily="@font/montserrat_regular"
         android:textSize="@dimen/general_text_size"

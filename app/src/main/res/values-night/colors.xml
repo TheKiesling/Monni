@@ -9,22 +9,24 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bgcolor">#767676</color>
     <!--Theme colors-->
-    <color name="alice_blue">#eef0ff</color>
-    <color name="maximum_blue_purple">#ADB6FD</color>
-    <color name="maximum_blue_purple_night">#ADB6FD</color>
+    <color name="alice_blue">#606060</color>
+    <color name="maximum_blue_purple">#7F7FC7</color>
+    <color name="maximum_blue_purple_night">#7F7FC7</color>7F7FC7
     <color name="lavender_blue">#D0C7FF</color>
-    <color name="lavender_blue_night">#D0C7FF</color>
-    <color name="shampoo">#FCD3F7</color>
-    <color name="shampoo_night">#FCD3F7</color>
-    <color name="light_pink">#FFE5FA</color>
-    <color name="brilliant_lavender">#FFB9F1</color>
-    <color name="light_fuchsia_pink">#FF83EA</color>
+    <color name="lavender_blue_night">#9796F0</color>
+    <color name="shampoo">#DEE2FF</color>
+    <color name="shampoo_night">#DEE2FF</color>
+    <color name="light_pink">#9291F0</color>
+    <color name="brilliant_lavender">#7F7FC7</color>
+    <color name="light_fuchsia_pink">#7F7FC7</color>
     <color name="light_cobalt_blue">#9796F0</color>
-    <color name="ube">#7F7FC7</color>
-    <color name="ube2">#7F7FC7</color>
-    <color name="bright_gray">#EFEDF1</color>
-    <color name="gray">#767676</color>
+    <color name="ube">#ADB6FD</color>
+    <color name="ube2">#FFFFFF</color>
+    <color name="bright_gray">#767676</color>
+    <color name="gray">#FFFFFF</color>
     <color name="gainsboro">#dbdbdb</color>
     <color name="login_blue">#DEE2FF</color>
     <color name="rojo">#ff0000</color>
+
+
 </resources>
