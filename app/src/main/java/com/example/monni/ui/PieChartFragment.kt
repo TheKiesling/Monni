@@ -1,5 +1,4 @@
 package com.example.monni.ui
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +7,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
-import com.example.monni.database.Category
 import com.example.monni.database.Database
 import com.example.monni.databinding.FragmentPieChartBinding
+import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.PieChart
+import com.github.mikephil.charting.components.Description
+import com.github.mikephil.charting.components.Legend
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import com.github.mikephil.charting.formatter.PercentFormatter
 import com.github.mikephil.charting.utils.ColorTemplate
 
 
@@ -66,10 +66,19 @@ class PieChartFragment : Fragment(R.layout.fragment_pie_chart) {
             }
 
     private fun declarePieChartData(data: List<PieEntry>, colors: List<Int>, pieChart: PieChart){
-        val pieDataSet: PieDataSet = PieDataSet(data,"Expense")
+        val pieDataSet: PieDataSet = PieDataSet(data,"")
         pieDataSet.setColors(colors)
         val pieData: PieData = PieData(pieDataSet)
+        pieData.setDrawValues(false)
+        val legendPieChart: Legend = pieChart.getLegend()
+        val description: Description = pieChart.getDescription()
+        legendPieChart.setEnabled(false)
+        pieChart.setDrawSliceText(false)
+        description.setEnabled(false)
         pieChart.setData(pieData)
+        pieChart.invalidate()
+        pieChart.animateY(1400, Easing.EaseInOutQuad)
+
     }
 }
 
