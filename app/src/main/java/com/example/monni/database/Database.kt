@@ -1,12 +1,9 @@
 package com.example.monni.database
 
 import com.example.monni.R
-<<<<<<< Updated upstream
 import com.example.monni.data.local.entity.Category
 import com.example.monni.data.local.entity.Register
-=======
 import com.example.monni.data.local.entity.SavingTip
->>>>>>> Stashed changes
 import java.time.LocalDate
 import java.util.*
 

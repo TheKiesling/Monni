@@ -84,7 +84,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
                 true
             }
             imageViewHomeFragmentNotifications.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_homeFragment_to_notificationsFragment)
+                requireView().findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToNotificationsFragment(args.email))
             }
 
             exitIconHomeFragment.setOnClickListener {

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
 import com.example.monni.data.local.entity.Notification
@@ -13,7 +14,7 @@ import java.time.format.DateTimeFormatter
 import java.time.temporal.ChronoUnit
 
 class NotificationsAdapter (
-    private val dataSet: MutableList<Notification>,
+    private val dataSet: List<Notification>,
     private val notificationItemListener: NotificationItemListener,
     ): RecyclerView.Adapter<NotificationsAdapter.ViewHolder>() {
 
@@ -26,8 +27,6 @@ class NotificationsAdapter (
             private val listener: NotificationItemListener
         ): RecyclerView.ViewHolder(view){
 
-            //private lateinit var binding: CategoryItemBinding
-
             private val description: TextView = view.findViewById(R.id.notificationItem_desc)
             private val date: TextView = view.findViewById(R.id.txt_notificationItem_fechaLimite)
             private val title: TextView = view.findViewById(R.id.notificationItem_title)
@@ -39,10 +38,16 @@ class NotificationsAdapter (
                 date.text = notification.dateLimit.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
                 description.text = notification.desc
                 title.text = notification.title
-                var temp = ChronoUnit.DAYS.between(LocalDate.now(), LocalDate.parse(noti.dateLimit)).toString()
-                if(temp.toInt() < 0) temp = "0"
-                
+                var temp = ChronoUnit.DAYS.between(LocalDate.now(), LocalDate.of(notification.dateLimit.substring(6).toInt(),
+                    notification.dateLimit.substring(3,5).toInt(), notification.dateLimit.substring(0,2).toInt())).toString()
                 days.text = temp
+                if(temp.toInt() <= 0) {
+                    days.text = "0"
+                    days.setTextColor(-65536)
+                }
+                
+
+
             }
 
         }

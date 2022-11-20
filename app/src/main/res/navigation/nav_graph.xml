@@ -35,9 +35,7 @@
             app:destination="@id/categoryFragment" />
         <action
             android:id="@+id/action_homeFragment_to_notificationsFragment"
-            app:destination="@id/notificationsFragment"
-            app:enterAnim="@anim/enter_notification"
-            app:popEnterAnim="@anim/enter_notification" />
+            app:destination="@id/notificationsFragment" />
         <action
             android:id="@+id/action_homeFragment_to_pieChartFragment"
             app:destination="@id/pieChartFragment" />

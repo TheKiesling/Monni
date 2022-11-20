@@ -58,6 +58,17 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/title_notification_dialog_error"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:textAlignment="center"
+            tools:text="@string/title"
+            android:textColor="@color/rojo"
+            android:textSize="@dimen/small_text_size"/>
+
+        <TextView
             android:id="@+id/desc_notification_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
@@ -85,6 +96,18 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/desc_notification_dialog_error"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:textAlignment="center"
+            tools:text="@string/title"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/rojo"/>
+
+
+        <TextView
             android:id="@+id/date_notification_dialog"
             style="@style/general_text"
             android:layout_width="match_parent"
@@ -110,6 +133,17 @@
                 android:background="@drawable/custom_edit_text"
                 android:inputType="date" />
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/date_notification_dialog_error"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:textAlignment="center"
+            tools:text="@string/title"
+            android:textSize="@dimen/small_text_size"
+            android:textColor="@color/rojo"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_marginTop="@dimen/margin_16dp"
