@@ -86,6 +86,9 @@
         <action
             android:id="@+id/action_notificationsFragment_to_homeFragment"
             app:destination="@id/homeFragment"/>
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <dialog
         android:id="@+id/notificationDialogFragment2"
