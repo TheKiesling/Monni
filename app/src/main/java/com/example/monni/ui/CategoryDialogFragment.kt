@@ -15,7 +15,9 @@ import com.example.monni.databinding.FragmentCategoryDialogBinding
 import com.example.monni.databinding.FragmentGoalDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class CategoryDialogFragment(): DialogFragment() {
+class CategoryDialogFragment(
+    category: String
+): DialogFragment() {
 
     private lateinit var binding : FragmentCategoryDialogBinding
 
@@ -30,7 +32,14 @@ class CategoryDialogFragment(): DialogFragment() {
     }
 
     private fun setListeners() {
-
+        binding.apply {
+            newRegisterOptionDialog.setOnClickListener {
+                NewRegisterDialogFragment(category).show(parentFragmentManager, "dialog")
+            }
+            modifyLimitOptionDialog.setOnClickListener {
+                LimitDialogFragment(category).show(parentFragmentManager, "dialog")
+            }
+        }
     }
 
 }

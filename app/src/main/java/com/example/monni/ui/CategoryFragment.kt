@@ -10,12 +10,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.example.monni.R
 import com.example.monni.data.local.entity.Register
 import com.example.monni.data.local.source.CategoryDatabase
 import com.example.monni.databinding.FragmentCategoryBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -40,10 +42,12 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         recyclerView = binding.fragmentCategoryRecycler
-
+        categoryDatabase = Room.databaseBuilder(
+            requireContext(),
+            CategoryDatabase::class.java,
+            "dbname"
+        ).build()
         setInfo()
         setupRecyclers()
         setListeners()
@@ -52,20 +56,28 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     private fun setInfo(){
         txtTitle = binding.fragmentCategoryTxtTitle
         txtTitle.text = args.categoryName
+        CoroutineScope(Dispatchers.IO).launch {
+            val registers = categoryDatabase.registerDao().getRegisters(args.email, args.categoryName)
+            if (registers.isNotEmpty()) {
+                registersList.addAll(registers)
+                CoroutineScope(Dispatchers.Main).launch {
+                    setupRecyclers()
+                }
+            }
+        }
     }
 
     private fun setListeners() {
         binding.apply {
             imageViewCategoryFragmentMoreOptions.setOnClickListener {
-                CategoryDialogFragment().show(parentFragmentManager,"dialog")
+                CategoryDialogFragment(args.categoryName).show(parentFragmentManager,"dialog")
             }
         }
     }
 
     private fun setupRecyclers(){
         lifecycleScope.launch(Dispatchers.IO) {
-            registersList = mutableListOf()
-                recyclerView.layoutManager = LinearLayoutManager(requireContext())
+            recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = RegistersAdapter(registersList, this@CategoryFragment)
         }

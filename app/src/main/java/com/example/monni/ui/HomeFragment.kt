@@ -105,7 +105,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
     }
 
     override fun onCategoryItemClicked(category: Category, position: Int) {
-        val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment(category.name)
+        val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment(category.name, args.email)
         requireView().findNavController().navigate(action)
     }
 }
