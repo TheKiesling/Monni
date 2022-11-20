@@ -8,25 +8,25 @@
 
     <TextView
         android:id="@+id/textView_savingsFragment_title"
+        style="@style/main_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/main_title_text"
-        android:text="Ahorros"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/ahorros_text_savings_fragment"
         app:layout_constraintEnd_toStartOf="@id/textView_savingsFragment_more"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="64dp"
         app:layout_constraintHorizontal_chainStyle="packed"
-        />
+        android:layout_marginTop="@dimen/margin_32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_savingsFragment_more"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_baseline_more_vert_24"
+        android:background="@drawable/ic_edit"
         app:layout_constraintStart_toEndOf="@id/textView_savingsFragment_title"
+        android:layout_marginStart="@dimen/margin_5dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="@dimen/margin_5dp"
         app:layout_constraintBottom_toBottomOf="@id/textView_savingsFragment_title"
 
         />
@@ -39,7 +39,7 @@
         tools:text="Q739.65"
         android:translationZ="90dp"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="@dimen/general_text_size"
         app:layout_constraintStart_toStartOf="@id/progressBar_savingsFragment"
         app:layout_constraintEnd_toEndOf="@id/progressBar_savingsFragment"
         app:layout_constraintTop_toTopOf="@id/progressBar_savingsFragment"
@@ -50,13 +50,12 @@
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="330dp"
         android:layout_height="24dp"
+        android:layout_marginTop="@dimen/margin_20dp"
         android:progress="75"
         android:progressDrawable="@drawable/curved_progress_bar"
-        app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_title"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"
-         />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_title" />
 
     <TextView
         android:id="@+id/textView_savingsFragment_savingsGoal"
@@ -66,28 +65,30 @@
         tools:text="Q1000"
         android:translationZ="90dp"
         android:textColor="@color/gray"
-        android:textSize="16sp"
-        android:layout_marginEnd="16dp"
+        android:textSize="@dimen/general_text_size"
+        android:layout_marginEnd="@dimen/margin_16dp"
         app:layout_constraintEnd_toEndOf="@id/progressBar_savingsFragment"
         app:layout_constraintTop_toTopOf="@id/progressBar_savingsFragment"
         app:layout_constraintBottom_toBottomOf="@id/progressBar_savingsFragment"/>
 
     <TextView
         android:id="@+id/textView_savingsFragment_goalText"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_16dp"
         android:fontFamily="@font/montserrat_bold"
-        tools:text="Estas al 74% de tu meta"
+        android:textAlignment="center"
+        android:textColor="@color/ube"
+        android:textSize="@dimen/subtitle_text_size"
         android:translationZ="90dp"
-        android:textColor="@color/lavender_blue"
-        android:textSize="20sp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/progressBar_savingsFragment"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/progressBar_savingsFragment"
+        tools:text="Estas al 74% de tu meta" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_loginFragment_support"
+        android:id="@+id/button_savingsFragment_support"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toStartOf="@id/textView_savingsFragment_support"
@@ -95,15 +96,13 @@
         app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_goalText"
         android:text="@string/c_mo_funciona"
         android:fontFamily="@font/montserrat_bold"
-        android:textSize="12sp"
+        android:textSize="@dimen/general_text_size"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:backgroundTint="@color/bright_gray"
         android:textColor="@color/gray"
         app:layout_constraintHorizontal_chainStyle="packed"
-
         app:cornerRadius="32dp"
-
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/margin_20dp"
         />
 
     <TextView
@@ -111,10 +110,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/support"
-        app:layout_constraintStart_toEndOf="@id/button_loginFragment_support"
+        app:layout_constraintStart_toEndOf="@id/button_savingsFragment_support"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/button_loginFragment_support"
-        app:layout_constraintTop_toTopOf="@id/button_loginFragment_support"
+        app:layout_constraintBottom_toBottomOf="@id/button_savingsFragment_support"
+        app:layout_constraintTop_toTopOf="@id/button_savingsFragment_support"
         />
 
     <TextView
@@ -122,28 +121,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/main_title_text"
+        android:layout_marginBottom="@dimen/margin_20dp"
         android:text="Tips de Ahorros"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_support"
-        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/square_element_pie_fragment"
+        android:layout_marginTop="@dimen/margin_20dp"
         />
 
     <TextView
         android:id="@+id/square_element_pie_fragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/square_element_pie_chart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_savingsFragment_secondTitle" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
+        android:id="@+id/savingsRecyclerView"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView_savingsFragment_secondTitle"
-        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toTopOf="@id/square_element_pie_fragment"
+        android:layout_marginTop="@dimen/margin_20dp"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"

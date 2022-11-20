@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/layout_itemCharacter"
+    android:id="@+id/layout_itemSavingsTip"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/list_item_with_image_height"
+    android:layout_height="wrap_content"
     android:padding="@dimen/margin_small"
     android:clickable="true"
     android:focusable="true"
@@ -14,8 +14,8 @@
         android:id="@+id/imageView_savingsTipsItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="@dimen/margin_16dp"
+        android:layout_marginBottom="@dimen/margin_5dp"
         android:src="@drawable/ic_baseline_expand_more_24"
         android:rotation="-90"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,13 +25,34 @@
         android:id="@+id/textView_savingsTipsItem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/subtitle_text_size"
         tools:text="La regla del 50/20/30"
         app:layout_constraintStart_toEndOf="@id/imageView_savingsTipsItem"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/general_text"
         android:textStyle="bold"
-        android:textColor="@color/lavender_blue"
+        android:textColor="@color/ube"
         />
 
+    <RelativeLayout
+        android:id="@+id/expanded_view"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/margin_24dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/textView_savingsTipsItem"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/margin_24dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_savingsTipsItem">
+
+        <TextView
+            android:id="@+id/savings_expanded_text"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_16dp"
+            android:textSize="@dimen/general_text_size"
+            tools:text="Description Text" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
