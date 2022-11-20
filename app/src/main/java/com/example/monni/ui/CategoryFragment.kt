@@ -82,4 +82,8 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
             recyclerView.adapter = RegistersAdapter(registersList, this@CategoryFragment)
         }
     }
+
+    override fun onRegisterItemClicked(register: Register, position: Int) {
+        NewRegisterDialogFragment(args.categoryName, register.registerId).show(parentFragmentManager, "dialog")
+    }
 }

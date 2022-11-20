@@ -10,4 +10,10 @@ interface RegisterDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(register: Register)
+
+    @Query("SELECT * FROM register WHERE registerId = :registerId")
+    suspend fun getRegisterById(registerId: Int): Register
+
+    @Update
+    suspend fun update(register: Register)
 }

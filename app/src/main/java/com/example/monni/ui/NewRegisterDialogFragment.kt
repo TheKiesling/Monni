@@ -24,12 +24,17 @@ import java.time.format.DateTimeFormatter
 
 
 class NewRegisterDialogFragment(
-    private val category: String
+    private val category: String,
+    private val idRegister: Int?
 ) : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentNewRegisterDialogBinding
     private lateinit var dataStore: DataStorage
     private lateinit var id: String
+    private var amount: Double = 0.0
+    private lateinit var date: LocalDate
+    private lateinit var description: String
     private lateinit var categoryDatabase: CategoryDatabase
+    private lateinit var register: Register
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,31 +53,53 @@ class NewRegisterDialogFragment(
             CategoryDatabase::class.java,
             "dbname"
         ).build()
+        setInfo()
         setListeners()
+    }
+
+    private fun setInfo() {
+        if (idRegister != null){
+            CoroutineScope(Dispatchers.IO).launch{
+                register = categoryDatabase.registerDao().getRegisterById(idRegister)
+                binding.apply {
+                    amountToAdd.editText!!.setText(register.amount.toString())
+                    dateInputDialog.editText!!.setText(register.date)
+                    descriptionInputDialog.editText!!.setText(register.description)
+                }
+            }
+        }
     }
 
     private fun setListeners() {
         binding.apply{
             saveButtonNewRegisterDialog.setOnClickListener {
-                val amount = binding.dateInputDialog.editText!!.text.toString().toDouble()
-                val date = LocalDate.parse(binding.dateInputDialog.editText!!.text.toString())
-                val description = binding.descriptionInputDialog.editText!!.text.toString()
+                amount = binding.amountToAdd.editText!!.text.toString().toDouble()
+                date = LocalDate.parse(binding.dateInputDialog.editText!!.text.toString())
+                description = binding.descriptionInputDialog.editText!!.text.toString()
                 CoroutineScope(Dispatchers.IO).launch {
                     id = dataStore.getValueFromKey("email")!!
                 }
+                val newRegister = Register(
+                    id = id,
+                    category = category,
+                    amount = amount,
+                    description = description,
+                    date = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+                )
 
+                val register = register.copy(
+                    id = id,
+                    category = category,
+                    amount = amount,
+                    description = description,
+                    date = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+                )
                 CoroutineScope(Dispatchers.IO).launch {
-                    categoryDatabase.registerDao().insert(
-                        Register(
-                            id = id,
-                            category = category,
-                            amount = amount,
-                            description = description,
-                            date = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
-                        )
-                    )
+                    if (idRegister == null)
+                        categoryDatabase.registerDao().insert(newRegister)
+                    else
+                        categoryDatabase.registerDao().update(register)
                 }
-
 
                 requireView().findNavController().navigate(R.id.action_newRegisterDialogFragment_to_categoryFragment)
             }

@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
+import com.example.monni.data.local.entity.Category
 import com.example.monni.data.local.entity.Register
 import java.time.format.DateTimeFormatter
 
@@ -17,7 +18,7 @@ class RegistersAdapter(
 
 
     interface RegisterItemListener {
-
+        fun onRegisterItemClicked(register: Register, position: Int)
     }
 
     class ViewHolder(

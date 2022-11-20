@@ -34,7 +34,7 @@ class CategoryDialogFragment(
     private fun setListeners() {
         binding.apply {
             newRegisterOptionDialog.setOnClickListener {
-                NewRegisterDialogFragment(category).show(parentFragmentManager, "dialog")
+                NewRegisterDialogFragment(category, null).show(parentFragmentManager, "dialog")
             }
             modifyLimitOptionDialog.setOnClickListener {
                 LimitDialogFragment(category).show(parentFragmentManager, "dialog")

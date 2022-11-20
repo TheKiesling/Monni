@@ -15,18 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/limit_dialog_tittle"
-            style="@style/general_text"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_16dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:textSize="@dimen/subtitle_text_size"
-            android:textStyle="bold"
-            tools:text="@string/add_new_register_text" />
 
         <TextView
             android:id="@+id/description_text_new_register_dialog"
@@ -112,33 +100,6 @@
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/additional_details"
-            style="@style/general_text"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_16dp"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:textSize="@dimen/general_text_size"
-            android:textStyle="bold"
-            android:text="@string/aditional_details_text" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/additional_details_text"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
-            android:layout_width="@dimen/dialog_input_w"
-            android:layout_height="52dp"
-            android:layout_gravity="center">
-
-            <EditText
-                android:id="@+id/edit_text_additional_details"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/custom_edit_text"
-                android:inputType="textLongMessage" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
