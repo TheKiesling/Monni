@@ -1,40 +1,40 @@
 package com.example.monni.ui
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
 import androidx.navigation.findNavController
 import com.example.monni.R
+import com.example.monni.databinding.FragmentGoalDialogBinding
 import com.example.monni.databinding.FragmentTipDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class TipDialogFragment : BottomSheetDialogFragment() {
+class TipDialogFragment : DialogFragment() {
+    private lateinit var binding : FragmentTipDialogBinding
 
-    private lateinit var binding: FragmentTipDialogBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentTipDialogBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        binding = FragmentTipDialogBinding.inflate(LayoutInflater.from(context))
         setListeners()
+        val builder = AlertDialog.Builder(requireActivity())
+        builder.setView(binding.root)
+        val dialog = builder.create()
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        return dialog
     }
 
     private fun setListeners() {
-        binding.apply{
-            buttonLoginFragmentClose.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_tipDialogFragment_to_savingsFragment)
+        binding.apply {
+            buttonSavingsFragmentClose.setOnClickListener{
+                dismiss()
             }
-
         }
     }
+
 }

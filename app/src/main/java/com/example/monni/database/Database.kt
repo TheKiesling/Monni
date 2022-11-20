@@ -1,15 +1,21 @@
 package com.example.monni.database
 
 import com.example.monni.R
+<<<<<<< Updated upstream
 import com.example.monni.data.local.entity.Category
 import com.example.monni.data.local.entity.Register
+=======
+import com.example.monni.data.local.entity.SavingTip
+>>>>>>> Stashed changes
 import java.time.LocalDate
 import java.util.*
 
 data class User(
     val username: String,
     val categories: List<Category>,
-    val limit: Double
+    val limit: Double,
+    val savings: Double,
+    val goal: Double
 )
 
 data class Notification(
@@ -24,6 +30,8 @@ object Database {
         User(
             username = "Adrian",
             limit = 1000.00,
+            savings = 500.00,
+            goal = 700.00,
             categories = listOf(
                 Category(
                     id = "Adrian",
@@ -83,6 +91,7 @@ object Database {
             )
 
         )
+
     )
 
 
@@ -104,9 +113,32 @@ object Database {
         )
     )
 
+    private var savingTips = mutableListOf(
+        SavingTip(
+            name = "30-day period",
+            description = "Keep track of all of your finances over a 30-day period",
+            expand = false
+        ),
+        SavingTip(
+            name = "Identify",
+            description = "Identify any variable costs that you can start cutting back",
+            expand = false
+        ),
+        SavingTip(
+            name = "Sell your unused items",
+            description = "Not only does this help declutter your home, but it can also mean earning quite a good amount of extra money",
+            expand = false
+        )
+    )
+
     fun getNotis(): List<Notification> {
         val notis = notifications.sortedBy{ it.dateLimit}
         return notis
+    }
+
+    fun getSavingTips(): List<SavingTip> {
+        val savingTips = savingTips
+        return savingTips
     }
 
     fun getUser(username: String): User {

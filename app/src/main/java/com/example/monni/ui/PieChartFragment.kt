@@ -65,7 +65,7 @@ class PieChartFragment : Fragment(R.layout.fragment_pie_chart) {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = PieChartAdapter(categoriesList)
-            }
+    }
 
     private fun declarePieChartData(data: List<PieEntry>, colors: List<Int>, pieChart: PieChart){
         val pieDataSet: PieDataSet = PieDataSet(data,"")

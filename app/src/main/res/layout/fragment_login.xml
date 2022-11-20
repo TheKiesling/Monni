@@ -30,17 +30,18 @@
 
     <TextView
         android:id="@+id/textView_loginFragment_title"
+        style="@style/main_title_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textSize="46sp"
+        android:textSize="45dp"
         android:fontFamily="@font/montserrat_medium"
         android:textStyle="bold"
-        android:textColor="@color/white"
+        android:textColor="@color/ube"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="32dp"/>
+        android:layout_marginTop="@dimen/margin_32dp"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_loginFragment_username"
@@ -48,17 +49,15 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textView_loginFragment_title"
+        app:layout_constraintTop_toBottomOf="@id/textView_loginFragment_title"
         android:hint="Username"
 
         app:boxCornerRadiusBottomEnd="32dp"
         app:boxCornerRadiusTopEnd="32dp"
         app:boxCornerRadiusBottomStart="32dp"
         app:boxCornerRadiusTopStart="32dp"
-
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginHorizontal="64dp"
+        android:layout_marginTop="@dimen/margin_32dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
         <com.google.android.material.textfield.TextInputEditText
@@ -83,9 +82,7 @@
         app:boxCornerRadiusTopEnd="32dp"
         app:boxCornerRadiusBottomStart="32dp"
         app:boxCornerRadiusTopStart="32dp"
-
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginHorizontal="64dp"
         android:layout_marginTop="16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
@@ -107,7 +104,7 @@
         app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_password"
         android:text="Iniciar Sesión"
         android:fontFamily="@font/montserrat_regular"
-        android:textSize="14sp"
+        android:textSize="@dimen/general_text_size"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:backgroundTint="@color/maximum_blue_purple"
         android:padding="16dp"
@@ -124,7 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/no_tienes_una_cuenta"
-        android:textSize="14sp"
+        android:textSize="@dimen/general_text_size"
         android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,7 +136,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="¡Crea una!"
-        android:textSize="14sp"
+        android:textSize="@dimen/general_text_size"
         android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/ube"
         app:layout_constraintStart_toEndOf="@id/textView_loginFragment_woAccount"

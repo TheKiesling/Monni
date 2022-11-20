@@ -26,11 +26,12 @@
         style="@style/general_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/margin_16dp"
+        android:layout_marginEnd="@dimen/margin_32dp"
+        android:layout_marginTop="@dimen/margin_16dp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/money_amount_text_pie_chart_element"
         app:layout_constraintStart_toEndOf="@+id/icon_for_pie_chart_element"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/margin_16dp"
         tools:text="Nombre de Categoría" />
 
     <TextView
