@@ -71,6 +71,9 @@
         <argument
             android:name="category_name"
             app:argType="string" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
@@ -127,6 +130,9 @@
         <action
             android:id="@+id/action_newRegisterDialogFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
     </dialog>
     <dialog
         android:id="@+id/limitDialogFragment"
@@ -135,6 +141,9 @@
         <action
             android:id="@+id/action_limitDialogFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
     </dialog>
     <fragment
         android:id="@+id/categoryDialogFragment2"
@@ -147,6 +156,9 @@
         <action
             android:id="@+id/action_categoryDialogFragment2_to_newRegisterDialogFragment"
             app:destination="@id/newRegisterDialogFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
     </fragment>
     <dialog
         android:id="@+id/goalDialogFragment2"

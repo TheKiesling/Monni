@@ -10,4 +10,7 @@ interface CategoryDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(categories: List<Category>)
+
+    @Query("UPDATE category SET `limit` = :limit WHERE id = :id AND name = :name")
+    suspend fun updateLimit(id: String, name: String, limit: Double)
 }

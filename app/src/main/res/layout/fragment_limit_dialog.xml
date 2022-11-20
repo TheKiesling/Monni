@@ -52,7 +52,7 @@
             android:text="@string/modify_limit_text"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold" />
-<!--
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/text_input_modify_limit_dialog"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
@@ -67,7 +67,7 @@
                 android:background="@drawable/custom_edit_text"
                 android:inputType="numberDecimal"
                 tools:ignore="SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>-->
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
