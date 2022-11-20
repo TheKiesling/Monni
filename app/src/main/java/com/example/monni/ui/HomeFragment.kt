@@ -26,7 +26,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
     private lateinit var dataStore: DataStorage
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var categoriesList: MutableList<Category>
+    private var categoriesList: MutableList<Category> = mutableListOf()
     private lateinit var categoryDatabase: CategoryDatabase
     private lateinit var name: String
 

@@ -34,4 +34,19 @@
     <string name="add_notification_text">Nueva notificacion</string>
     <string name="name">Nombre</string>
     <string name="c_mo_funciona">¿Cómo funciona?</string>
+    <string name ="actividades_recreativas">Actividades Recreativas</string>
+    <string name ="gastos_fijos">Gastos Fijos</string>
+    <string name ="transporte">Transporte</string>
+    <string name ="comida">Comida</string>
+    <string name ="vestimenta">Vestimenta</string>
+    <string name ="supermercado">Supermercado</string>
+    <string name ="emergencia">Emergencia</string>
+    <string name ="shampoo">#FCD3F7</string>
+    <string name="brilliant_lavender">#FFB9F1</string>
+    <string name="light_fuchsia_pink">#FF83EA</string>
+    <string name="lavender_blue">#D0C7FF</string>
+    <string name="maximum_blue_purple_night">#ADB6FD</string>
+    <string name="light_cobalt_blue">#9796F0</string>
+    <string name="ube">#7F7FC7</string>
+
 </resources>
