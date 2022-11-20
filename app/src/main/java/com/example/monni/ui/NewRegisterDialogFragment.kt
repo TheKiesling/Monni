@@ -24,7 +24,7 @@ import java.time.format.DateTimeFormatter
 
 
 class NewRegisterDialogFragment(
-    category: String
+    private val category: String
 ) : BottomSheetDialogFragment() {
     private lateinit var binding: FragmentNewRegisterDialogBinding
     private lateinit var dataStore: DataStorage
@@ -54,9 +54,9 @@ class NewRegisterDialogFragment(
     private fun setListeners() {
         binding.apply{
             saveButtonNewRegisterDialog.setOnClickListener {
-                val amount = binding.amountToAddText.text.toString().toDouble()
-                val date = LocalDate.parse(binding.dateTextDialog.text.toString())
-                val description = binding.descriptionTextNewRegisterDialog.text.toString()
+                val amount = binding.dateInputDialog.editText!!.text.toString().toDouble()
+                val date = LocalDate.parse(binding.dateInputDialog.editText!!.text.toString())
+                val description = binding.descriptionInputDialog.editText!!.text.toString()
                 CoroutineScope(Dispatchers.IO).launch {
                     id = dataStore.getValueFromKey("email")!!
                 }
