@@ -17,7 +17,7 @@ import kotlinx.coroutines.launch
 
 
 class LimitDialogFragment(
-    category: String
+    private val category: String
 ) : BottomSheetDialogFragment() {
     private lateinit var dataStore: DataStorage
     private lateinit var binding: FragmentLimitDialogBinding

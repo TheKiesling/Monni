@@ -16,7 +16,7 @@ import com.example.monni.databinding.FragmentGoalDialogBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class CategoryDialogFragment(
-    category: String
+    private val category: String
 ): DialogFragment() {
 
     private lateinit var binding : FragmentCategoryDialogBinding
