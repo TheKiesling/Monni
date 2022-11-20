@@ -34,7 +34,6 @@
     <string name="add_notification_text">Nueva notificacion</string>
     <string name="name">Nombre</string>
     <string name="c_mo_funciona">¿Cómo funciona?</string>
-<<<<<<< Updated upstream
     <string name ="actividades_recreativas">Actividades Recreativas</string>
     <string name ="gastos_fijos">Gastos Fijos</string>
     <string name ="transporte">Transporte</string>
@@ -49,11 +48,8 @@
     <string name="maximum_blue_purple_night">#ADB6FD</string>
     <string name="light_cobalt_blue">#9796F0</string>
     <string name="ube">#7F7FC7</string>
-
-=======
     <string name="ahorros_text_savings_fragment">Ahorros</string>
     <string name="close_text_dialog">Cerrar</string>
     <string name="savings_explanation_text">Cada mes, se calcula la diferencia entre el dinero gastado y el límite de cada categoría. Esta diferencia será agregada al total ahorrado, con el objetivo de llegar a la meta establecida en el transcurso de un año.</string>
     <string name="how_do_savings_work_title">¿Cómo funcionan los ahorros?</string>
->>>>>>> Stashed changes
 </resources>
