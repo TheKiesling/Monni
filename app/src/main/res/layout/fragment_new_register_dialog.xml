@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/dialog_format"
     tools:context=".ui.NewRegisterDialogFragment">
 
     <LinearLayout
@@ -31,7 +32,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/description_input_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -59,7 +60,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date_input_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -87,7 +88,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/amount_to_add"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">

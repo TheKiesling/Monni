@@ -58,10 +58,10 @@ class LimitDialogFragment(
                     categoryDatabase.categoryDao().updateLimit(id, category, limit)
                 }
 
-                requireView().findNavController().navigate(R.id.action_limitDialogFragment_to_categoryFragment)
+                dismiss()
             }
             cancelButtonLimitDialog.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_limitDialogFragment_to_categoryFragment)
+                dismiss()
             }
         }
     }

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
@@ -21,15 +22,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
 
 
 class NewRegisterDialogFragment(
     private val category: String,
     private val idRegister: Int?
-) : BottomSheetDialogFragment() {
+) : DialogFragment() {
     private lateinit var binding: FragmentNewRegisterDialogBinding
     private lateinit var dataStore: DataStorage
-    private lateinit var id: String
+    private var id: String = ""
     private var amount: Double = 0.0
     private lateinit var date: LocalDate
     private lateinit var description: String
@@ -58,8 +60,8 @@ class NewRegisterDialogFragment(
     }
 
     private fun setInfo() {
-        if (idRegister != null){
-            CoroutineScope(Dispatchers.IO).launch{
+        if (idRegister != null) {
+            CoroutineScope(Dispatchers.IO).launch {
                 register = categoryDatabase.registerDao().getRegisterById(idRegister)
                 binding.apply {
                     amountToAdd.editText!!.setText(register.amount.toString())
@@ -71,10 +73,15 @@ class NewRegisterDialogFragment(
     }
 
     private fun setListeners() {
-        binding.apply{
+        binding.apply {
             saveButtonNewRegisterDialog.setOnClickListener {
                 amount = binding.amountToAdd.editText!!.text.toString().toDouble()
-                date = LocalDate.parse(binding.dateInputDialog.editText!!.text.toString())
+
+                var temp = binding.dateInputDialog.editText!!.text.toString()
+                date = LocalDate.of(
+                    temp.substring(6).toInt(),
+                    temp.substring(3, 5).toInt(), temp.substring(0, 2).toInt()
+                )
                 description = binding.descriptionInputDialog.editText!!.text.toString()
                 CoroutineScope(Dispatchers.IO).launch {
                     id = dataStore.getValueFromKey("email")!!
@@ -87,24 +94,27 @@ class NewRegisterDialogFragment(
                     date = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
                 )
 
-                val register = register.copy(
-                    id = id,
-                    category = category,
-                    amount = amount,
-                    description = description,
-                    date = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
-                )
-                CoroutineScope(Dispatchers.IO).launch {
-                    if (idRegister == null)
+                if (idRegister == null)
+                    CoroutineScope(Dispatchers.IO).launch {
                         categoryDatabase.registerDao().insert(newRegister)
-                    else
+                    }
+                else {
+                    val register = register.copy(
+                        id = id,
+                        category = category,
+                        amount = amount,
+                        description = description,
+                        date = date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"))
+                    )
+                    CoroutineScope(Dispatchers.IO).launch {
                         categoryDatabase.registerDao().update(register)
+                    }
                 }
-
-                requireView().findNavController().navigate(R.id.action_newRegisterDialogFragment_to_categoryFragment)
+                dismiss()
             }
+
             cancelButtonNewRegisterDialog.setOnClickListener {
-                requireView().findNavController().navigate(R.id.action_newRegisterDialogFragment_to_categoryFragment)
+                dismiss()
             }
         }
     }

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +28,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentCategoryBinding
-    private lateinit var registersList: MutableList<Register>
+    private var registersList: MutableList<Register> = mutableListOf()
     private lateinit var txtTitle: TextView
     private lateinit var categoryDatabase: CategoryDatabase
 

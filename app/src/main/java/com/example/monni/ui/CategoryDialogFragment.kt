@@ -35,9 +35,11 @@ class CategoryDialogFragment(
         binding.apply {
             newRegisterOptionDialog.setOnClickListener {
                 NewRegisterDialogFragment(category, null).show(parentFragmentManager, "dialog")
+                dismiss()
             }
             modifyLimitOptionDialog.setOnClickListener {
                 LimitDialogFragment(category).show(parentFragmentManager, "dialog")
+                dismiss()
             }
         }
     }
