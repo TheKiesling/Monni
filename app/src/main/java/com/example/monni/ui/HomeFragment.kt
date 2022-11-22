@@ -55,9 +55,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
 
     private fun setInfo(){
         CoroutineScope(Dispatchers.IO).launch {
-            val categories = categoryDatabase.categoryDao().getCategories(args.email)
-
-
+            var categories = categoryDatabase.categoryDao().getCategories(args.email)
 
             categoriesList.addAll(categories)
             CoroutineScope(Dispatchers.Main).launch {
@@ -104,6 +102,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
     private fun setupRecyclers() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
+        println(categoriesList)
         recyclerView.adapter = CategoriesAdapter(categoriesList, this@HomeFragment)
     }
 
@@ -111,4 +110,5 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
         val action = HomeFragmentDirections.actionHomeFragmentToCategoryFragment(category.name, args.email)
         requireView().findNavController().navigate(action)
     }
+
 }
