@@ -18,14 +18,15 @@
     <TextView
         android:id="@+id/textview_home_fragment_savings"
         style="@style/main_title_text"
+        android:layout_marginHorizontal="@dimen/margin_32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_20dp"
         android:gravity="center"
-        android:text="@string/savings_text_home"
+        tools:text="@string/savings_text_home"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/home_icon"
         app:layout_constraintTop_toBottomOf="@+id/textview_home_fragment_username" />
 
     <TextView

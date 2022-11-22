@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/black2"
         />
 
     <TextView
@@ -29,7 +29,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="@color/ube"
+        android:textColor="@color/ube2"
         android:layout_marginTop="@dimen/main_title_text_top_margin"
         />
 
@@ -140,6 +140,7 @@
         android:id="@+id/fragment_newUser_ic_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:tint="@color/gray"
         android:src="@drawable/ic_baseline_expand_more_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/title"
@@ -153,7 +154,7 @@
         android:background="@drawable/new_user_wave_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/black2"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

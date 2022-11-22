@@ -38,6 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_5dp"
+        app:tint="@color/gray"
         app:layout_constraintStart_toEndOf="@id/progressBar"
         android:src="@drawable/ic_baseline_expand_more_24"
         android:rotation="-90"

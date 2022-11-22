@@ -15,16 +15,14 @@ import com.example.monni.data.local.entity.Category
 import com.example.monni.data.local.entity.User
 import com.example.monni.data.local.source.CategoryDatabase
 import com.example.monni.data.local.storage.DataStorage
-import com.example.monni.data.remote.firestore.FirestoreAuthApiImpl
-import com.example.monni.data.repository.auth.AuthRepository
-import com.example.monni.data.repository.auth.AuthRepositoryImpl
 import com.example.monni.databinding.FragmentNewUserBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class NewUserFragment : Fragment(R.layout.fragment_new_user) {
     private lateinit var binding: FragmentNewUserBinding
     private val viewModel: NewUserFragmentViewModel by viewModels()
@@ -65,6 +63,7 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
                 when(state){
                     is LoginFragmentUiState.Success -> {
                         CoroutineScope(Dispatchers.IO).launch {
+                            user = User(email, 300.0, 0.0)
                             dataStore.saveKeyValue("email", email)
                             dataStore.saveKeyValue("name", name)
                             categoryDatabase.userDao().insert(user)
@@ -118,20 +117,21 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
         var i = -1
         for (name in names) {
             i++
+            var category = Category(
+                id = email,
+                amount = 0.0,
+                color = colors[i],
+                name = name,
+                limit = 1000.0
+            )
             CoroutineScope(Dispatchers.IO).launch {
                 categoryDatabase.categoryDao().insert(
                     listOf(
-                        Category(
-                            id = email,
-                            amount = 0.0,
-                            color = colors[i],
-                            name = name,
-                            limit = 1000.0
-                        )
+                        category
                     )
                 )
-
             }
+
         }
     }
 }

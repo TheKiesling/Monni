@@ -26,7 +26,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
     private lateinit var dataStore: DataStorage
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentHomeBinding
-    private var categoriesList: MutableList<Category> = mutableListOf()
+    private var categoriesList: List<Category> = listOf()
     private lateinit var categoryDatabase: CategoryDatabase
     private lateinit var name: String
 
@@ -49,6 +49,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
             CategoryDatabase::class.java,
             "dbname"
         ).build()
+
         setInfo()
         setListeners()
     }
@@ -56,11 +57,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
     private fun setInfo(){
         CoroutineScope(Dispatchers.IO).launch {
             val categories = categoryDatabase.categoryDao().getCategories(args.email)
-
-            if(categoriesList.isEmpty()){
-                categoriesList.addAll(categories)
-            }
-            categoriesList.addAll(categories)
+            println(categories)
+            categoriesList = categories
             CoroutineScope(Dispatchers.Main).launch {
                 setupRecyclers()
             }
@@ -73,6 +71,8 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
                     }
                 }
             }
+
+            binding.textviewHomeFragmentSavings.text = "Se han ahorrado       Q" + categoryDatabase.userDao().getUser(args.email).savings
         }
     }
 
