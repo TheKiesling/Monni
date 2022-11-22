@@ -31,7 +31,6 @@ class GoalDialogFragment(private val email:String): DialogFragment() {
     private var currentGoal: Double = 0.0
     private var currentSavings: Double = 0.0
     private lateinit var categoryDB: CategoryDatabase
-    private var amountSavings: Double = 0.0
     private lateinit var vm: GoalDialogViewModel
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

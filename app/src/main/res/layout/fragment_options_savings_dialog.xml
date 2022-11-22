@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.OptionsSavingsDialog"
+    android:background="@drawable/dialog_format">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/general_text"
+            android:layout_marginVertical="@dimen/margin_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:text="@string/options_text"
+            android:textSize="@dimen/subtitle_text_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/modify_goal_text"
+            style="@style/general_text"
+            android:layout_marginVertical="@dimen/margin_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/modify_goal_text" />
+
+        <TextView
+            android:id="@+id/add_savings_text"
+            style="@style/general_text"
+            android:layout_marginVertical="@dimen/margin_20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/add_amount_savings" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

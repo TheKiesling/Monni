@@ -34,14 +34,14 @@
     <string name="add_notification_text">Nueva notificacion</string>
     <string name="name">Nombre</string>
     <string name="c_mo_funciona">¿Cómo funciona?</string>
-    <string name ="actividades_recreativas">Actividades Recreativas</string>
-    <string name ="gastos_fijos">Gastos Fijos</string>
-    <string name ="transporte">Transporte</string>
-    <string name ="comida">Comida</string>
-    <string name ="vestimenta">Vestimenta</string>
-    <string name ="supermercado">Supermercado</string>
-    <string name ="emergencia">Emergencia</string>
-    <string name ="shampoo">#FCD3F7</string>
+    <string name="actividades_recreativas">Actividades Recreativas</string>
+    <string name="gastos_fijos">Gastos Fijos</string>
+    <string name="transporte">Transporte</string>
+    <string name="comida">Comida</string>
+    <string name="vestimenta">Vestimenta</string>
+    <string name="supermercado">Supermercado</string>
+    <string name="emergencia">Emergencia</string>
+    <string name="shampoo">#FCD3F7</string>
     <string name="brilliant_lavender">#FFB9F1</string>
     <string name="light_fuchsia_pink">#FF83EA</string>
     <string name="lavender_blue">#D0C7FF</string>
@@ -64,6 +64,7 @@
     <string name="limite_actual">Limite actual: Q</string>
     <string name="mucho_texto">Ingrese una descripción más corta</string>
     <string name="cantidad_invalida">Cantidad invalida</string>
-    <string name = "fecha_invalida">Fecha invalida</string>
+    <string name="fecha_invalida">Fecha invalida</string>
     <string name="more_info_text">Más información</string>
+    <string name="add_amount_savings">Agregar ahorro</string>
 </resources>

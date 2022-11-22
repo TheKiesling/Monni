@@ -74,7 +74,7 @@ class SavingsFragment : Fragment(R.layout.fragment_savings), SavingsAdapter.Savi
     private fun setListeners() {
         binding.apply{
             textViewSavingsFragmentMore.setOnClickListener {
-                GoalDialogFragment(args.email).show(parentFragmentManager,"dialog")
+                OptionsSavingsDialog(args.email).show(parentFragmentManager,"dialog")
             }
             buttonSavingsFragmentSupport.setOnClickListener{
                 TipDialogFragment().show(parentFragmentManager,"dialog")
