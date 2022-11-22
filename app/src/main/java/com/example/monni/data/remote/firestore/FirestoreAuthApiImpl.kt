@@ -32,8 +32,12 @@ class FirestoreAuthApiImpl: AuthApi{
     ): Resource<String> {
         return try {
             val auth = Firebase.auth
+<<<<<<< Updated upstream
             val response = auth.signInWithEmailAndPassword(email, password).await()
 
+=======
+            val response = auth.createUserWithEmailAndPassword(email, password).await()
+>>>>>>> Stashed changes
             val user = response.user
             if (user != null)
                 Resource.Success(data = user.uid)

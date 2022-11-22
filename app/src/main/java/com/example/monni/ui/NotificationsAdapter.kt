@@ -3,7 +3,6 @@ package com.example.monni.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.monni.R
@@ -18,7 +17,7 @@ class NotificationsAdapter (
     ): RecyclerView.Adapter<NotificationsAdapter.ViewHolder>() {
 
         interface NotificationItemListener {
-
+            fun onNotificationItemClicked(notification: Notification, position: Int)
         }
 
         class ViewHolder(
@@ -39,10 +38,21 @@ class NotificationsAdapter (
                 date.text = notification.dateLimit.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
                 description.text = notification.desc
                 title.text = notification.title
+<<<<<<< Updated upstream
                 var temp = ChronoUnit.DAYS.between(LocalDate.now(), noti.dateLimit).toString()
                 if(temp.toInt() < 0) temp = "0"
                 
                 days.text = temp
+=======
+                var temp = ChronoUnit.DAYS.between(LocalDate.now(), LocalDate.of(notification.dateLimit.substring(6).toInt(),
+                    notification.dateLimit.substring(3,5).toInt(), notification.dateLimit.substring(0,2).toInt())).toString()
+                days.text = temp
+                if(temp.toInt() <= 0) {
+                    days.text = "0"
+                    days.setTextColor(-65536)
+                }
+
+>>>>>>> Stashed changes
             }
 
         }
@@ -57,7 +67,7 @@ class NotificationsAdapter (
         }
 
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.setData(dataSet[position])
+            holder.setData(dataSet.get(position))
         }
 
     }

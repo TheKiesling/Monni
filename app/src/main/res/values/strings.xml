@@ -55,5 +55,10 @@
     <string name="close_text_dialog">Cerrar</string>
     <string name="savings_explanation_text">Cada mes, se calcula la diferencia entre el dinero gastado y el límite de cada categoría. Esta diferencia será agregada al total ahorrado, con el objetivo de llegar a la meta establecida en el transcurso de un año.</string>
     <string name="how_do_savings_work_title">¿Cómo funcionan los ahorros?</string>
+<<<<<<< Updated upstream
 >>>>>>> Stashed changes
 </resources>
+=======
+    <string name="more_info_text">Mas informacion</string>
+</resources>
+>>>>>>> Stashed changes

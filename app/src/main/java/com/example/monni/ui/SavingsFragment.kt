@@ -7,24 +7,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
-import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
 import com.example.monni.R
 import com.example.monni.data.local.entity.SavingTip
-import com.example.monni.database.Database
-import com.example.monni.database.User
+import com.example.monni.data.local.source.CategoryDatabase
+import com.example.monni.data.local.source.InitializerSavingTips
 import com.example.monni.databinding.FragmentSavingsBinding
-import com.github.mikephil.charting.data.PieEntry
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 
 class SavingsFragment : Fragment(R.layout.fragment_savings), SavingsAdapter.SavingsTipsItemListener{
+    private val args: SavingsFragmentArgs by navArgs()
     private lateinit var binding: FragmentSavingsBinding
     private lateinit var recyclerView: RecyclerView
-    private var database: Database = Database
-    lateinit var listOfTips: List<SavingTip>
+    private var userGoal = 0.0
+    private var userSavings = 0.0
+    private var listOfTips: MutableList<SavingTip> = mutableListOf()
+    private lateinit var categoryDatabase: CategoryDatabase
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,25 +40,33 @@ class SavingsFragment : Fragment(R.layout.fragment_savings), SavingsAdapter.Savi
     @SuppressLint("NotifyDataSetChanged")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        categoryDatabase = Room.databaseBuilder(
+            requireContext(),
+            CategoryDatabase::class.java,
+            "dbname"
+        ).build()
+
+        recyclerView = binding.savingsRecyclerView
+
         val progressBar: ProgressBar = binding.progressBarSavingsFragment
         val progressBarGoalText = binding.textViewSavingsFragmentSavingsGoal
         val progressBarSavingsText = binding.textViewSavingsFragmentSavings
         val savingsText = binding.textViewSavingsFragmentGoalText
-        val user: User = database.getUser("the_kiesling")
-        val userSavings = user.savings
-        val userGoal = user.goal
 
-
-        savingsText.text = "Has alcanzado el ${((userSavings/userGoal)* 100).toInt()}% de tu meta"
-        progressBar.progress = ((userSavings/userGoal)* 100).toInt()
-        progressBarGoalText.text = "Q." + userGoal.toString()
-        progressBarSavingsText.text = "Q." + userSavings.toString()
-        recyclerView = binding.savingsRecyclerView
-
-        if(userSavings==userGoal){
-            progressBarGoalText.visibility = View.GONE
+        CoroutineScope(Dispatchers.IO).launch {
+            userSavings = categoryDatabase.userDao().getUser(args.email).savings
+            userGoal = categoryDatabase.userDao().getUser(args.email).goal
+            CoroutineScope(Dispatchers.IO).launch {
+                savingsText.text =
+                    ((userSavings / userGoal) * 100).toInt().toString() + "% alcanzado"
+                progressBar.progress = ((userSavings / userGoal) * 100).toInt()
+                progressBarGoalText.text = "Q." + userGoal.toString()
+                progressBarSavingsText.text = "Q." + userSavings.toString()
+            }
         }
-        setupRecyclers()
+
+        setInfo()
         setListeners()
     }
 
@@ -74,8 +84,7 @@ class SavingsFragment : Fragment(R.layout.fragment_savings), SavingsAdapter.Savi
 
     @SuppressLint("NotifyDataSetChanged")
     private fun setupRecyclers(){
-        val database = Database
-        listOfTips = database.getSavingTips()
+
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = SavingsAdapter(listOfTips, this)
@@ -83,5 +92,19 @@ class SavingsFragment : Fragment(R.layout.fragment_savings), SavingsAdapter.Savi
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onTipItemClicked(tip: SavingTip, position: Int) {
+    }
+
+    private fun setInfo(){
+        CoroutineScope(Dispatchers.IO).launch {
+            var tips = categoryDatabase.savingTipsDao().getSavingTips()
+            if(tips.isEmpty()){
+                InitializerSavingTips.createTipCall(categoryDatabase)
+                tips = categoryDatabase.savingTipsDao().getSavingTips()
+            }
+            listOfTips = tips
+            CoroutineScope(Dispatchers.Main).launch {
+                setupRecyclers()
+            }
+        }
     }
 }

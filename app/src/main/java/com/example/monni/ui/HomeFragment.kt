@@ -41,7 +41,6 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         recyclerView = binding.recyclerViewHomeFragment
         dataStore = DataStorage(requireContext())
         categoryDatabase = Room.databaseBuilder(
@@ -77,7 +76,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
         binding.apply{
             bottomNavigationHomeFragment.setOnItemSelectedListener { item ->
                 when (item.itemId) {
-                    R.id.menu_item_savings -> requireView().findNavController().navigate(R.id.action_homeFragment_to_savingsFragment)
+                    R.id.menu_item_savings -> requireView().findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSavingsFragment(args.email))
 
                     R.id.menu_item_graph -> requireView().findNavController().navigate(R.id.action_homeFragment_to_pieChartFragment)
                 }

@@ -1,14 +1,17 @@
 package com.example.monni.database
 
+<<<<<<< Updated upstream:app/src/main/java/com/example/monni/database/Database.kt
 import com.example.monni.R
 <<<<<<< Updated upstream
 import com.example.monni.data.local.entity.Category
 import com.example.monni.data.local.entity.Register
 =======
+=======
+import com.example.monni.data.local.entity.Category
+>>>>>>> Stashed changes:app/src/main/java/com/example/monni/data/local/Database.kt
 import com.example.monni.data.local.entity.SavingTip
 >>>>>>> Stashed changes
 import java.time.LocalDate
-import java.util.*
 
 data class User(
     val username: String,
@@ -130,16 +133,6 @@ object Database {
             expand = false
         )
     )
-
-    fun getNotis(): List<Notification> {
-        val notis = notifications.sortedBy{ it.dateLimit}
-        return notis
-    }
-
-    fun getSavingTips(): List<SavingTip> {
-        val savingTips = savingTips
-        return savingTips
-    }
 
     fun getUser(username: String): User {
         val user = users.first{it.username.equals(username)}
