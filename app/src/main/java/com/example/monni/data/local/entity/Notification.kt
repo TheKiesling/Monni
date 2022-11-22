@@ -5,10 +5,8 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Notification(
-    @PrimaryKey (autoGenerate = true)
-    val notificationID: Int = 0,
     val id: String,
     val dateLimit: String,
-    val title: String,
+    @PrimaryKey val title: String,
     val desc: String
 )

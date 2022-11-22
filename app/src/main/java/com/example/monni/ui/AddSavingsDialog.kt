@@ -58,8 +58,8 @@ class AddSavingsDialog (private val email:String) : DialogFragment(){
                     }
                 }
 
-                else if(currentGoal+amount > currentGoal) {
-                    categoryDB.userDao().updateLimit(email, currentGoal+(currentSavings-amount))
+                else if(currentSavings+amount > currentGoal) {
+                    categoryDB.userDao().updateLimit(email, currentSavings+amount)
                     currentSavings += amount
                     categoryDB.userDao().updateSavings(email, currentSavings)
                     CoroutineScope(Dispatchers.Main).launch {

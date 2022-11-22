@@ -9,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.monni.data.local.entity.Notification
 import com.example.monni.data.local.source.CategoryDatabase
@@ -96,7 +97,11 @@ class NotificationDialogFragment(): DialogFragment() {
                                 )
                             )
                         }
+
+
+
                         dismiss()
+
                     }
 
                     NotificationsDialogUiState.Default -> {
