@@ -55,4 +55,7 @@
     <string name="savingsGoal">Meta de ahorros</string>
     <string name="login_text">Iniciar sesión</string>
     <string name="createAnAccount">¡Crea una!</string>
+    <string name="errorInvalidEmail" translatable="false">I</string>
+    <string name="tips_de_ahorros">Tips de Ahorros</string>
+    <string name="se_han_ahorrado">Se han ahorrado      Q</string>
 </resources>

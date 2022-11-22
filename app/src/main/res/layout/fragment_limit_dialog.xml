@@ -25,6 +25,7 @@
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
             android:gravity="center_vertical"
+            android:textColor="#767676"
             android:textSize="@dimen/subtitle_text_size"
             android:text="@string/limite_de_gasto" />
 
@@ -50,6 +51,7 @@
             android:layout_weight="0.3"
             android:gravity="center_vertical"
             android:text="@string/modify_limit_text"
+            android:textColor="#767676"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold" />
 

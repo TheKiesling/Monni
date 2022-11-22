@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:text="@string/options_text"
+            android:textColor="#767676"
             android:textSize="@dimen/subtitle_text_size"
             android:textStyle="bold" />
 
@@ -33,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
+            android:textColor="#767676"
             android:clickable="true"
             android:focusable="true"
             android:text="@string/modify_goal_text" />
@@ -46,6 +48,7 @@
             android:layout_marginStart="@dimen/margin_16dp"
             android:clickable="true"
             android:focusable="true"
+            android:textColor="#767676"
             android:text="@string/add_amount_savings" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

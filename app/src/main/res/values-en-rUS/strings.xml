@@ -55,4 +55,6 @@
     <string name="limite_actual">Current limit: Q</string>
     <string name="cantidad_invalida">Invalid quantity</string>
     <string name="fecha_invalida">Invalid date</string>
+    <string name="tips_de_ahorros">Saving tips</string>
+    <string name="se_han_ahorrado">You have saved      Q</string>
 </resources>

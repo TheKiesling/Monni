@@ -24,6 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
+            android:textColor="#767676"
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
             android:textStyle="bold"
@@ -37,7 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:gravity="center_vertical"
-            android:textColor="@color/ube"
+            android:textColor="#767676"
+
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
             android:text="@string/actualGoal" />
@@ -49,6 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_weight="0.3"
+            android:textColor="#767676"
             android:gravity="center_vertical"
             android:text="@string/modify_goal_text"
             android:textSize="@dimen/general_text_size"

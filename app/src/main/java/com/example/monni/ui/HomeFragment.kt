@@ -71,8 +71,12 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
                     }
                 }
             }
+            CoroutineScope(Dispatchers.Main).launch {
+                binding.apply {
+                    binding.textviewHomeFragmentSavings.text = getString(R.string.se_han_ahorrado) + categoryDatabase.userDao().getUser(args.email).savings
+                }
+            }
 
-            binding.textviewHomeFragmentSavings.text = "Se han ahorrado       Q" + categoryDatabase.userDao().getUser(args.email).savings
         }
     }
 

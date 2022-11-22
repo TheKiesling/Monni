@@ -55,7 +55,6 @@
     <string name="firebaseErrorInvalidEmail" translatable="false">ERROR_INVALID_EMAIL</string>
     <string name="errorInvalidEmail" translatable="false">El correo electrónico no es valido</string>
     <string name="firebaseErrorWrongPassword" translatable="false">ERROR_WRONG_PASSWORD</string>
-    <string name="errorWrongPassword" translatable="false">La contraseña es incorrecta</string>
     <string name="firebaseErrorEmailAlreadyInUse" translatable="false">ERROR_EMAIL_ALREADY_IN_USE</string>
     <string name="errorEmailAlreadyInUse" translatable="false">El correo ingresado ya es usado por otra cuenta</string>
     <string name="firebaseErrorWeakPassword" translatable="false">ERROR_WEAK_PASSWORD</string>
@@ -71,4 +70,7 @@
     <string name="savingsGoal">Meta de ahorros</string>
     <string name="login_text">Iniciar sesión</string>
     <string name="createAnAccount">¡Crea una!</string>
+    <string name="se_han_ahorrado">Se han ahorrado      Q</string>
+    <string name="errorWrongPassword" translatable="false">La contraseña es incorrecta</string>
+    <string name="tips_de_ahorros">Tips de Ahorros</string>
 </resources>

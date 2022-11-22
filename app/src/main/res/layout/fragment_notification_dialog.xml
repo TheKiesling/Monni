@@ -28,12 +28,14 @@
             android:layout_marginBottom="@dimen/margin_16dp"
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
+            android:textColor="#767676"
             android:textStyle="bold"
             android:text="@string/add_notification_text" />
 
         <TextView
             android:id="@+id/title_notification_dialog"
             style="@style/general_text"
+            android:textColor="#767676"
             android:layout_width="match_parent"
             android:layout_height="@dimen/zero"
             android:layout_marginStart="@dimen/margin_16dp"
@@ -76,6 +78,7 @@
             android:layout_height="@dimen/zero"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_weight="0.7"
+            android:textColor="#767676"
             android:gravity="center_vertical"
             android:text="@string/descNotification"
             android:textSize="@dimen/general_text_size"
@@ -115,6 +118,7 @@
             android:layout_height="@dimen/zero"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_weight="0.7"
+            android:textColor="#767676"
             android:gravity="center_vertical"
             android:text="@string/limitDate"
             android:textSize="@dimen/general_text_size"
