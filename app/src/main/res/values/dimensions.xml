@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
+
+    <dimen name="zero">0dp</dimen>
+
     <!-- Text dimensions -->
     <dimen name="general_text_size">16sp</dimen>
     <dimen name="main_title_text_size">32sp</dimen>
 
+    <dimen name="notification_title_size">14sp</dimen>
+    <dimen name="notification_text_size">11sp</dimen>
+
     <dimen name="small_text_size">12sp</dimen>
     <dimen name="subtitle_text_size">20sp</dimen>
+    <dimen name="big_text_size">45sp</dimen>
+
+    <!-- Styles -->
+    <dimen name="styleElevation">2dp</dimen>
+    <dimen name="styleTranslation">90dp</dimen>
 
     <!-- Heights -->
-
     <dimen name="main_title_text_top_margin">65sp</dimen>
     <dimen name="return_arrow_margin">30dp</dimen>
     <dimen name="list_item_with_image_height">72dp</dimen>
     <dimen name="list_item_with_one_line_height">56dp</dimen>
+    <dimen name="item_height">35dp</dimen>
 
     <!-- Margins -->
     <dimen name="margin_16dp">16dp</dimen>
@@ -22,9 +33,18 @@
     <dimen name="margin_5dp">5dp</dimen>
     <dimen name="margin_24dp">24dp</dimen>
     <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_small2">10dp</dimen>
+    <dimen name="medium_margin">64dp</dimen>
+    <dimen name="medium_margin_big">80dp</dimen>
+    <dimen name="big_margin_medium">100dp</dimen>
+    <dimen name="big_margin">150dp</dimen>
 
     <dimen name="dialog_format_radius">16dp</dimen>
     <dimen name="dialog_button_w">136dp</dimen>
     <dimen name="dialog_input_w">196dp</dimen>
+    <dimen name="dialog_width1">300dp</dimen>
+    <dimen name="dialog_width2">325dp</dimen>
+    <dimen name="dialog_height1">500dp</dimen>
+    <dimen name="dialog_square">250dp</dimen>
 
 </resources>

@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/Dialog"
-        android:layout_width="320dp"
+        android:layout_width="@dimen/dialog_width2"
         android:layout_height="wrap_content"
         android:background="@drawable/dialog_format2"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
             android:text="@string/more_info_text"
             android:textColor="@color/ube"
             android:textSize="@dimen/general_text_size"
-            app:cornerRadius="100dp"
+            app:cornerRadius="@dimen/big_margin_medium"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginBottom="@dimen/margin_16dp"
             app:layout_constraintBottom_toTopOf="@id/button_savingsFragment_close"
@@ -80,7 +80,7 @@
             android:text="@string/close_text_dialog"
             android:textColor="@color/gray"
             android:textSize="@dimen/general_text_size"
-            app:cornerRadius="100dp"
+            app:cornerRadius="@dimen/big_margin_medium"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

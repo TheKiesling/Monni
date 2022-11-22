@@ -67,4 +67,8 @@
     <string name="fecha_invalida">Fecha invalida</string>
     <string name="more_info_text">Más información</string>
     <string name="add_amount_savings">Agregar ahorro</string>
+    <string name="actualGoal">Meta actual: Q</string>
+    <string name="savingsGoal">Meta de ahorros</string>
+    <string name="login_text">Iniciar sesión</string>
+    <string name="createAnAccount">¡Crea una!</string>
 </resources>

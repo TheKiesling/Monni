@@ -19,7 +19,7 @@
 
     <TextView
         android:id="@+id/square_element_pie_fragment"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         android:background="@drawable/square_element_pie_chart"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_expenses_pie_fragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:layout_marginTop="@dimen/margin_16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,8 +38,8 @@
         tools:listitem="@layout/pie_chart_item" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
         android:layout_marginBottom="@dimen/margin_20dp"
         app:layout_constraintBottom_toTopOf="@+id/square_element_pie_fragment"
         app:layout_constraintEnd_toEndOf="parent"

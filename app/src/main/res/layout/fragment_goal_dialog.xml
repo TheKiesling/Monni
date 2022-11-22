@@ -27,7 +27,7 @@
             android:gravity="center_vertical"
             android:textSize="@dimen/subtitle_text_size"
             android:textStyle="bold"
-            android:text="Meta de ahorros" />
+            android:text="@string/savingsGoal" />
 
         <TextView
             android:layout_marginTop="@dimen/margin_small"
@@ -40,7 +40,7 @@
             android:textColor="@color/ube"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            android:text="Meta actual Q1000.00" />
+            tools:text="Meta actual Q1000.00" />
 
         <TextView
             android:id="@+id/new_goal_option_dialog"

@@ -9,7 +9,7 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="@dimen/dialog_height1"
         android:background="@drawable/new_user_wave"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/main_title_text"
-        android:textSize="35dp"
+        android:textSize="@dimen/main_title_text_size"
         android:fontFamily="@font/montserrat_medium"
         android:textStyle="bold"
         android:text="@string/crear_usuario"
@@ -35,17 +35,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_newUserFragment_email"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_newUserFragment_username"
         android:hint="@string/email"
 
-        app:boxCornerRadiusBottomEnd="32dp"
-        app:boxCornerRadiusTopEnd="32dp"
-        app:boxCornerRadiusBottomStart="32dp"
-        app:boxCornerRadiusTopStart="32dp"
+        app:boxCornerRadiusBottomEnd="@dimen/dialog_format_radius"
+        app:boxCornerRadiusTopEnd="@dimen/dialog_format_radius"
+        app:boxCornerRadiusBottomStart="@dimen/dialog_format_radius"
+        app:boxCornerRadiusTopStart="@dimen/dialog_format_radius"
 
         android:layout_marginStart="@dimen/main_title_text_top_margin"
         android:layout_marginEnd="@dimen/main_title_text_top_margin"
@@ -62,48 +62,48 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_newUserFragment_password"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_newUserFragment_email"
         android:hint="@string/password"
 
-        app:boxCornerRadiusBottomEnd="32dp"
-        app:boxCornerRadiusTopEnd="32dp"
-        app:boxCornerRadiusBottomStart="32dp"
-        app:boxCornerRadiusTopStart="32dp"
+        app:boxCornerRadiusBottomEnd="@dimen/dialog_format_radius"
+        app:boxCornerRadiusTopEnd="@dimen/dialog_format_radius"
+        app:boxCornerRadiusBottomStart="@dimen/dialog_format_radius"
+        app:boxCornerRadiusTopStart="@dimen/dialog_format_radius"
 
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/margin_16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:drawableStart="@drawable/ic_lock"
-            android:drawablePadding="16dp"
+            android:drawablePadding="@dimen/margin_16dp"
             android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_newUserFragment_username"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title"
         android:hint="@string/name"
 
-        app:boxCornerRadiusBottomEnd="32dp"
-        app:boxCornerRadiusTopEnd="32dp"
-        app:boxCornerRadiusBottomStart="32dp"
-        app:boxCornerRadiusTopStart="32dp"
+        app:boxCornerRadiusBottomEnd="@dimen/dialog_format_radius"
+        app:boxCornerRadiusTopEnd="@dimen/dialog_format_radius"
+        app:boxCornerRadiusBottomStart="@dimen/dialog_format_radius"
+        app:boxCornerRadiusTopStart="@dimen/dialog_format_radius"
 
-        android:layout_marginStart="64dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginStart="@dimen/medium_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
         android:layout_marginTop="@dimen/return_arrow_margin"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
@@ -111,7 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:drawableStart="@drawable/ic_person"
-            android:drawablePadding="16dp"
+            android:drawablePadding="@dimen/margin_16dp"
             />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -127,9 +127,9 @@
         android:textSize="@dimen/general_text_size"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:backgroundTint="@color/ube"
-        android:padding="16dp"
+        android:padding="@dimen/margin_16dp"
 
-        app:cornerRadius="32dp"
+        app:cornerRadius="@dimen/dialog_format_radius"
 
         android:layout_marginStart="@dimen/main_title_text_top_margin"
         android:layout_marginEnd="@dimen/main_title_text_top_margin"
@@ -148,8 +148,8 @@
         android:rotation="-90"/>
 
     <TextView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="@dimen/dialog_square"
+        android:layout_height="@dimen/dialog_square"
         android:background="@drawable/new_user_wave_top"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

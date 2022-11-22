@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="35dp"
+    android:layout_height="@dimen/item_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_itemCategory"
@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/textView_categoryItem_date"
         style="@style/general_text"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/return_arrow_margin"
@@ -24,19 +24,19 @@
     <TextView
         android:id="@+id/textView_categoryItem_desc"
         style="@style/general_text"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Gasolina"
         android:layout_weight="0.3"
         android:layout_gravity="center"
         android:textAlignment="center"
-        android:layout_marginEnd="10dp"/>
+        android:layout_marginEnd="@dimen/margin_small2"/>
 
     <TextView
         android:id="@+id/textView_categoryItem_amount"
         style="@style/general_text"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="350.25"
@@ -55,7 +55,7 @@
         android:layout_gravity="center_vertical"
 
         android:layout_weight="0.005"
-        android:layout_marginStart="5dp"
+        android:layout_marginStart="@dimen/margin_5dp"
         android:layout_marginEnd="@dimen/return_arrow_margin"/>
 
 </LinearLayout>

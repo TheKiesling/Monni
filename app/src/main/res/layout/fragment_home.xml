@@ -37,7 +37,7 @@
         android:layout_marginTop="@dimen/margin_20dp"
         android:text="@string/welcoming_text_home"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="@dimen/general_text_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,15 +73,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_32dp"
         android:src="@drawable/ic_exit"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="@dimen/margin_20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/white" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView_homeFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/zero"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation_homeFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -91,10 +91,10 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation_homeFragment"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         android:background="@drawable/round_corners_bottom_nav"
-        android:elevation="2dp"
+        android:elevation="@dimen/styleElevation"
         app:itemRippleColor="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:labelVisibilityMode="unlabeled"

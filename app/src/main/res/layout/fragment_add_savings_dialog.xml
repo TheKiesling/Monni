@@ -21,7 +21,7 @@
             android:id="@+id/amount_to_add_text"
             style="@style/general_text"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/zero"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_weight="0.7"
             android:gravity="center_vertical"
@@ -46,7 +46,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
+            android:layout_height="@dimen/zero"
             android:layout_gravity="center"
             android:layout_weight="1.35">
 

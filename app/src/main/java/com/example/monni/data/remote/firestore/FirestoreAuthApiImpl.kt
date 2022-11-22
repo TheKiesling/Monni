@@ -18,25 +18,23 @@ class FirestoreAuthApiImpl: AuthApi{
             val auth = Firebase.auth
             val response = auth.signInWithEmailAndPassword(email, password).await()
             val user = response.user
+
+            if (user != null)
+                Resource.Success(data = user.uid)
+            else
+                Resource.Error(message = "Error")
+            /*
             var message: String = ""
             var flag: Boolean = false
             var data = ""
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        println("wooooooooo")
                         if (user != null) {
-                            println("successful")
-                            flag = true
                             data = user.uid
-                            Resource.Success(data = data)
-                        }
-                        else{
-                            println("null")
-                            null
-                        }
 
-                    } else {
+                        }
+                    } /*else {
                         val errorCode = (task.exception).toString()
                         message =
                             if (errorCode == "ERROR_INVALID_EMAIL"){
@@ -48,19 +46,12 @@ class FirestoreAuthApiImpl: AuthApi{
                         else
                             "0"
                         println(message)
-                    }
+                    }*/
                 }
-            if (flag){
-                println("user")
-                data = user!!.uid
-                Resource.Success(data = data)
-            }
-            else{
-                println("error")
-                Resource.Error(message=message)}
+            Resource.Success(data = data)*/
 
         } catch (e: Exception) {
-            Resource.Error(message = "User not found")
+            Resource.Error(message = e.toString())
         }
     }
 

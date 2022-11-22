@@ -32,7 +32,7 @@ class LoginFragmentViewModel @Inject constructor(
                 }
 
                 is Resource.Error -> {
-                    _uiState.value = LoginFragmentUiState.Error("ola")
+                    _uiState.value = LoginFragmentUiState.Error(userId.message!!)
                 }
                 null -> {
                     _uiState.value = LoginFragmentUiState.Error("User not found")

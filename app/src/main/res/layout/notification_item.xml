@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/margin_small"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp">
+        app:cardCornerRadius="@dimen/margin_20dp"
+        app:cardElevation="@dimen/margin_small">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_notificationItem"
@@ -30,7 +30,7 @@
                 android:layout_marginStart="@dimen/main_title_text_top_margin"
                 android:scaleX="2.7"
                 android:scaleY="2.7"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="@dimen/margin_small2"
                 app:layout_constraintVertical_chainStyle="packed"
                 android:layout_marginBottom="@dimen/margin_20dp"
                 app:tint="@color/brilliant_lavender"/>
@@ -58,12 +58,12 @@
                 app:layout_constraintStart_toStartOf="@id/circle_counter"
                 app:layout_constraintEnd_toEndOf="@id/circle_counter"
                 android:textColor="@color/white"
-                android:layout_marginBottom="2dp"
-                android:textSize="28sp"/>
+                android:layout_marginBottom="@dimen/styleElevation"
+                android:textSize="@dimen/main_title_text_size"/>
 
             <TextView
                 android:id="@+id/notificationItem_title"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/zero"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/dias_restantes"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +71,7 @@
                 android:layout_marginTop="@dimen/margin_small"
                 android:fontFamily="@font/montserrat_medium"
                 android:textStyle="bold"
-                android:textSize="14sp"
+                android:textSize="@dimen/notification_title_size"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/notificationItem_desc"
                 android:textAlignment="center"
@@ -80,7 +80,7 @@
 
             <TextView
                 android:id="@+id/notificationItem_desc"
-                android:layout_width="0dp"
+                android:layout_width="@dimen/zero"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_regular"
                 app:layout_constraintTop_toBottomOf="@id/notificationItem_title"
@@ -90,7 +90,7 @@
                 android:layout_marginHorizontal="@dimen/margin_small"
                 tools:text="Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint."
                 android:textAlignment="center"
-                android:textSize="11sp"
+                android:textSize="@dimen/notification_text_size"
                 />
 
             <TextView
@@ -104,7 +104,7 @@
                 android:layout_marginHorizontal="@dimen/margin_small"
                 android:text="@string/fecha_l_mite"
                 android:textAlignment="center"
-                android:textSize="11sp"
+                android:textSize="@dimen/notification_text_size"
                 android:fontFamily="@font/montserrat_regular"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 android:layout_marginBottom="@dimen/margin_small"
@@ -120,8 +120,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginHorizontal="@dimen/margin_small"
                 tools:text="29/02/22"
-                android:paddingHorizontal="5dp"
-                android:textSize="11sp"
+                android:paddingHorizontal="@dimen/margin_5dp"
+                android:textSize="@dimen/notification_text_size"
                 android:fontFamily="@font/montserrat_regular"
                 android:background="@drawable/category_item_cost_bg"
                 android:textAlignment="center"

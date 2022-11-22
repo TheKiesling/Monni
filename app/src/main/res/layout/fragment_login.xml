@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/imageView_loginFragment_shapeLogin2"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero"
         android:background="@drawable/ic_wave2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/login"
-        android:textSize="45dp"
+        android:textSize="@dimen/big_text_size"
         android:fontFamily="@font/montserrat_medium"
         android:textStyle="bold"
         android:textColor="@color/ube"
@@ -45,25 +45,25 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_loginFragment_username"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView_loginFragment_title"
-        android:hint="Username"
+        android:hint="@string/email"
 
-        app:boxCornerRadiusBottomEnd="32dp"
-        app:boxCornerRadiusTopEnd="32dp"
-        app:boxCornerRadiusBottomStart="32dp"
-        app:boxCornerRadiusTopStart="32dp"
-        android:layout_marginHorizontal="64dp"
+        app:boxCornerRadiusBottomEnd="@dimen/margin_32dp"
+        app:boxCornerRadiusTopEnd="@dimen/margin_32dp"
+        app:boxCornerRadiusBottomStart="@dimen/margin_32dp"
+        app:boxCornerRadiusTopStart="@dimen/margin_32dp"
+        android:layout_marginHorizontal="@dimen/medium_margin"
         android:layout_marginTop="@dimen/margin_32dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:drawablePadding="16dp"
+            android:drawablePadding="@dimen/margin_16dp"
             android:drawableStart="@drawable/ic_person"
             android:shadowRadius="@integer/material_motion_duration_long_1"
             />
@@ -71,26 +71,26 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputLayout_loginFragment_password"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_username"
         android:hint="Password"
 
-        app:boxCornerRadiusBottomEnd="32dp"
-        app:boxCornerRadiusTopEnd="32dp"
-        app:boxCornerRadiusBottomStart="32dp"
-        app:boxCornerRadiusTopStart="32dp"
-        android:layout_marginHorizontal="64dp"
-        android:layout_marginTop="16dp"
+        app:boxCornerRadiusBottomEnd="@dimen/margin_32dp"
+        app:boxCornerRadiusTopEnd="@dimen/margin_32dp"
+        app:boxCornerRadiusBottomStart="@dimen/margin_32dp"
+        app:boxCornerRadiusTopStart="@dimen/margin_32dp"
+        android:layout_marginHorizontal="@dimen/medium_margin"
+        android:layout_marginTop="@dimen/margin_16dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:drawableLeft="@drawable/ic_lock"
-            android:drawablePadding="16dp"
+            android:drawablePadding="@dimen/margin_16dp"
             android:inputType="textPassword"
             />
     </com.google.android.material.textfield.TextInputLayout>
@@ -102,18 +102,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/inputLayout_loginFragment_password"
-        android:text="Iniciar Sesión"
+        android:text="@string/login_text"
         android:fontFamily="@font/montserrat_regular"
         android:textSize="@dimen/general_text_size"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
         android:backgroundTint="@color/maximum_blue_purple"
-        android:padding="16dp"
+        android:padding="@dimen/margin_16dp"
 
-        app:cornerRadius="32dp"
+        app:cornerRadius="@dimen/margin_32dp"
 
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="@dimen/medium_margin_big"
+        android:layout_marginEnd="@dimen/medium_margin_big"
+        android:layout_marginTop="@dimen/margin_32dp"
         />
 
     <TextView
@@ -128,22 +128,22 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/textView_loginFragment_createAccount"
         app:layout_constraintHorizontal_chainStyle="packed"
-        android:layout_marginBottom="174dp"
-        android:layout_marginEnd="4dp"/>
+        android:layout_marginBottom="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/margin_5dp"/>
 
     <TextView
         android:id="@+id/textView_loginFragment_createAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¡Crea una!"
+        android:text="@string/createAnAccount"
         android:textSize="@dimen/general_text_size"
         android:fontFamily="@font/montserrat_regular"
         android:textColor="@color/ube"
         app:layout_constraintStart_toEndOf="@id/textView_loginFragment_woAccount"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="174dp"
+        android:layout_marginBottom="@dimen/big_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="@dimen/margin_5dp"
         android:clickable="true"
         android:focusable="true"/>
 
