@@ -52,4 +52,12 @@
     <string name="close_text_dialog">Cerrar</string>
     <string name="savings_explanation_text">Cada mes, se calcula la diferencia entre el dinero gastado y el límite de cada categoría. Esta diferencia será agregada al total ahorrado, con el objetivo de llegar a la meta establecida en el transcurso de un año.</string>
     <string name="how_do_savings_work_title">¿Cómo funcionan los ahorros?</string>
+    <string name="firebaseErrorInvalidEmail">ERROR_INVALID_EMAIL</string>
+    <string name="errorInvalidEmail">El correo electrónico no es valido</string>
+    <string name="firebaseErrorWrongPassword">ERROR_WRONG_PASSWORD</string>
+    <string name="errorWrongPassword">La contraseña es incorrecta</string>
+    <string name="firebaseErrorEmailAlreadyInUse">ERROR_EMAIL_ALREADY_IN_USE</string>
+    <string name="errorEmailAlreadyInUse">El correo ingresado ya es usado por otra cuenta</string>
+    <string name="firebaseErrorWeakPassword">ERROR_WEAK_PASSWORD</string>
+    <string name="errorWeakPassword">La contraseña es inválida</string>
 </resources>

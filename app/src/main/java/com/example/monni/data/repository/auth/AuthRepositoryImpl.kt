@@ -6,11 +6,13 @@ import com.example.monni.data.remote.api.AuthApi
 class AuthRepositoryImpl(
     private val authApi: AuthApi
 ): AuthRepository {
-    override suspend fun signInWithEmailAndPassword(email: String, password: String) : String? {
+    override suspend fun signInWithEmailAndPassword(email: String, password: String) : Resource<String>? {
         val authResponse = authApi.signInWithEmailAndPassword(email, password)
 
         return if (authResponse is Resource.Success)
-            authResponse.data!!
+            Resource.Success(authResponse.data!!)
+        else if (authResponse is Resource.Error)
+            Resource.Error(authResponse.message!!)
         else
             null
     }
