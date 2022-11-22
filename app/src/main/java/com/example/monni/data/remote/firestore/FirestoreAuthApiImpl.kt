@@ -22,36 +22,24 @@ class FirestoreAuthApiImpl: AuthApi{
             if (user != null)
                 Resource.Success(data = user.uid)
             else
-                Resource.Error(message = "Error")
-            /*
-            var message: String = ""
-            var flag: Boolean = false
-            var data = ""
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        if (user != null) {
-                            data = user.uid
-
-                        }
-                    } /*else {
-                        val errorCode = (task.exception).toString()
-                        message =
-                            if (errorCode == "ERROR_INVALID_EMAIL"){
-                                "El correo electrónico no es valido"
-
-                            }
-                            else if (errorCode == "ERROR_WRONG_PASSWORD")
-                                "La contraseña es incorrecta"
-                        else
-                            "0"
-                        println(message)
-                    }*/
-                }
-            Resource.Success(data = data)*/
+                Resource.Error(message = "Error en la ejecución")
 
         } catch (e: Exception) {
-            Resource.Error(message = e.toString())
+            var message = when(e.toString()){
+                "ERROR_INVALID_EMAIL" -> "El correo electrónico no es válido"
+                "ERROR_INVALID_CUSTOM_TOKEN" -> "Ingrese todos los campos necesarios"
+                "ERROR_INVALID_CREDENTIAL" -> "Formato incorrecto en ingreso de datos"
+                "ERROR_CUSTOM_TOKEN_MISMATCH" -> "Error en la verificación del usuario"
+                "ERROR_WRONG_PASSWORD" -> "Contraseña incorrecta"
+                "ERROR_USER_MISMATCH" -> "No existe una cuenta registrada con este correo"
+                "ERROR_MISSING_EMAIL" -> "Ingrese un correo en el campo indicado"
+                "ERROR_WEAK_PASSWORD" -> "La contraseña se encuentra en un formato inválido (mínimo 6 caracteres)"
+                "ERROR_USER_NOT_FOUND" -> "No existe una cuenta registrada con este correo"
+                "ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL" -> "Ya existe una cuenta registrada con este correo"
+                "ERROR_EMAIL_ALREADY_IN_USE"-> "Ya existe una cuenta registrada con este correo"
+                else -> "Error en la ejecución"
+            }
+            Resource.Error(message = message)
         }
     }
 
@@ -67,9 +55,23 @@ class FirestoreAuthApiImpl: AuthApi{
             if (user != null)
                 Resource.Success(data = user.uid)
             else
-                Resource.Error(message = "Error")
+                Resource.Error(message = "Error en la ejecución")
         } catch (e: Exception) {
-            Resource.Error(message = "Error")
+            var message = when(e.toString()){
+                "ERROR_INVALID_EMAIL" -> "El correo electrónico no es válido"
+                "ERROR_INVALID_CUSTOM_TOKEN" -> "Ingrese todos los campos necesarios"
+                "ERROR_INVALID_CREDENTIAL" -> "Formato incorrecto en ingreso de datos"
+                "ERROR_CUSTOM_TOKEN_MISMATCH" -> "Error en la verificación del usuario"
+                "ERROR_WRONG_PASSWORD" -> "Contraseña incorrecta"
+                "ERROR_USER_MISMATCH" -> "No existe una cuenta registrada con este correo"
+                "ERROR_MISSING_EMAIL" -> "Ingrese un correo en el campo indicado"
+                "ERROR_WEAK_PASSWORD" -> "La contraseña se encuentra en un formato inválido (mínimo 6 caracteres)"
+                "ERROR_USER_NOT_FOUND" -> "No existe una cuenta registrada con este correo"
+                "ERROR_ACCOUNT_EXISTS_WITH_DIFFERENT_CREDENTIAL" -> "Ya existe una cuenta registrada con este correo"
+                "ERROR_EMAIL_ALREADY_IN_USE"-> "Ya existe una cuenta registrada con este correo"
+                else -> "Error en la ejecución"
+            }
+            Resource.Error(message = message)
         }
     }
 

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.room.Room
@@ -20,12 +21,13 @@ import com.example.monni.data.repository.auth.AuthRepositoryImpl
 import com.example.monni.databinding.FragmentNewUserBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 
 class NewUserFragment : Fragment(R.layout.fragment_new_user) {
     private lateinit var binding: FragmentNewUserBinding
-    private lateinit var authRepository: AuthRepository
+    private val viewModel: NewUserFragmentViewModel by viewModels()
     private lateinit var user: User
     private lateinit var dataStore: DataStorage
     private lateinit var email: String
@@ -52,11 +54,32 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
             "dbname"
         ).build()
 
-        authRepository = AuthRepositoryImpl(
-            authApi = FirestoreAuthApiImpl()
-        )
+        setObservables()
 
         setListeners()
+    }
+
+    private fun setObservables(){
+        lifecycleScope.launchWhenStarted {
+            viewModel.uiState.collectLatest { state ->
+                when(state){
+                    is LoginFragmentUiState.Success -> {
+                        CoroutineScope(Dispatchers.IO).launch {
+                            dataStore.saveKeyValue("email", email)
+                            dataStore.saveKeyValue("name", name)
+                            categoryDatabase.userDao().insert(user)
+                        }
+                        createCategories()
+                        val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment(email)
+                        requireView().findNavController().navigate(action)
+                    }
+
+                    is LoginFragmentUiState.Error ->{
+                        Toast.makeText(requireContext(), state.message, Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+        }
     }
 
     private fun setListeners() {
@@ -66,22 +89,7 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
                 password = binding.inputLayoutNewUserFragmentPassword.editText!!.text.toString()
                 name = binding.inputLayoutNewUserFragmentUsername.editText!!.text.toString()
 
-                lifecycleScope.launch {
-                    val userId = authRepository.createUserWithEmailAndPassword(email, password)
-                    user = User(email,300.00,0.00)
-                    if (userId != null) {
-                        CoroutineScope(Dispatchers.IO).launch {
-                            dataStore.saveKeyValue("email", email)
-                            dataStore.saveKeyValue("name", name)
-                            categoryDatabase.userDao().insert(user)
-                        }
-                        createCategories()
-                        val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment(email)
-                        requireView().findNavController().navigate(action)
-                    } else {
-                        Toast.makeText(requireContext(), "jk", Toast.LENGTH_LONG).show()
-                    }
-                }
+                viewModel.createAccount(email, password)
             }
         }
     }

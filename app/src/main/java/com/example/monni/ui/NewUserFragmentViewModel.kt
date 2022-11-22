@@ -11,20 +11,18 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class LoginFragmentViewModel @Inject constructor(
+class NewUserFragmentViewModel @Inject constructor(
     private val repository: AuthRepository
-): ViewModel(){
+): ViewModel() {
 
     private val _uiState: MutableStateFlow<LoginFragmentUiState> =
         MutableStateFlow(LoginFragmentUiState.Default)
     val uiState: StateFlow<LoginFragmentUiState> = _uiState
 
-
-
-    fun login(email: String, password: String){
+    fun createAccount(email: String, password: String){
         viewModelScope.launch {
             _uiState.value = LoginFragmentUiState.Default
-            val userId = repository.signInWithEmailAndPassword(email, password)
+            val userId = repository.createUserWithEmailAndPassword(email, password)
             when (userId) {
                 is Resource.Success -> {
                     _uiState.value = LoginFragmentUiState.Success(userId.data)
