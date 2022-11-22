@@ -1,0 +1,14 @@
+package com.example.monni.data.local.source
+
+import androidx.room.*
+import com.example.monni.data.local.entity.SavingTip
+import com.example.monni.data.local.entity.User
+
+@Dao
+interface UserDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(user: User)
+
+    @Query("SELECT * FROM user WHERE email = :email")
+    suspend fun getUser(email: String): User
+}

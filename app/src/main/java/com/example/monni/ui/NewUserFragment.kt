@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.room.Room
 import com.example.monni.R
 import com.example.monni.data.local.entity.Category
+import com.example.monni.data.local.entity.User
 import com.example.monni.data.local.source.CategoryDatabase
 import com.example.monni.data.local.storage.DataStorage
 import com.example.monni.data.remote.firestore.FirestoreAuthApiImpl
@@ -25,6 +26,7 @@ import kotlinx.coroutines.launch
 class NewUserFragment : Fragment(R.layout.fragment_new_user) {
     private lateinit var binding: FragmentNewUserBinding
     private lateinit var authRepository: AuthRepository
+    private lateinit var user: User
     private lateinit var dataStore: DataStorage
     private lateinit var email: String
     private lateinit var password: String
@@ -43,11 +45,13 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataStore = DataStorage(requireContext())
+
         categoryDatabase = Room.databaseBuilder(
             requireContext(),
             CategoryDatabase::class.java,
             "dbname"
         ).build()
+
         authRepository = AuthRepositoryImpl(
             authApi = FirestoreAuthApiImpl()
         )
@@ -64,13 +68,13 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
 
                 lifecycleScope.launch {
                     val userId = authRepository.createUserWithEmailAndPassword(email, password)
-
+                    user = User(email,300.00,0.00)
                     if (userId != null) {
                         CoroutineScope(Dispatchers.IO).launch {
                             dataStore.saveKeyValue("email", email)
                             dataStore.saveKeyValue("name", name)
+                            categoryDatabase.userDao().insert(user)
                         }
-                        createCategories()
                         val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment(email)
                         requireView().findNavController().navigate(action)
                     } else {
@@ -80,6 +84,7 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
             }
         }
     }
+
 
     private fun createCategories() {
         val names = listOf(
@@ -101,9 +106,8 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
             getString(R.string.light_cobalt_blue),
             getString(R.string.ube)
         )
-        var i = -1
+        var i = 0
         for (name in names) {
-            i++
             CoroutineScope(Dispatchers.IO).launch {
                 categoryDatabase.categoryDao().insert(
                     listOf(
@@ -111,14 +115,13 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
                             id = email,
                             amount = 0.0,
                             color = colors[i],
-                            name = name,
+                            name = names[i],
                             limit = 1000.0
                         )
                     )
                 )
-
+                i++
             }
-
         }
     }
 }

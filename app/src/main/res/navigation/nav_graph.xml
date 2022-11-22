@@ -118,6 +118,9 @@
         <action
             android:id="@+id/action_savingsFragment_to_goalDialogFragment2"
             app:destination="@id/goalDialogFragment2" />
+        <argument
+            android:name="email"
+            app:argType="string" />
     </fragment>
     <dialog
         android:id="@+id/tipDialogFragment"
