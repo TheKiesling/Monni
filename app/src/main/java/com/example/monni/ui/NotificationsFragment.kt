@@ -80,7 +80,7 @@ class NotificationsFragment : Fragment(R.layout.fragment_notifications), Notific
     @SuppressLint("NotifyDataSetChanged")
     private fun setupRecyclers(){
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.setHasFixedSize(true)
+        recyclerView.setHasFixedSize(false)
         recyclerView.adapter = NotificationsAdapter(notiList.sortedBy { LocalDate.of(it.dateLimit.substring(6).toInt(),
             it.dateLimit.substring(3,5).toInt(), it.dateLimit.substring(0,2).toInt()) }, this)
 

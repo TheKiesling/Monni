@@ -60,4 +60,9 @@
     <string name="errorEmailAlreadyInUse">El correo ingresado ya es usado por otra cuenta</string>
     <string name="firebaseErrorWeakPassword">ERROR_WEAK_PASSWORD</string>
     <string name="errorWeakPassword">La contraseña es inválida</string>
+    <string name="limite_de_gasto">Limite de Gasto</string>
+    <string name="limite_actual">Limite actual: Q</string>
+    <string name="mucho_texto">Ingrese una descripción más corta</string>
+    <string name="cantidad_invalida">Cantidad invalida</string>
+    <string name = "fecha_invalida">Fecha invalida</string>
 </resources>

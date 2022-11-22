@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,9 +28,10 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentCategoryBinding
-    private lateinit var registersList: MutableList<Register>
+    private var registersList: MutableList<Register> = mutableListOf()
     private lateinit var txtTitle: TextView
     private lateinit var categoryDatabase: CategoryDatabase
+    private lateinit var limitVM: LimitDialogViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -48,6 +50,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
             CategoryDatabase::class.java,
             "dbname"
         ).build()
+        limitVM = LimitDialogViewModel()
         setInfo()
         setupRecyclers()
         setListeners()
@@ -60,9 +63,11 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
             val registers = categoryDatabase.registerDao().getRegisters(args.email, args.categoryName)
             if (registers.isNotEmpty()) {
                 registersList.addAll(registers)
-                CoroutineScope(Dispatchers.Main).launch {
-                    setupRecyclers()
-                }
+            } else {
+                registersList = mutableListOf()
+            }
+            CoroutineScope(Dispatchers.Main).launch {
+                setupRecyclers()
             }
         }
     }
@@ -70,20 +75,23 @@ class CategoryFragment : Fragment(R.layout.fragment_category), RegistersAdapter.
     private fun setListeners() {
         binding.apply {
             imageViewCategoryFragmentMoreOptions.setOnClickListener {
-                CategoryDialogFragment(args.categoryName).show(parentFragmentManager,"dialog")
+                CategoryDialogFragment(args.categoryName, args.email).show(parentFragmentManager,"dialog")
+            }
+            fragmentCategoryIcReturn.setOnClickListener {
+                requireView().findNavController().navigate(CategoryFragmentDirections.actionCategoryFragmentToHomeFragment(args.email))
             }
         }
     }
 
     private fun setupRecyclers(){
-        lifecycleScope.launch(Dispatchers.IO) {
+        lifecycleScope.launch(Dispatchers.Main) {
             recyclerView.layoutManager = LinearLayoutManager(requireContext())
-            recyclerView.setHasFixedSize(true)
+            recyclerView.setHasFixedSize(false)
             recyclerView.adapter = RegistersAdapter(registersList, this@CategoryFragment)
         }
     }
 
     override fun onRegisterItemClicked(register: Register, position: Int) {
-        NewRegisterDialogFragment(args.categoryName, register.registerId).show(parentFragmentManager, "dialog")
+        NewRegisterDialogFragment(args.categoryName, register.registerId, args.email).show(parentFragmentManager, "dialog")
     }
 }

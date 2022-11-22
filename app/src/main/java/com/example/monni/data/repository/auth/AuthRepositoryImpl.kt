@@ -9,10 +9,12 @@ class AuthRepositoryImpl(
     override suspend fun signInWithEmailAndPassword(email: String, password: String) : Resource<String>? {
         val authResponse = authApi.signInWithEmailAndPassword(email, password)
 
-        return if (authResponse is Resource.Success)
+        return if (authResponse is Resource.Success){
             Resource.Success(authResponse.data!!)
-        else if (authResponse is Resource.Error)
-            Resource.Error(authResponse.message!!)
+        }
+        else if (authResponse is Resource.Error){
+            println("fnanfñan")
+            Resource.Error(authResponse.message!!)}
         else
             null
     }

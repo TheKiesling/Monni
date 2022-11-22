@@ -10,6 +10,7 @@
         android:layout_width="325dp"
         android:layout_height="500dp"
         android:orientation="vertical"
+        android:backgroundTint="@color/cardview_light_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,7 +24,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_16dp"
             android:layout_marginTop="@dimen/margin_16dp"
-            android:layout_weight="1"
+            android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
@@ -31,7 +32,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/description_input_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -43,6 +44,16 @@
                 android:background="@drawable/custom_edit_text"
                 android:inputType="textShortMessage" />
         </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/description_text_new_register_dialog_error"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:textAlignment="center"
+            android:textSize="@dimen/small_text_size"
+            tools:text="@string/add_new_register_text_description"
+            android:textColor="@color/rojo"/>
 
         <TextView
             android:id="@+id/date_text_dialog"
@@ -50,8 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_16dp"
-            android:layout_weight="1"
+            android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
@@ -59,7 +69,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/date_input_dialog"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -73,13 +83,23 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
+            android:id="@+id/date_text_new_register_dialog_error"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:textAlignment="center"
+            android:textSize="@dimen/small_text_size"
+            tools:text="@string/add_new_register_text_description"
+            android:textColor="@color/rojo"/>
+
+        <TextView
             android:id="@+id/amount_to_add_text"
             style="@style/general_text"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/margin_16dp"
-            android:layout_marginTop="@dimen/margin_16dp"
-            android:layout_weight="1"
+            android:layout_weight="0.7"
             android:gravity="center_vertical"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
@@ -87,7 +107,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/amount_to_add"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="@dimen/dialog_input_w"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
@@ -100,12 +120,23 @@
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/amount_text_new_register_dialog_error"
+            style="@style/general_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:textAlignment="center"
+            android:textSize="@dimen/small_text_size"
+            tools:text="@string/add_new_register_text_description"
+            android:textColor="@color/rojo"/>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_weight="2">
+            android:layout_weight="1.35">
 
             <Button
                 android:id="@+id/save_button_new_register_dialog"

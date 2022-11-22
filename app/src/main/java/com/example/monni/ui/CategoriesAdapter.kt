@@ -37,6 +37,7 @@ class CategoriesAdapter(
 
             txtName.text = category.name
             progressBar.progress = (100*category.amount/category.limit).toInt()
+            println(category.name)
             progressBar.progressTintList = ColorStateList.valueOf(Color.parseColor(category.color))
 
             layout.setOnClickListener{

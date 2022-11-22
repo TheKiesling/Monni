@@ -25,16 +25,17 @@ class LoginFragmentViewModel @Inject constructor(
         viewModelScope.launch {
             _uiState.value = LoginFragmentUiState.Default
             val userId = repository.signInWithEmailAndPassword(email, password)
+            println(userId)
             when (userId) {
                 is Resource.Success -> {
                     _uiState.value = LoginFragmentUiState.Success(userId.data)
                 }
 
                 is Resource.Error -> {
-                    _uiState.value = LoginFragmentUiState.Error(userId.message!!)
+                    _uiState.value = LoginFragmentUiState.Error("ola")
                 }
                 null -> {
-                    _uiState.value = LoginFragmentUiState.Error("User not found",)
+                    _uiState.value = LoginFragmentUiState.Error("User not found")
                 }
                 else -> {}
             }

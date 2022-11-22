@@ -24,32 +24,40 @@ class FirestoreAuthApiImpl: AuthApi{
             auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        println("wooooooooo")
                         if (user != null) {
+                            println("successful")
                             flag = true
                             data = user.uid
+                            Resource.Success(data = data)
                         }
                         else{
+                            println("null")
                             null
                         }
 
                     } else {
                         val errorCode = (task.exception).toString()
                         message =
-                            if (errorCode == "ERROR_INVALID_EMAIL")
+                            if (errorCode == "ERROR_INVALID_EMAIL"){
                                 "El correo electrónico no es valido"
+
+                            }
                             else if (errorCode == "ERROR_WRONG_PASSWORD")
                                 "La contraseña es incorrecta"
                         else
                             "0"
+                        println(message)
                     }
-
-
                 }
-            if (flag)
+            if (flag){
+                println("user")
+                data = user!!.uid
                 Resource.Success(data = data)
-            else
-                Resource.Error(message=message)
-
+            }
+            else{
+                println("error")
+                Resource.Error(message=message)}
 
         } catch (e: Exception) {
             Resource.Error(message = "User not found")
@@ -62,7 +70,7 @@ class FirestoreAuthApiImpl: AuthApi{
     ): Resource<String> {
         return try {
             val auth = Firebase.auth
-            val response = auth.signInWithEmailAndPassword(email, password).await()
+            val response = auth.createUserWithEmailAndPassword(email, password).await()
 
             val user = response.user
             if (user != null)

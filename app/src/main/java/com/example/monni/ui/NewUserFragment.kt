@@ -63,13 +63,14 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
                 name = binding.inputLayoutNewUserFragmentUsername.editText!!.text.toString()
 
                 lifecycleScope.launch {
-                    val userId = authRepository.signInWithEmailAndPassword(email, password)
+                    val userId = authRepository.createUserWithEmailAndPassword(email, password)
 
                     if (userId != null) {
                         CoroutineScope(Dispatchers.IO).launch {
                             dataStore.saveKeyValue("email", email)
                             dataStore.saveKeyValue("name", name)
                         }
+                        createCategories()
                         val action = NewUserFragmentDirections.actionNewUserFragmentToHomeFragment(email)
                         requireView().findNavController().navigate(action)
                     } else {
@@ -100,8 +101,9 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
             getString(R.string.light_cobalt_blue),
             getString(R.string.ube)
         )
-        var i = 0
+        var i = -1
         for (name in names) {
+            i++
             CoroutineScope(Dispatchers.IO).launch {
                 categoryDatabase.categoryDao().insert(
                     listOf(
@@ -109,13 +111,14 @@ class NewUserFragment : Fragment(R.layout.fragment_new_user) {
                             id = email,
                             amount = 0.0,
                             color = colors[i],
-                            name = names[i],
+                            name = name,
                             limit = 1000.0
                         )
                     )
                 )
-                i++
+
             }
+
         }
     }
 }

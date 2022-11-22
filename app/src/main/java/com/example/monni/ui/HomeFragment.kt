@@ -56,6 +56,9 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
     private fun setInfo(){
         CoroutineScope(Dispatchers.IO).launch {
             val categories = categoryDatabase.categoryDao().getCategories(args.email)
+
+
+
             categoriesList.addAll(categories)
             CoroutineScope(Dispatchers.Main).launch {
                 setupRecyclers()

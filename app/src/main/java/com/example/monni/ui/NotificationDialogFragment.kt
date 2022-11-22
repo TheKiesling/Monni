@@ -17,6 +17,7 @@ import com.example.monni.databinding.FragmentNotificationDialogBinding
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.components.FragmentComponent
 import dagger.hilt.components.SingletonComponent
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +26,7 @@ import kotlinx.coroutines.launch
 
 @Module
 @AndroidEntryPoint
-@InstallIn(SingletonComponent::class)
+@InstallIn(FragmentComponent::class)
 class NotificationDialogFragment(): DialogFragment() {
     private lateinit var binding :FragmentNotificationDialogBinding
     private lateinit var vm: NotificationsDialogViewModel
