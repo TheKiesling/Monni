@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Monni</string>
     <string name="category_registers">Registros de Categoría</string>
@@ -5,8 +6,6 @@
     <string name="email">Email</string>
     <string name="crear_cuenta">Crear Usuario</string>
     <string name="crear_usuario">Crear Usuario</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-    <string name="savings_text_home" translatable="false">Se han ahorrado Q739.65 \n ¡Sigue asi!</string>
     <string name="welcoming_text_home">Bienvenido de vuelta,</string>
     <string name="savings_icon_text">Ahorros</string>
     <string name="chart_icon_text">Gráfico</string>
@@ -41,25 +40,10 @@
     <string name="vestimenta">Vestimenta</string>
     <string name="supermercado">Supermercado</string>
     <string name="emergencia">Emergencia</string>
-    <string name="shampoo" translatable="false">#FCD3F7</string>
-    <string name="brilliant_lavender" translatable="false">#FFB9F1</string>
-    <string name="light_fuchsia_pink" translatable="false">#FF83EA</string>
-    <string name="lavender_blue" translatable="false">#D0C7FF</string>
-    <string name="maximum_blue_purple_night" translatable="false">#ADB6FD</string>
-    <string name="light_cobalt_blue" translatable="false">#9796F0</string>
-    <string name="ube" translatable="false">#7F7FC7</string>
     <string name="ahorros_text_savings_fragment">Ahorros</string>
     <string name="close_text_dialog">Cerrar</string>
     <string name="savings_explanation_text">Cada mes, se calcula la diferencia entre el dinero gastado y el límite de cada categoría. Esta diferencia será agregada al total ahorrado, con el objetivo de llegar a la meta establecida en el transcurso de un año.</string>
     <string name="how_do_savings_work_title">¿Cómo funcionan los ahorros?</string>
-    <string name="firebaseErrorInvalidEmail" translatable="false">ERROR_INVALID_EMAIL</string>
-    <string name="errorInvalidEmail" translatable="false">El correo electrónico no es valido</string>
-    <string name="firebaseErrorWrongPassword" translatable="false">ERROR_WRONG_PASSWORD</string>
-    <string name="errorWrongPassword" translatable="false">La contraseña es incorrecta</string>
-    <string name="firebaseErrorEmailAlreadyInUse" translatable="false">ERROR_EMAIL_ALREADY_IN_USE</string>
-    <string name="errorEmailAlreadyInUse" translatable="false">El correo ingresado ya es usado por otra cuenta</string>
-    <string name="firebaseErrorWeakPassword" translatable="false">ERROR_WEAK_PASSWORD</string>
-    <string name="errorWeakPassword" translatable="false">La contraseña es inválida</string>
     <string name="limite_de_gasto">Limite de Gasto</string>
     <string name="limite_actual">Limite actual: Q</string>
     <string name="mucho_texto">Ingrese una descripción más corta</string>
