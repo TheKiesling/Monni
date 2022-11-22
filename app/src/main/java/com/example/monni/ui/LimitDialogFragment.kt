@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
@@ -83,11 +84,9 @@ class LimitDialogFragment(
         lifecycleScope.launchWhenStarted {
             vm.uiState.collectLatest { state ->
                 vm.getNewLimit()
-                binding.currentLimitTextDialogError.visibility = View.VISIBLE
                 when(state){
                     is GeneralUiState.Error -> {
-                        binding.currentLimitTextDialogError.visibility = View.VISIBLE
-                        binding.currentLimitTextDialogError.text = state.msg
+                        Toast.makeText(requireContext(), state.msg, Toast.LENGTH_LONG).show()
                     }
                     GeneralUiState.Success -> {
                         CoroutineScope(Dispatchers.IO).launch {
