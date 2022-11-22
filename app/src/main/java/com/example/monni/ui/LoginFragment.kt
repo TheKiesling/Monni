@@ -68,7 +68,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     }
 
                     is LoginFragmentUiState.Error ->{
-                        state.message
+                        Toast.makeText(requireContext(), state.message, Toast.LENGTH_LONG).show()
                     }
                 }
 
