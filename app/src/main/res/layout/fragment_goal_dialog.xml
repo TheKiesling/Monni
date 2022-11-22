@@ -40,7 +40,7 @@
             android:textColor="@color/ube"
             android:textSize="@dimen/general_text_size"
             android:textStyle="bold"
-            tools:text="Meta actual Q1000.00" />
+            android:text="@string/actualGoal" />
 
         <TextView
             android:id="@+id/new_goal_option_dialog"

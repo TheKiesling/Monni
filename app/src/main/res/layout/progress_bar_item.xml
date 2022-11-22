@@ -18,17 +18,17 @@
         android:layout_height="wrap_content"
         tools:text="Nombre Categoría"
         android:layout_marginStart="@dimen/margin_16dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="@dimen/margin_5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="330dp"
-        android:layout_height="17dp"
+        android:layout_width="@dimen/dialog_width2"
+        android:layout_height="@dimen/margin_16dp"
         android:layout_marginStart="@dimen/margin_16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/margin_small"
         tools:progress="40"
         android:scaleY="5"
         app:layout_constraintBottom_toBottomOf="parent"
