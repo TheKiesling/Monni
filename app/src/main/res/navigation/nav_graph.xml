@@ -106,7 +106,11 @@
         android:id="@+id/pieChartFragment"
         android:name="com.example.monni.ui.PieChartFragment"
         android:label="fragment_pie_chart"
-        tools:layout="@layout/fragment_pie_chart" />
+        tools:layout="@layout/fragment_pie_chart" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
     <fragment
         android:id="@+id/savingsFragment"
         android:name="com.example.monni.ui.SavingsFragment"

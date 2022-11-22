@@ -80,7 +80,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), CategoriesAdapter.Categor
                 when (item.itemId) {
                     R.id.menu_item_savings -> requireView().findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToSavingsFragment(args.email))
 
-                    R.id.menu_item_graph -> requireView().findNavController().navigate(R.id.action_homeFragment_to_pieChartFragment)
+                    R.id.menu_item_graph -> requireView().findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPieChartFragment(args.email))
                 }
                 true
             }
